@@ -11,3 +11,14 @@ npm i
 ```javascript
 npm run dev
 ```
+
+## Todo
+- Add Sass 
+- Create a default layout
+- Add Storybook
+- Unit tests
+
+& more
+
+## Participate
+Create issue or join me on [Discord](https://discord.gg/rNE6m9)
