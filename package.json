@@ -8,8 +8,13 @@
     "dev": "parcel index.html"
   },
   "keywords": [],
-  "author": "",
+  "author": "Vincent Hirtz",
   "license": "ISC",
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged"
+    }
+  },
   "dependencies": {
     "hookrouter": "^1.2.3",
     "react": "^16.13.1",
@@ -20,8 +25,9 @@
     "@babel/plugin-proposal-class-properties": "^7.8.3",
     "@babel/preset-env": "^7.8.4",
     "@babel/preset-react": "^7.8.3",
-    "babel-plugin-transform-react-pug": "^7.0.1",
-    "pug": "^2.0.4",
+    "husky": "^4.2.5",
+    "prettier": "^2.0.5",
+    "pretty-quick": "^2.0.1",
     "sass": "^1.25.0"
   }
 }
