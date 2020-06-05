@@ -4,7 +4,6 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "parcel index.html"
   },
   "keywords": [],
@@ -12,8 +11,14 @@
   "license": "ISC",
   "husky": {
     "hooks": {
-      "pre-commit": "pretty-quick --staged"
+      "pre-commit": "lint-staged"
     }
+  },
+  "lint-staged": {
+    "*.js": [
+      "./node_modules/.bin/eslint --fix",
+      "prettier -write"
+    ]
   },
   "dependencies": {
     "hookrouter": "^1.2.3",
@@ -22,12 +27,21 @@
   },
   "devDependencies": {
     "@babel/core": "^7.10.2",
-    "@babel/plugin-proposal-class-properties": "^7.8.3",
-    "@babel/preset-env": "^7.8.4",
-    "@babel/preset-react": "^7.8.3",
+    "@babel/plugin-proposal-class-properties": "^7.10.1",
+    "@babel/preset-env": "^7.10.2",
+    "@babel/preset-react": "^7.10.1",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^7.1.0",
+    "eslint-config-airbnb": "^18.1.0",
+    "eslint-config-airbnb-base": "^14.1.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-eslint-plugin": "^2.2.1",
+    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-react": "^7.20.0",
     "husky": "^4.2.5",
+    "lint-staged": "^10.2.9",
     "prettier": "^2.0.5",
     "pretty-quick": "^2.0.1",
-    "sass": "^1.25.0"
+    "sass": "^1.26.8"
   }
 }

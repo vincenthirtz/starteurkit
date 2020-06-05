@@ -1,10 +1,9 @@
-import React from 'react'
 
-const NotFound  = () => (
+const NotFound = () => (
 
-<div>
-   404
-</div>)
+   <div>
+      404 Page
+   </div>)
 
 
 
