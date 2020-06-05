@@ -9,12 +9,12 @@
         "plugin:react/recommended"
     ],
     "globals": {
-        "__DEV__": true,
+        "__DEV__": true
     },
     "env": {
         "browser": true,
         "es6": true,
-        "jest": true,
+        "jest": true
     },
     "rules": {
         "react/display-name": "off",
@@ -25,7 +25,7 @@
                 "js": "never",
                 "jsx": "never",
                 "mjs": "never"
-            },
+            }
         ],
         "react/react-in-jsx-scope": "off",
         "react/jsx-uses-vars": [2],
@@ -47,8 +47,8 @@
                     "warn",
                     "error",
                     "info"
-                ],
-            },
+                ]
+            }
         ],
         "react/jsx-filename-extension": "off",
         "react/prefer-stateless-function": "off",
@@ -63,7 +63,7 @@
                 "skipBlankLines": false
             }
         ],
-        "no-underscore-dangle": "off",
+        "no-underscore-dangle": "off"
     },
     "settings": {
         "import/resolver": {
