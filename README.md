@@ -1,4 +1,5 @@
 [![CodeFactor](https://www.codefactor.io/repository/github/vincenthirtz/starteurkit/badge)](https://www.codefactor.io/repository/github/vincenthirtz/starteurkit)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/c54484c4-8eb1-4017-87a6-4a2097ec29e0/deploy-status)](https://app.netlify.com/sites/romantic-saha-c6aa6a/deploys)
 
 # starteurkit
 
