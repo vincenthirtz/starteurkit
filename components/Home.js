@@ -1,13 +1,9 @@
-import React from 'react'
-import Header from './Header'
+import React from "react";
 
 const Home = () => (
+  <div>
+    <h1>Hello Home</h1>
+  </div>
+);
 
-    <div>
-        <Header />
-        <div className="container">
-            <h1 >Hello Home</h1>
-        </div>
-    </div>)
-
-export default Home
+export default Home;

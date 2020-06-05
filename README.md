@@ -8,6 +8,8 @@ React Starter kit
 - Pre-commit Hook
 - Prettier
 - Eslint
+- Sass
+- Semantic UI
 
 ## Install
 ```javascript
@@ -21,8 +23,7 @@ npm run dev
 ```
 
 ## Todo
-- Add Sass 
-- Create a default layout
+- improve default layout
 - Add Storybook
 - Unit tests
 

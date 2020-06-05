@@ -17,6 +17,7 @@
         "jest": true,
     },
     "rules": {
+        "react/display-name": "off",
         "import/extensions": [
             "error",
             "always",
