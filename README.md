@@ -1,10 +1,11 @@
 [![CodeFactor](https://www.codefactor.io/repository/github/vincenthirtz/starteurkit/badge)](https://www.codefactor.io/repository/github/vincenthirtz/starteurkit)
 
 # starteurkit
-React Starter kit 
+
+React Starter kit
 
 - Parcel
-- Router Hooks 
+- Router Hooks
 - Pre-commit Hook
 - Prettier
 - Eslint
@@ -12,17 +13,20 @@ React Starter kit
 - Semantic UI
 
 ## Install
+
 ```javascript
 git clone https://github.com/vincenthirtz/starteurkit.git
 npm i
 ```
 
 ## Usage
+
 ```javascript
 npm run dev
 ```
 
 ## Todo
+
 - improve default layout
 - Add Storybook
 - Unit tests
@@ -30,4 +34,5 @@ npm run dev
 & more
 
 ## Participate
+
 Create issue or join me on [Discord](https://discord.gg/rNE6m9)

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 import { Menu } from "semantic-ui-react";
 import { navigate } from "hookrouter";
@@ -7,7 +7,6 @@ import Footer from "./Footer";
 
 const Layout = (props) => {
   const { children } = props;
-  const { activeItem, setActiveItem } = useState(false);
 
   return (
     <>
@@ -18,24 +17,10 @@ const Layout = (props) => {
             <Menu.Header>Menu</Menu.Header>
 
             <Menu.Menu>
-              <Menu.Item
-                name="home"
-                active={activeItem === "home"}
-                onClick={() => {
-                  setActiveItem("home");
-                  navigate("/");
-                }}
-              >
+              <Menu.Item name="home" onClick={() => navigate("/")}>
                 Home
               </Menu.Item>
-              <Menu.Item
-                name="about"
-                active={activeItem === "about"}
-                onClick={() => {
-                  setActiveItem("about");
-                  navigate("/about");
-                }}
-              >
+              <Menu.Item name="about" onClick={() => navigate("/about")}>
                 About
               </Menu.Item>
             </Menu.Menu>
