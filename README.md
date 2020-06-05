@@ -1,7 +1,13 @@
 [![CodeFactor](https://www.codefactor.io/repository/github/vincenthirtz/starteurkit/badge)](https://www.codefactor.io/repository/github/vincenthirtz/starteurkit)
 
 # starteurkit
-React Starter kit (Parcel, Router Hooks &amp; more)
+React Starter kit 
+
+- Parcel
+- Router Hooks 
+- Pre-commit Hook
+- Prettier
+- Eslint
 
 ## Install
 ```javascript
