@@ -18,16 +18,19 @@ const SidebarComponent = (props) => {
   return (
     <Responsive getWidth={getWidth} minWidth={Responsive.onlyTablet.minWidth}>
       <Visibility once={false} onBottomPassed={setSidebar} onBottomPassedReverse={setSidebar}>
-        <Segment inverted textAlign="center" style={{ minHeight: 700, padding: "1em 0em" }} vertical>
+        <Segment inverted textAlign="center" style={{ minHeight: getWorkingPath() === "/" ? 700 : 0, padding: "1em 0em", marginBottom: "20px" }} vertical>
           <Menu fixed={fixed ? "top" : null} inverted={!fixed} pointing={!fixed} secondary={!fixed} size="large">
             <Container>
               <Menu.Item as="a" onClick={() => navigate("/")} active={getWorkingPath() === "/"}>
                 Home
               </Menu.Item>
-              <Menu.Item as="a">Features</Menu.Item>
-              <Menu.Item as="a">Company</Menu.Item>
+              <Menu.Item as="a" onClick={() => navigate("/features")} active={getWorkingPath() === "/features"}>Features</Menu.Item>
+              <Menu.Item as="a"  onClick={() => navigate("/docs")} active={getWorkingPath() === "/docs"}>Docs</Menu.Item>
               <Menu.Item as="a" onClick={() => navigate("/about")} active={getWorkingPath() === "/about"}>
                 About
+              </Menu.Item>
+              <Menu.Item as="a" onClick={() => navigate("/contact")} active={getWorkingPath() === "/contact"}>
+                Contact
               </Menu.Item>
               <Menu.Item position="right">
                 <Button as="a" inverted={!fixed}>
@@ -39,7 +42,7 @@ const SidebarComponent = (props) => {
               </Menu.Item>
             </Container>
           </Menu>
-          <Header />
+         {getWorkingPath() === "/" &&  <Header />}
         </Segment>
       </Visibility>
 

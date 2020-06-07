@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, Container, Divider, Grid, Header, Image, Segment } from "semantic-ui-react";
+import { Container, Divider, Grid, Header, Icon, Segment } from "semantic-ui-react";
 
 const Home = () => (
   <>
@@ -8,48 +8,14 @@ const Home = () => (
         <Grid.Row>
           <Grid.Column width={8}>
             <Header as="h3" style={{ fontSize: "2em" }}>
-              We Help Companies and Companions
+              For students and developers
             </Header>
             <p style={{ fontSize: "1.33em" }}>
-              We can give your company superpowers to do things that they never thought possible. Let us delight your
-              customers and empower your needs... through pure data analytics.
-            </p>
-            <Header as="h3" style={{ fontSize: "2em" }}>
-              We Make Bananas That Can Dance
-            </Header>
-            <p style={{ fontSize: "1.33em" }}>
-              Yes that's right, you thought it was the stuff of dreams, but even bananas can be bioengineered.
+            Do you need a ready to use project? Starteurkit is for you!
             </p>
           </Grid.Column>
           <Grid.Column floated="right" width={6}>
-            <Image bordered rounded size="large" src="/images/wireframe/white-image.png" />
-          </Grid.Column>
-        </Grid.Row>
-        <Grid.Row>
-          <Grid.Column textAlign="center">
-            <Button size="huge">Check Them Out</Button>
-          </Grid.Column>
-        </Grid.Row>
-      </Grid>
-    </Segment>
-
-    <Segment style={{ padding: "0em" }} vertical>
-      <Grid celled="internally" columns="equal" stackable>
-        <Grid.Row textAlign="center">
-          <Grid.Column style={{ paddingBottom: "5em", paddingTop: "5em" }}>
-            <Header as="h3" style={{ fontSize: "2em" }}>
-              "What a Company"
-            </Header>
-            <p style={{ fontSize: "1.33em" }}>That is what they all say about us</p>
-          </Grid.Column>
-          <Grid.Column style={{ paddingBottom: "5em", paddingTop: "5em" }}>
-            <Header as="h3" style={{ fontSize: "2em" }}>
-              "I shouldn't have gone with their competitor."
-            </Header>
-            <p style={{ fontSize: "1.33em" }}>
-              <Image avatar src="/images/avatar/large/nan.jpg" />
-              <b>Nan</b> Chief Fun Officer Acme Toys
-            </p>
+            <Icon name="coffee" size="massive" />
           </Grid.Column>
         </Grid.Row>
       </Grid>
@@ -58,31 +24,43 @@ const Home = () => (
     <Segment style={{ padding: "8em 0em" }} vertical>
       <Container text>
         <Header as="h3" style={{ fontSize: "2em" }}>
-          Breaking The Grid, Grabs Your Attention
+        Why choose this kit among the others ?
         </Header>
         <p style={{ fontSize: "1.33em" }}>
-          Instead of focusing on content creation and hard work, we have learned how to master the art of doing nothing
-          by providing massive amounts of whitespace and generic content that can seem massive, monolithic and worth
-          your attention.
+         
+It does not pretend to be in the best react kits but it is rather practical and up to date
         </p>
-        <Button as="a" size="large">
-          Read More
-        </Button>
+        <Grid columns={3} >
+      <Grid.Column>
+    <Icon name="react" size="huge" />
+      </Grid.Column>
+      <Grid.Column>
+    <Icon name="sass" size="huge" />
+    </Grid.Column>
+      <Grid.Column>
+    <Icon name="node" size="huge" />
+    </Grid.Column>
+      <Grid.Column>
+    <Icon name="npm" size="huge" />
+    </Grid.Column>
+      <Grid.Column>
+    <Icon name="github" size="huge" />
+    </Grid.Column>
+    </Grid>
 
         <Divider as="h4" className="header" horizontal style={{ margin: "3em 0em", textTransform: "uppercase" }}>
-          <a href="#">Case Studies</a>
+          <a href="#">Participate</a>
         </Divider>
 
         <Header as="h3" style={{ fontSize: "2em" }}>
-          Did We Tell You About Our Bananas?
+          
+Can we participate in the project?
         </Header>
         <p style={{ fontSize: "1.33em" }}>
-          Yes I know you probably disregarded the earlier boasts as non-sequitur filler content, but it's really true.
-          It took years of gene splicing and combinatory DNA research, but our bananas can really dance.
+          
+Anyone can participate by offering pull requests. Let's discuss together the future of the project on Discord.
         </p>
-        <Button as="a" size="large">
-          I'm Still Quite Interested
-        </Button>
+        <Icon name="heart" size="large" />
       </Container>
     </Segment>
   </>
