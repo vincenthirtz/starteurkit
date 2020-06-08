@@ -37,5 +37,5 @@ Profile.propTypes = {
 };
 
 Profile.defaultProps = {
-  country: ""
-}
+  country: "",
+};

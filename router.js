@@ -1,12 +1,12 @@
 import React from "react";
 import { useRoutes } from "hookrouter";
 import Home from "./components/Home";
-import About from "./components/About";
+import About from "./components/About/About";
 import Features from "./components/Features";
 import Docs from "./components/Docs";
 import Contact from "./components/Contact";
 import NotFoundPage from "./components/NotFoundPage";
-import Layout from "./components/Layout";
+import Layout from "./components/Layout/Layout";
 
 function Router() {
   const routes = {
@@ -40,6 +40,12 @@ function Router() {
 
   const routeResult = useRoutes(routes);
 
-  return routeResult || <Layout><NotFoundPage /></Layout>;
+  return (
+    routeResult || (
+      <Layout>
+        <NotFoundPage />
+      </Layout>
+    )
+  );
 }
 export default Router;

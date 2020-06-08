@@ -4,8 +4,10 @@ import Profile from "./Profile";
 
 const About = () => (
   <div>
-    <Container fluid style={{minHeight: "500px"}}>
-      <Header as="h3" divider>About</Header>
+    <Container fluid style={{ minHeight: "500px" }}>
+      <Header as="h3" divider>
+        About
+      </Header>
       <Segment padded="very">
         <Grid relaxed columns={4}>
           <Grid.Column>
