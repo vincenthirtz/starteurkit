@@ -26,6 +26,7 @@
     "@formiz/core": "^1.0.0-rc.12",
     "@formiz/validations": "^1.0.0-rc.10",
     "hookrouter": "^1.2.3",
+    "prop-types": "^15.7.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "semantic-ui-react": "^0.88.2"

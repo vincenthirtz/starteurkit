@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
+import { navigate, getWorkingPath } from "hookrouter";
 import { Button, Container, Menu, Responsive, Segment, Sidebar, Icon } from "semantic-ui-react";
 import Header from "./Header";
 
@@ -22,14 +23,18 @@ const MobileComponent = (props) => {
         vertical
         visible={sidebarOpened}
       >
-        <Menu.Item as="a" active>
+        <Menu.Item as="a" onClick={() => navigate("/")} active={getWorkingPath() === "/"}>
           Home
         </Menu.Item>
-        <Menu.Item as="a">Work</Menu.Item>
-        <Menu.Item as="a">Company</Menu.Item>
-        <Menu.Item as="a">Careers</Menu.Item>
-        <Menu.Item as="a">Log in</Menu.Item>
-        <Menu.Item as="a">Sign Up</Menu.Item>
+        <Menu.Item as="a" onClick={() => navigate("/features")} active={getWorkingPath() === "/features"}>
+          Features
+        </Menu.Item>
+        <Menu.Item as="a" onClick={() => navigate("/about")} active={getWorkingPath() === "/about"}>
+          About
+        </Menu.Item>
+        <Menu.Item as="a" onClick={() => navigate("/contact")} active={getWorkingPath() === "/contact"}>
+          Contact
+        </Menu.Item>
       </Sidebar>
 
       <Sidebar.Pusher dimmed={sidebarOpened}>

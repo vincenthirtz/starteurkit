@@ -3,7 +3,6 @@ import { useRoutes } from "hookrouter";
 import Home from "./components/Home";
 import About from "./components/About/About";
 import Features from "./components/Features";
-import Docs from "./components/Docs";
 import Contact from "./components/Contact";
 import NotFoundPage from "./components/NotFoundPage";
 import Layout from "./components/Layout/Layout";
@@ -23,11 +22,6 @@ function Router() {
     "/features": () => (
       <Layout>
         <Features />
-      </Layout>
-    ),
-    "/docs": () => (
-      <Layout>
-        <Docs />
       </Layout>
     ),
     "/contact": () => (

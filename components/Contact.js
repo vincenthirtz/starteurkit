@@ -74,9 +74,7 @@ const Contact = () => {
         Contact
       </Header>
       <Grid columns="equal">
-        <Grid.Column>
-          <Segment>1</Segment>
-        </Grid.Column>
+        <Grid.Column />
         <Grid.Column width={8}>
           <Segment>
             {" "}
@@ -95,9 +93,7 @@ const Contact = () => {
             )}
           </Segment>
         </Grid.Column>
-        <Grid.Column>
-          <Segment>3</Segment>
-        </Grid.Column>
+        <Grid.Column />
       </Grid>
     </Container>
   );

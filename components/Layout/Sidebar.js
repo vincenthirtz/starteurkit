@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 import { navigate, getWorkingPath } from "hookrouter";
-import { Button, Container, Menu, Responsive, Segment, Visibility } from "semantic-ui-react";
+import { Container, Menu, Responsive, Segment, Visibility } from "semantic-ui-react";
 import Header from "./Header";
 
 const SidebarComponent = (props) => {
@@ -32,9 +32,6 @@ const SidebarComponent = (props) => {
               <Menu.Item as="a" onClick={() => navigate("/features")} active={getWorkingPath() === "/features"}>
                 Features
               </Menu.Item>
-              <Menu.Item as="a" onClick={() => navigate("/docs")} active={getWorkingPath() === "/docs"}>
-                Docs
-              </Menu.Item>
               <Menu.Item as="a" onClick={() => navigate("/about")} active={getWorkingPath() === "/about"}>
                 About
               </Menu.Item>
@@ -42,20 +39,21 @@ const SidebarComponent = (props) => {
                 Contact
               </Menu.Item>
               <Menu.Item position="right">
-                <Button as="a" inverted={!fixed}>
+                {/* <Button as="a" inverted={!fixed}>
                   Log in
                 </Button>
                 <Button as="a" inverted={!fixed} primary={fixed} style={{ marginLeft: "0.5em" }}>
                   Sign Up
-                </Button>
+                </Button> */}
               </Menu.Item>
             </Container>
           </Menu>
           {getWorkingPath() === "/" && <Header />}
         </Segment>
       </Visibility>
-
-      {children}
+      <div style={{ minHeight: getWorkingPath() !== "/" && 700, padding: "1em 0em", marginBottom: "20px" }}>
+        {children}
+      </div>
     </Responsive>
   );
 };

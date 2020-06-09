@@ -16,7 +16,6 @@ const Features = () => (
                 <Item.Header as="a">Responsive</Item.Header>
                 <Item.Meta>
                   <span>Date</span>
-                  <span>Category</span>
                 </Item.Meta>
                 <Item.Description>
                   A description which may flow for several lines and give context to the content.
@@ -31,7 +30,6 @@ const Features = () => (
                 <Item.Header as="a">Fast</Item.Header>
                 <Item.Meta>
                   <span>Date</span>
-                  <span>Category</span>
                 </Item.Meta>
                 <Item.Description>
                   A description which may flow for several lines and give context to the content.
@@ -46,7 +44,6 @@ const Features = () => (
                 <Item.Header as="a">Customizable</Item.Header>
                 <Item.Meta>
                   <span>Date</span>
-                  <span>Category</span>
                 </Item.Meta>
                 <Item.Description>
                   A description which may flow for several lines and give context to the content.
@@ -61,7 +58,6 @@ const Features = () => (
                 <Item.Header as="a">Internationalization</Item.Header>
                 <Item.Meta>
                   <span>Date</span>
-                  <span>Category</span>
                 </Item.Meta>
                 <Item.Description>
                   A description which may flow for several lines and give context to the content.
@@ -76,7 +72,6 @@ const Features = () => (
                 <Item.Header as="a">Universal access</Item.Header>
                 <Item.Meta>
                   <span>Date</span>
-                  <span>Category</span>
                 </Item.Meta>
                 <Item.Description>
                   A description which may flow for several lines and give context to the content.
@@ -91,7 +86,6 @@ const Features = () => (
                 <Item.Header as="a">Ready to use</Item.Header>
                 <Item.Meta>
                   <span>Date</span>
-                  <span>Category</span>
                 </Item.Meta>
                 <Item.Description>
                   A description which may flow for several lines and give context to the content.
@@ -106,7 +100,6 @@ const Features = () => (
                 <Item.Header as="a">Exportable</Item.Header>
                 <Item.Meta>
                   <span>Date</span>
-                  <span>Category</span>
                 </Item.Meta>
                 <Item.Description>
                   A description which may flow for several lines and give context to the content.

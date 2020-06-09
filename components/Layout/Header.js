@@ -27,7 +27,7 @@ const HeaderComponent = (props) => {
           marginTop: mobile ? "0.5em" : "1.5em",
         }}
       />
-      <Button primary size="huge">
+      <Button primary size="huge" onClick={() => window.open("https://github.com/vincenthirtz/starteurkit")}>
         Github
         <Icon name="right arrow" />
       </Button>
