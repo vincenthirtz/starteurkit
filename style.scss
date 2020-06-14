@@ -1,8 +1,10 @@
-@use './components/style/test.scss';
+@use './components/style/home.scss';
+@import "./components/style/color.scss";
+
 
 $container-size: 768px;
 $bg: rgb(186, 197, 26);
-$text: #fff;
+
 
 *,
 *::after,
@@ -34,5 +36,5 @@ body {
 }
 
 .form-content {
- margin-bottom: 20px;
+  margin-bottom: 20px;
 }

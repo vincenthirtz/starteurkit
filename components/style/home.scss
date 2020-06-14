@@ -1,0 +1,65 @@
+@import "./color.scss";
+
+.ui.inverted.segment {
+  background: $gradient;
+}
+.ui.primary.button {
+  background-color: $highlight;
+}
+
+.ui.secondary.inverted.pointing.menu {
+  background-color: $dark;
+}
+.presentationHolder {
+  margin: 10rem;
+  .presentation {
+    display: flex;
+    flex-direction: column;
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 2rem;
+    }
+    .s1 {
+      font-size: 1.2rem;
+      font-weight: bolder;
+    }
+    .s2 {
+      font-size: 1.1rem;
+      font-weight: lighter;
+    }
+  }
+}
+
+.homeLogo {
+  display: flex;
+  justify-content: space-around;
+  margin: 2em 0;
+}
+
+
+.topMenu{
+  padding: 1rem;
+ a{
+  font-size: 1.1rem;
+   color: $text;
+   font-weight: bolder;
+   margin: 1rem;
+   padding: 0.5rem;
+  }
+     a:hover{
+      border-bottom:solid;
+      border-width: 2px;
+      font-size: 1.01;
+      cursor: pointer; 
+      background-color: #fb78137e;
+     }
+}
+@media screen and (max-width: 640px){
+ .topMenu{
+   font-size: 40rem;
+  color: red;
+ }
+}
+ 
+
+//chercher ou est la querie dans le JS qui fait apparaitre le menu burger

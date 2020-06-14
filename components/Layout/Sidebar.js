@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 import { navigate, getWorkingPath } from "hookrouter";
-import { Container, Menu, Responsive, Segment, Visibility } from "semantic-ui-react";
+import { Container, Responsive, Segment, Visibility } from "semantic-ui-react";
 import Header from "./Header";
 
 const SidebarComponent = (props) => {
@@ -24,36 +24,24 @@ const SidebarComponent = (props) => {
           style={{ minHeight: getWorkingPath() === "/" ? 700 : 0, padding: "1em 0em", marginBottom: "20px" }}
           vertical
         >
-          <Menu fixed={fixed ? "top" : null} inverted={!fixed} pointing={!fixed} secondary={!fixed} size="large">
-            <Container>
-              <Menu.Item as="a" onClick={() => navigate("/")} active={getWorkingPath() === "/"}>
-                Home
-              </Menu.Item>
-              <Menu.Item as="a" onClick={() => navigate("/features")} active={getWorkingPath() === "/features"}>
-                Features
-              </Menu.Item>
-              <Menu.Item as="a" onClick={() => navigate("/about")} active={getWorkingPath() === "/about"}>
-                About
-              </Menu.Item>
-              <Menu.Item as="a" onClick={() => navigate("/contact")} active={getWorkingPath() === "/contact"}>
-                Contact
-              </Menu.Item>
-              <Menu.Item position="right">
-                {/* <Button as="a" inverted={!fixed}>
-                  Log in
-                </Button>
-                <Button as="a" inverted={!fixed} primary={fixed} style={{ marginLeft: "0.5em" }}>
-                  Sign Up
-                </Button> */}
-              </Menu.Item>
-            </Container>
-          </Menu>
+          <Container className="topMenu">
+            <a onClick={() => navigate("/")} active={getWorkingPath() === "/"}>
+              Home
+            </a>
+            <a onClick={() => navigate("/features")} active={getWorkingPath() === "/features"}>
+              Features
+            </a>
+            <a onClick={() => navigate("/about")} active={getWorkingPath() === "/about"}>
+              About
+            </a>
+            <a onClick={() => navigate("/contact")} active={getWorkingPath() === "/contact"}>
+              Contact
+            </a>
+          </Container>
           {getWorkingPath() === "/" && <Header />}
         </Segment>
       </Visibility>
-      <div style={{ minHeight: getWorkingPath() !== "/" && 700, padding: "1em 0em", marginBottom: "20px" }}>
-        {children}
-      </div>
+      <div style={{ minHeight: getWorkingPath() !== "/" && 700 }}>{children}</div>
     </Responsive>
   );
 };
