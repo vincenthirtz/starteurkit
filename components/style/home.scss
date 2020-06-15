@@ -1,10 +1,10 @@
 @use 'sass:color';
 @import "./color.scss";
 
-$breakpoints:(
-  'phone': 360px,
-  'tablet': 760px,
-  'desktop': 1024px
+$breakpoints: (
+  "phone": 360px,
+  "tablet": 760px,
+  "desktop": 1024px,
 );
 
 .ui.inverted.segment {
@@ -63,12 +63,11 @@ $breakpoints:(
     cursor: pointer;
     background-color: color.scale($dark, $lightness: -20%, $alpha: -60%);
   }
-  .flag{
+  .flag {
     cursor: pointer;
-}
+  }
 }
 
 // @media screen and (min-width: 361px) {
-
 
 // }
