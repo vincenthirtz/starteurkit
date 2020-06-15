@@ -1,6 +1,7 @@
-$container-size: 768px;
-$bg: rgb(206, 202, 202);
-$text: #fff;
+@use './components/style/home.scss';
+@import "./components/style/color.scss";
+
+$bg: rgb(186, 197, 26);
 
 *,
 *::after,
@@ -16,21 +17,17 @@ body {
   padding: 0;
 }
 
-.container {
-  margin: 0 auto;
-  max-width: $container-size;
-  text-align: center;
-
-  h1 {
-    display: inline-block;
-    font-size: 36px;
-  }
-}
-
 .form-left {
   text-align: left;
 }
 
 .form-content {
- margin-bottom: 20px;
+  margin-bottom: 20px;
+}
+
+.HomeArticle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }

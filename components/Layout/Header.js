@@ -1,42 +1,27 @@
 import React from "react";
-import PropTypes from "prop-types";
-import { Button, Container, Header, Icon } from "semantic-ui-react";
+import { Button, Icon } from "semantic-ui-react";
 
-const HeaderComponent = (props) => {
-  const { mobile } = props;
+const HeaderComponent = () => {
   return (
-    <Container text>
-      <Header
-        as="h1"
-        content="Starte(u)rkit"
-        inverted
-        style={{
-          fontSize: mobile ? "2em" : "4em",
-          fontWeight: "normal",
-          marginBottom: 0,
-          marginTop: mobile ? "1.5em" : "3em",
-        }}
-      />
-      <Header
-        as="h2"
-        content="React Starter Kit with Routing Hook, Parcel, Sass, Eslint, Prettier, Pre-commit Hook"
-        inverted
-        style={{
-          fontSize: mobile ? "1.5em" : "1.7em",
-          fontWeight: "normal",
-          marginTop: mobile ? "0.5em" : "1.5em",
-        }}
-      />
+    <div className="presentationHolder">
+      <div className="presentation">
+        <h1>Starte(u)rkit</h1>
+        <span className="s1">React Starter Kit with:</span>
+        <span className="s2">Routing Hook, Parcel, Sass, Eslint, Prettier, Pre-commit Hook</span>
+      </div>
+      <div className="homeLogo">
+        <Icon className="icon" name="react" size="huge" />
+        <Icon className="icon" name="sass" size="huge" />
+        <Icon className="icon" name="node" size="huge" />
+        <Icon className="icon" name="npm" size="huge" />
+        <Icon className="icon" name="github" size="huge" />
+      </div>
       <Button primary size="huge" onClick={() => window.open("https://github.com/vincenthirtz/starteurkit")}>
         Github
         <Icon name="right arrow" />
       </Button>
-    </Container>
+    </div>
   );
 };
 
 export default HeaderComponent;
-
-HeaderComponent.propTypes = {
-  mobile: PropTypes.bool.isRequired,
-};

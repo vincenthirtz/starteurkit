@@ -1,0 +1,71 @@
+@use 'sass:color';
+@import "./color.scss";
+
+$breakpoints:(
+  'phone': 360px,
+  'tablet': 760px,
+  'desktop': 1024px
+);
+
+.ui.inverted.segment {
+  background: $gradient;
+}
+.ui.primary.button {
+  background-color: $highlight;
+}
+
+.ui.secondary.inverted.pointing.menu {
+  background-color: $dark;
+}
+
+.presentationHolder {
+  margin: auto;
+  width: 700px;
+  padding: 10rem 0;
+  .presentation {
+    display: flex;
+    flex-direction: column;
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 2rem;
+    }
+    .s1 {
+      font-size: 1.2rem;
+      font-weight: bolder;
+    }
+    .s2 {
+      font-size: 1.1rem;
+      font-weight: lighter;
+    }
+  }
+}
+
+.homeLogo {
+  display: flex;
+  justify-content: space-around;
+  margin: 2em 0;
+}
+
+.topMenu {
+  padding: 1rem;
+  a {
+    font-size: 1.1rem;
+    color: $text;
+    font-weight: bolder;
+    margin: 1rem;
+    padding: 0.5rem;
+  }
+  a:hover {
+    border-bottom: solid;
+    border-width: 2px;
+    border-radius: 2px;
+    font-size: 1.01;
+    cursor: pointer;
+    background-color: color.scale($dark, $lightness: -20%, $alpha: -60%);
+  }
+}
+
+// @media screen and (min-width: 361px) {
+
+
+// }
