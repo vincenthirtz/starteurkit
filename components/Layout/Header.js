@@ -1,6 +1,6 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
-import { Button, Icon } from "semantic-ui-react";
+import { Icon } from "semantic-ui-react";
 
 const HeaderComponent = () => {
   const { t } = useTranslation();
@@ -18,10 +18,6 @@ const HeaderComponent = () => {
         <Icon className="icon" name="npm" size="huge" />
         <Icon className="icon" name="github" size="huge" />
       </div>
-      <Button primary size="huge" onClick={() => window.open("https://github.com/vincenthirtz/starteurkit")}>
-        Github
-        <Icon name="right arrow" />
-      </Button>
     </div>
   );
 };

@@ -7,8 +7,7 @@
     "dev": "parcel index.html",
     "build": "NODE_ENV=development parcel build index.html --no-minify",
     "prod": "parcel build index.html",
-    "snyk-protect": "snyk protect",
-    "prepublish": "npm run snyk-protect"
+    "snyk-protect": "snyk protect"
   },
   "keywords": [],
   "author": "Vincent Hirtz",
