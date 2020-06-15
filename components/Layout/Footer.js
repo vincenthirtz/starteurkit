@@ -1,15 +1,17 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 import { navigate } from "hookrouter";
 import { Container, Grid, Header, List, Segment, Divider } from "semantic-ui-react";
 
 const Footer = () => {
+  const { t } = useTranslation();
   return (
     <Segment inverted style={{ margin: "5em 0em 0em", padding: "5em 0em" }} vertical>
       <Container textAlign="center">
         <Grid columns={4} divided stackable inverted>
           <Grid.Row>
             <Grid.Column>
-              <Header inverted as="h4" content="Social" />
+              <Header inverted as="h4" content={t("Social")} />
               <List link inverted>
                 <List.Item as="a" href="https://twitter.com/alukaard76">
                   Twitter
@@ -23,11 +25,11 @@ const Footer = () => {
               </List>
             </Grid.Column>
             <Grid.Column>
-              <Header inverted as="h4" content="Fast" />
-              <p>Starting a project has never been easier</p>
+              <Header inverted as="h4" content={t("Fast")} />
+              <p>{t("Starting a project has never been easier")} </p>
             </Grid.Column>
             <Grid.Column>
-              <Header inverted as="h4" content="Tech" />
+              <Header inverted as="h4" content={t("Tech")} />
               <List link inverted>
                 <List.Item as="a" href="https://reactjs.org/">
                   React
@@ -44,24 +46,24 @@ const Footer = () => {
               </List>
             </Grid.Column>
             <Grid.Column>
-              <Header inverted as="h4" content="Simple" />
-              <p>Focus only on your application code</p>
+              <Header inverted as="h4" content={t("Simple")} />
+              <p>{t("Focus only on your application code")}</p>
             </Grid.Column>
           </Grid.Row>
         </Grid>
         <Divider inverted section />
         <List horizontal inverted divided link size="small">
           <List.Item as="a" href="#">
-            Sitemap
+            <p>{t("Sitemap")}</p>
           </List.Item>
           <List.Item as="a" onClick={() => navigate("/contact")}>
-            Contact
+            <p>{t("Contact")}</p>
           </List.Item>
           <List.Item as="a" href="#">
-            Terms and Conditions
+            <p>{t("Terms and Conditions")}</p>
           </List.Item>
           <List.Item as="a" href="#">
-            Privacy Policy
+            <p>{t("Privacy Policy")}</p>
           </List.Item>
         </List>
       </Container>

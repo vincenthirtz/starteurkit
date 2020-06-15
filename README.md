@@ -10,6 +10,7 @@ React Starter kit
 
 - Parcel
 - Router Hooks
+- EmailJS
 - Pre-commit Hook
 - Prettier
 - Eslint
@@ -31,7 +32,7 @@ npm run dev
 
 ## Todo
 
-- improve default layout
+- Improve layout
 - Add Storybook
 - Unit tests
 

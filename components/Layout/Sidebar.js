@@ -1,12 +1,15 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
+import i18n from "i18next";
+import { useTranslation } from "react-i18next";
 import { navigate, getWorkingPath } from "hookrouter";
-import { Responsive, Segment, Visibility } from "semantic-ui-react";
+import { Responsive, Segment, Visibility, Flag } from "semantic-ui-react";
 import Header from "./Header";
 
 const SidebarComponent = (props) => {
   const { children } = props;
   const [fixed, setFixed] = useState();
+  const { t } = useTranslation();
   const getWidth = () => {
     const isSSR = typeof window === "undefined";
 
@@ -14,6 +17,10 @@ const SidebarComponent = (props) => {
   };
 
   const setSidebar = () => setFixed(!fixed);
+
+  const setLangFR = () => i18n.changeLanguage("fr-FR");
+
+  const setLangEN = () => i18n.changeLanguage("en-US");
 
   return (
     <Responsive getWidth={getWidth} minWidth={Responsive.onlyTablet.minWidth}>
@@ -26,17 +33,19 @@ const SidebarComponent = (props) => {
         >
           <div className="topMenu">
             <a onClick={() => navigate("/")} active={getWorkingPath() === "/"}>
-              Home
+              {t("Home")}
             </a>
             <a onClick={() => navigate("/features")} active={getWorkingPath() === "/features"}>
-              Features
+              {t("Features")}
             </a>
             <a onClick={() => navigate("/about")} active={getWorkingPath() === "/about"}>
-              About
+              {t("About")}
             </a>
             <a onClick={() => navigate("/contact")} active={getWorkingPath() === "/contact"}>
-              Contact
+              {t("Contact")}
             </a>
+            <Flag name="france" onClick={setLangFR} />
+            <Flag name="uk" onClick={setLangEN} />
           </div>
           {getWorkingPath() === "/" && <Header />}
         </Segment>

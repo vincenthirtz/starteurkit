@@ -63,6 +63,9 @@ $breakpoints:(
     cursor: pointer;
     background-color: color.scale($dark, $lightness: -20%, $alpha: -60%);
   }
+  .flag{
+    cursor: pointer;
+}
 }
 
 // @media screen and (min-width: 361px) {
