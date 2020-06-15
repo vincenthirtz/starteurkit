@@ -1,9 +1,9 @@
 import React from "react";
-import { Button, Container, Icon } from "semantic-ui-react";
+import { Button, Icon } from "semantic-ui-react";
 
 const HeaderComponent = () => {
   return (
-    <Container className="presentationHolder" text>
+    <div className="presentationHolder">
       <div className="presentation">
         <h1>Starte(u)rkit</h1>
         <span className="s1">React Starter Kit with:</span>
@@ -20,7 +20,7 @@ const HeaderComponent = () => {
         Github
         <Icon name="right arrow" />
       </Button>
-    </Container>
+    </div>
   );
 };
 

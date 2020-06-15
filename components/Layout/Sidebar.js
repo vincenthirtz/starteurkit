@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 import { navigate, getWorkingPath } from "hookrouter";
-import { Container, Responsive, Segment, Visibility } from "semantic-ui-react";
+import { Responsive, Segment, Visibility } from "semantic-ui-react";
 import Header from "./Header";
 
 const SidebarComponent = (props) => {
@@ -24,7 +24,7 @@ const SidebarComponent = (props) => {
           style={{ minHeight: getWorkingPath() === "/" ? 700 : 0, padding: "1em 0em", marginBottom: "20px" }}
           vertical
         >
-          <Container className="topMenu">
+          <div className="topMenu">
             <a onClick={() => navigate("/")} active={getWorkingPath() === "/"}>
               Home
             </a>
@@ -37,7 +37,7 @@ const SidebarComponent = (props) => {
             <a onClick={() => navigate("/contact")} active={getWorkingPath() === "/contact"}>
               Contact
             </a>
-          </Container>
+          </div>
           {getWorkingPath() === "/" && <Header />}
         </Segment>
       </Visibility>

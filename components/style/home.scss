@@ -1,3 +1,4 @@
+@use 'sass:color';
 @import "./color.scss";
 
 .ui.inverted.segment {
@@ -10,8 +11,11 @@
 .ui.secondary.inverted.pointing.menu {
   background-color: $dark;
 }
+
 .presentationHolder {
-  margin: 10rem;
+  margin: auto;
+    width: 700px;
+    padding: 10rem 0;
   .presentation {
     display: flex;
     flex-direction: column;
@@ -49,17 +53,18 @@
      a:hover{
       border-bottom:solid;
       border-width: 2px;
+      border-radius: 2px;
       font-size: 1.01;
       cursor: pointer; 
-      background-color: #fb78137e;
+      background-color: color.scale($dark,$lightness:-20%, $alpha: -60%);
      }
-}
-@media screen and (max-width: 640px){
+    }
+
+@media screen and (max-width: 361px){
  .topMenu{
-   font-size: 40rem;
-  color: red;
+   a {
+     font-size: 200px!important;
+   }
  }
 }
  
-
-//chercher ou est la querie dans le JS qui fait apparaitre le menu burger

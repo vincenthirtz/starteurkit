@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Grid, Container, Header, Segment, Button, Form, Message } from "semantic-ui-react";
+import { Grid, Header, Segment, Button, Form, Message } from "semantic-ui-react";
 import { Formiz, useForm } from "@formiz/core";
 import { isEmail } from "@formiz/validations";
 import MyField from "./Form/Field";
@@ -32,44 +32,46 @@ const Contact = () => {
       }, 1000);
     };
     return (
-      <Formiz onValidSubmit={submitForm} connect={myForm}>
-        <Form noValidate onSubmit={myForm.submit} className="demo-form" style={{ minHeight: "16rem" }}>
-          <div className="form-content">
-            <MyField name="name" label="Name" />
+      <>
+        <Formiz onValidSubmit={submitForm} connect={myForm}>
+          <Form noValidate onSubmit={myForm.submit} className="demo-form" style={{ minHeight: "16rem" }}>
+            <div className="form-content">
+              <MyField name="name" label="Name" />
 
-            <MyField
-              name="email"
-              label="Email"
-              type="email"
-              required="Email is required"
-              validations={[
-                {
-                  rule: isEmail(),
-                  message: "Not a valid email",
-                },
-              ]}
-            />
-            <MyTextArea name="message" label="Message" required="Message is required" />
-          </div>
-
-          <div className="demo-form__footer">
-            <div className="ml-auto" style={{ minWidth: "6rem" }}>
-              <Button
-                className="demo-button is-full is-primary"
-                type="submit"
-                disabled={isLoading || (!myForm.isValid && myForm.isSubmitted)}
-              >
-                {isLoading ? "Loading..." : "Send"}
-              </Button>
+              <MyField
+                name="email"
+                label="Email"
+                type="email"
+                required="Email is required"
+                validations={[
+                  {
+                    rule: isEmail(),
+                    message: "Not a valid email",
+                  },
+                ]}
+              />
+              <MyTextArea name="message" label="Message" required="Message is required" />
             </div>
-          </div>
-        </Form>
-      </Formiz>
+
+            <div className="demo-form__footer">
+              <div className="ml-auto" style={{ minWidth: "6rem" }}>
+                <Button
+                  className="demo-button is-full is-primary"
+                  type="submit"
+                  disabled={isLoading || (!myForm.isValid && myForm.isSubmitted)}
+                >
+                  {isLoading ? "Loading..." : "Send"}
+                </Button>
+              </div>
+            </div>
+          </Form>
+        </Formiz>
+      </>
     );
   };
 
   return (
-    <Container fluid>
+    <>
       <Header as="h3" divider>
         Contact
       </Header>
@@ -95,7 +97,7 @@ const Contact = () => {
         </Grid.Column>
         <Grid.Column />
       </Grid>
-    </Container>
+    </>
   );
 };
 export default Contact;

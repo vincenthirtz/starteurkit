@@ -2,7 +2,6 @@
 @import "./components/style/color.scss";
 
 
-$container-size: 768px;
 $bg: rgb(186, 197, 26);
 
 
@@ -20,16 +19,6 @@ body {
   padding: 0;
 }
 
-.container {
-  margin: 0 auto;
-  max-width: $container-size;
-  text-align: center;
-
-  h1 {
-    display: inline-block;
-    font-size: 36px;
-  }
-}
 
 .form-left {
   text-align: left;
@@ -37,4 +26,11 @@ body {
 
 .form-content {
   margin-bottom: 20px;
+}
+
+.HomeArticle{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
