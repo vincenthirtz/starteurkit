@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import Container from "./Container";
+import Sidebar from "./Sidebar";
 import Footer from "./Footer";
 import "../style/home.scss";
 
@@ -9,7 +9,7 @@ const Layout = (props) => {
 
   return (
     <>
-      <Container>{children}</Container>
+      <Sidebar>{children}</Sidebar>
       <Footer />
     </>
   );

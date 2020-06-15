@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, Icon } from "semantic-ui-react";
+import { Icon } from "semantic-ui-react";
 
 const HeaderComponent = () => {
   return (
@@ -16,10 +16,6 @@ const HeaderComponent = () => {
         <Icon className="icon" name="npm" size="huge" />
         <Icon className="icon" name="github" size="huge" />
       </div>
-      <Button primary size="huge" onClick={() => window.open("https://github.com/vincenthirtz/starteurkit")}>
-        Github
-        <Icon name="right arrow" />
-      </Button>
     </div>
   );
 };

@@ -3,48 +3,9 @@
 
 $breakpoints:(
   'phone': 360px,
-  'tablet': 760px,
+  'tablet': 770px,
   'desktop': 1024px
 );
-
-.ui.inverted.segment {
-  background: $gradient;
-}
-.ui.primary.button {
-  background-color: $highlight;
-}
-
-.ui.secondary.inverted.pointing.menu {
-  background-color: $dark;
-}
-
-.presentationHolder {
-  margin: auto;
-  width: 700px;
-  padding: 10rem 0;
-  .presentation {
-    display: flex;
-    flex-direction: column;
-    h1 {
-      font-size: 3rem;
-      margin-bottom: 2rem;
-    }
-    .s1 {
-      font-size: 1.2rem;
-      font-weight: bolder;
-    }
-    .s2 {
-      font-size: 1.1rem;
-      font-weight: lighter;
-    }
-  }
-}
-
-.homeLogo {
-  display: flex;
-  justify-content: space-around;
-  margin: 2em 0;
-}
 
 .topMenu {
   padding: 1rem;
@@ -65,7 +26,108 @@ $breakpoints:(
   }
 }
 
-// @media screen and (min-width: 361px) {
+.headerHome {
+  background: $gradient;
+  display: flex;
+  flex-direction: column;
+    align-items: center;
+}
 
+.ui.secondary.inverted.pointing.menu {
+  background-color: $dark;
+}
 
-// }
+.presentationHolder {
+  color:$text;
+  margin: auto;
+  width: 700px;
+  padding: 10rem 0;
+  .presentation {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    h1 {
+      font-size: 4.9rem;
+      margin-bottom: 2rem;
+    }
+    .s1 {
+      font-size: 1.2rem;
+      font-weight: bolder;
+      margin-bottom: 1rem;
+    }
+    .s2 {
+      font-size: 1.1rem;
+      font-weight: lighter;
+      margin-bottom: 2rem;
+    }
+  }
+}
+
+.homeLogo {
+  color: $text ;
+  display: flex;
+  justify-content: space-around;
+  margin: 2em 0;
+}
+
+.gridwrapper{
+  margin:8rem 0 ;
+  display: grid;
+  grid-template-columns: repeat(4, 2fr);
+  grid-gap: 10px;
+  grid-auto-rows: minmax(100px, auto);
+  .gridText{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    grid-column: 2;
+    grid-row: 1;
+  }
+  .gridIcon{
+    margin: auto;
+    grid-column: 3/4;
+    grid-row: 1;
+  }
+}
+.question{
+  font-size: 2em;
+}
+.footer{
+  color: $text;
+  background: $gradient;
+  display: flex;
+  justify-content: space-around;
+  padding: 2rem 8rem 4rem;
+  .row{
+    h4{
+      font-size: 1.2rem;
+      font-weight: 800;
+    }
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: flex-start;
+    ul{
+      display: flex;
+    flex-direction: column;
+    padding: 0;
+    margin: 0;
+    a{
+      color:$text;
+      font-weight: 400;
+    }
+    }
+  }
+  }
+@media (max-width: "tablet") {
+  .ui.inverted.segment{
+    background-color: black;
+  }
+.topMenu{
+font-family: sans-serif;
+background-color: black;
+
+}
+}
