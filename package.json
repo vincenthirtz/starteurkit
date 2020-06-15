@@ -6,7 +6,9 @@
   "scripts": {
     "dev": "parcel index.html",
     "build": "NODE_ENV=development parcel build index.html --no-minify",
-    "prod": "parcel build index.html"
+    "prod": "parcel build index.html",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "keywords": [],
   "author": "Vincent Hirtz",
@@ -31,7 +33,8 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-i18next": "^11.5.1",
-    "semantic-ui-react": "^0.88.2"
+    "semantic-ui-react": "^0.88.2",
+    "snyk": "^1.341.1"
   },
   "devDependencies": {
     "@babel/core": "^7.10.2",
@@ -52,5 +55,6 @@
     "prettier": "^2.0.5",
     "pretty-quick": "^2.0.1",
     "sass": "^1.26.8"
-  }
+  },
+  "snyk": true
 }
