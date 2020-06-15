@@ -1,6 +1,12 @@
 @use 'sass:color';
 @import "./color.scss";
 
+$breakpoints:(
+  'phone': 360px,
+  'tablet': 760px,
+  'desktop': 1024px  
+);
+
 .ui.inverted.segment {
   background: $gradient;
 }
@@ -14,8 +20,8 @@
 
 .presentationHolder {
   margin: auto;
-    width: 700px;
-    padding: 10rem 0;
+  width: 700px;
+  padding: 10rem 0;
   .presentation {
     display: flex;
     flex-direction: column;
@@ -40,31 +46,26 @@
   margin: 2em 0;
 }
 
-
-.topMenu{
+.topMenu {
   padding: 1rem;
- a{
-  font-size: 1.1rem;
-   color: $text;
-   font-weight: bolder;
-   margin: 1rem;
-   padding: 0.5rem;
+  a {
+    font-size: 1.1rem;
+    color: $text;
+    font-weight: bolder;
+    margin: 1rem;
+    padding: 0.5rem;
   }
-     a:hover{
-      border-bottom:solid;
-      border-width: 2px;
-      border-radius: 2px;
-      font-size: 1.01;
-      cursor: pointer; 
-      background-color: color.scale($dark,$lightness:-20%, $alpha: -60%);
-     }
-    }
-
-@media screen and (max-width: 361px){
- .topMenu{
-   a {
-     font-size: 200px!important;
-   }
- }
+  a:hover {
+    border-bottom: solid;
+    border-width: 2px;
+    border-radius: 2px;
+    font-size: 1.01;
+    cursor: pointer;
+    background-color: color.scale($dark, $lightness: -20%, $alpha: -60%);
+  }
 }
- 
+
+@media screen and (min-width: 361px) {
+
+
+}
