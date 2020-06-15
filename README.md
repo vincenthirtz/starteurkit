@@ -1,4 +1,5 @@
 [![CodeFactor](https://www.codefactor.io/repository/github/vincenthirtz/starteurkit/badge)](https://www.codefactor.io/repository/github/vincenthirtz/starteurkit)
+![Snyk Vulnerabilities for GitHub Repo](https://img.shields.io/snyk/vulnerabilities/github/vincenthirtz/starteurkit)
 [![Discord](https://img.shields.io/discord/712287691810799757?color=green)](https://discord.gg/rNE6m9)
 ![GitHub repo size](https://img.shields.io/github/repo-size/vincenthirtz/starteurkit)
 ![Node.js CI](https://github.com/vincenthirtz/starteurkit/workflows/Node.js%20CI/badge.svg)
@@ -10,6 +11,7 @@ React Starter kit
 
 - Parcel
 - Router Hooks
+- EmailJS
 - Pre-commit Hook
 - Prettier
 - Eslint
@@ -31,7 +33,7 @@ npm run dev
 
 ## Todo
 
-- improve default layout
+- Improve layout
 - Add Storybook
 - Unit tests
 

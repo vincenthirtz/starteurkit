@@ -90,6 +90,9 @@ $breakpoints:(
     grid-column: 3/4;
     grid-row: 1;
   }
+  .flag {
+    cursor: pointer;
+  }
 }
 .question{
   font-size: 2em;
