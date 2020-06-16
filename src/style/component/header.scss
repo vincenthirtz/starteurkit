@@ -1,0 +1,82 @@
+@use 'sass:color';
+@import './queries/mixins.scss';
+@import './theme/color.scss';
+
+
+
+// .topMenu {
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+//   position: fixed;
+//   z-index: 9999;
+//   background-color:$backgroundDark;
+//   width: 100%;
+//   padding-top: 3rem;
+//   a{
+//     font-size: 5rem;
+//     padding: 3rem 1rem 6rem 1rem ;
+//     margin: 1rem auto;
+//     color: white;
+//     border-bottom:solid;
+//     text-align: center;
+//     width: 100%;
+//   }
+//   .flag{
+//     width: 1rem;
+//   }
+// }
+
+// .headerHome {
+//   background: $gradient;
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+// }
+    
+
+// .presentationHolder {
+//   color: $text;
+//   margin: auto;
+//   width: 700px;
+//   padding: 10rem 0;
+//   .presentation {
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: center;
+//     align-items: center;
+//     h1 {
+//       font-size: 4.9rem;
+//       margin-bottom: 2rem;
+//     }
+//     .s1 {
+//       font-size: 1.2rem;
+//       font-weight: bolder;
+//       margin-bottom: 1rem;
+//     }
+//     .s2 {
+//       font-size: 1.1rem;
+//       font-weight: lighter;
+//       margin-bottom: 2rem;
+//     }
+//   }
+// }
+
+// .homeLogo {
+//   color: $text;
+//   display: flex;
+//   justify-content: space-around;
+//   margin: 2em 0;
+// }
+
+@media (max-width: 800px){
+  @include mobile();
+}
+
+@media(min-width: 801px){
+  @include menu();
+}
+
+@media(min-width: 801px){
+  @include homeHead();
+  }

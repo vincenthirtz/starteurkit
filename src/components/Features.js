@@ -1,12 +1,10 @@
 import React from "react";
-import { Header, Item, Icon, Segment } from "semantic-ui-react";
+import { Item, Icon } from "semantic-ui-react";
 
 const Features = () => (
-  <div>
-    <Header as="h3" divider>
-      Features
-    </Header>
-    <Segment padded="very">
+  <div className="featureWrap">
+    <h3>Features</h3>
+    <div>
       <Item.Group divided>
         <Item>
           <Icon name="mobile alternate" size="massive" />
@@ -106,7 +104,7 @@ const Features = () => (
           </Item.Content>
         </Item>
       </Item.Group>
-    </Segment>
+    </div>
   </div>
 );
 

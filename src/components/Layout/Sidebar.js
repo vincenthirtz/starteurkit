@@ -30,8 +30,8 @@ const SidebarComponent = (props) => {
           <a onClick={() => navigate("/contact")} active={getWorkingPath() === "/contact"}>
             {t("Contact")}
           </a>
-          <Flag name="france" onClick={setLangFR} />
-          <Flag name="uk" onClick={setLangEN} />
+          <Flag name="france" onClick={setLangFR} className="flag" />
+          <Flag name="uk" onClick={setLangEN} className="flag" />
         </div>
         {getWorkingPath() === "/" && <Header />}
       </div>

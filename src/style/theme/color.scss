@@ -1,5 +1,8 @@
+@use 'sass:color';
+
 $bgHead: #b6eb7a;
 $highlight: #fb7813;
-$dark: #e84a5f;
+$dark: hsl(352, 77%, 60%);
 $gradient: linear-gradient(0deg, rgba(254, 206, 171, 1) 0%, rgba(232, 74, 95, 1) 100%);
 $text: #fff;
+$backgroundDark:color.scale($dark, $lightness: -20%, $alpha: -20%);
