@@ -7,7 +7,7 @@ import { Flag } from "semantic-ui-react";
 import Header from "./Header";
 
 const SidebarComponent = (props) => {
-  const { children } = props;
+  const { children, open } = props;
   const { t } = useTranslation();
 
   const setLangFR = () => i18n.changeLanguage("fr-FR");
@@ -17,7 +17,7 @@ const SidebarComponent = (props) => {
   return (
     <>
       <div className="headerHome">
-        <div className="topMenu">
+        <div className={`topMenu ${open ? "" : "hidden"}`}>
           <a onClick={() => navigate("/")} active={getWorkingPath() === "/"}>
             {t("Home")}
           </a>
@@ -44,4 +44,5 @@ export default SidebarComponent;
 
 SidebarComponent.propTypes = {
   children: PropTypes.element.isRequired,
+  open: PropTypes.element.isRequired,
 };

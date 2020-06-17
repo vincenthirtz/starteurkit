@@ -1,103 +1,58 @@
-@mixin mobile() {
-  .topMenu {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: fixed;
-    z-index: 9999;
-    background-color:$backgroundDark;
+
+@mixin topMenu ($color, $backgroundColor) {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  z-index: 9999;
+  background-color:$backgroundDark;
+  width: 100%;
+  padding-top: 1rem;
+  animation-duration: 40s;
+  animation-name: tamere;
+  animation-iteration-count:1;
+  animation-direction: normal;
+  a{
+    font-size: 1.5rem;
+    padding: 1rem 1rem 1.5rem 1rem ;
+    transform: translateY(-01rem);
+    margin: 0.5rem auto;
+    color: $text;
+    border-bottom:solid;
+    border-width: 1px;
+    text-align: center;
     width: 100%;
-    padding-top: 3rem;
-    a{
-      font-size: 5rem;
-      padding: 3rem 1rem 6rem 1rem ;
-      margin: 1rem auto;
-      color: white;
-      border-bottom:solid;
-      text-align: center;
-      width: 100%;
-    }
-    .flag{
-      width: 1rem;
-    }
   }
-  
-  .headerHome {
-    background: $gradient;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-      @media(min-width: 801px){
-        @include homeHead();
-        }
-  
-  .presentationHolder {
-    color: $text;
-    margin: auto;
-    width: 700px;
-    padding: 10rem 0;
-    .presentation {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      h1 {
-        font-size: 4.9rem;
-        margin-bottom: 2rem;
-      }
-      .s1 {
-        font-size: 1.2rem;
-        font-weight: bolder;
-        margin-bottom: 1rem;
-      }
-      .s2 {
-        font-size: 1.1rem;
-        font-weight: lighter;
-        margin-bottom: 2rem;
-      }
-    }
-  }
-  
-  .homeLogo {
-    color: $text;
-    display: flex;
-    justify-content: space-around;
-    margin: 2em 0;
+  .flag{
+    width: 1rem;
   }
 }
 
-@mixin homeHead() {
-    .headerHome {
-      background-color: black;
+@mixin menu() {
+    display: block;
+    position: initial;
+    background-color: $gradient;
+    width: 100%;
+    padding: 1rem 2.5rem;
+    text-align: center;
+    a {
+      font-size: 1.1rem;
+      color: $text;
+      font-weight: bolder;
+      margin: 0rem;
+      padding: 1rem 1.5rem;
+      border-bottom: transparent;
     }
-  }
-  
-  @mixin menu() {
-    .topMenu {
-      display: block;
-      position: initial;
-      background-color:$gradient;
-      width: 100%;
-      padding: 1rem 2.5rem;
-      text-align: center;
-      a {
-        font-size: 1.1rem;
-        color: $text;
-        font-weight: bolder;
-        margin: 0rem;
-        padding: 1rem 1.5rem;
-        border-bottom: transparent;
-      }
-      a:hover {
-        border-bottom: solid;
-        border-width: 2px;
-        border-radius: 2px;
-        font-size: 1.01;
-        cursor: pointer;
-        background-color: color.scale($dark, $lightness: -20%, $alpha: -60%);
-      }
-      .flag {
-        cursor: pointer;
-      }
-    }}
+    a:hover {
+      border-bottom: solid;
+      border-width: 2px;
+      border-radius: 2px;
+      font-size: 1.01;
+      cursor: pointer;
+      background-color: color.scale($dark, $lightness: -20%, $alpha: -60%);
+    }
+    .flag {
+      cursor: pointer;
+    }
+}

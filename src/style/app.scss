@@ -1,10 +1,9 @@
 @use './component/header.scss';
 @use './component/footer.scss';
-@import './queries/media-queries.scss';
-@import './theme/color.scss';
+@import "./queries/media-queries.scss";
+@import "./theme/color.scss";
 
 
-$bg: transparent;
 
 *,
 *::after,
