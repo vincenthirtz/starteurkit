@@ -1,0 +1,73 @@
+@use 'sass:color';
+@import "./theme/color.scss";
+
+//////barre de menu//////
+.burgerMenu{
+    position: absolute;
+    z-index: 99999;
+    height: 3rem;
+    width: 3rem;
+    background-color: $bg;
+    border: none;
+    animation: buttonToLeft .5s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+div{
+    position: relative;
+    width: 100%;
+    height: 50%;
+    span{
+        display: block;
+        background-color:$text;
+        width: 2rem;
+        height: .3rem;
+        border-radius: 1rem;
+        margin-top: .25rem;
+        .bun1{
+            position: absolute;
+            top:0;
+            transform: translateY(-50%);
+        }
+        .bun2{
+            position: absolute;
+            bottom: 0;
+            transform: translateY(-50%);
+        }
+    }
+
+}
+
+  }
+  .burgerMenu.open
+  { animation:buttonToRight .5s;
+    animation-iteration-count: 1;
+    animation-timing-function:cubic-bezier(0.53,-0.26, 0.58, 1);
+    animation-fill-mode: forwards;
+  }
+
+
+
+
+
+
+
+
+///button's animations///
+@keyframes buttonToLeft {
+    0%{
+      left: 80%;
+    }
+    100%{
+    left: 0%;
+    }
+  }
+  
+  
+  @keyframes buttonToRight {
+    0%{
+      left: 0%;
+    }
+    100%{
+    left: 88%;
+    }
+  }

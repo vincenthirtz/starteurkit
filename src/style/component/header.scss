@@ -4,17 +4,6 @@
 
 
 
-//////barre de menu//////
-.burgerMenu{
-  position: absolute;
-  z-index: 99999;
-}
-svg{
-color:$text;
-position: absolute;
-z-index: 99998;
-}
-
 .topMenu {
   @include topMenu($text, $backgroundDark);
   animation: menuMove .5s;
@@ -31,6 +20,7 @@ z-index: 99998;
 }
 }
 
+///menu's animations///
 @keyframes menuMove {
   0%{
     right: 200%;
@@ -39,7 +29,6 @@ z-index: 99998;
     right: 0%;
   }
 }
-
 @keyframes menuMoveBack {
 0%{
   right: 0%;
