@@ -1,50 +1,43 @@
 @use 'sass:color';
-@import "./queries/mixins.scss";
+@import '../queries/media-queries.scss';
+@import '../queries/mixins.scss';
 @import "./theme/color.scss";
-
-
 
 .topMenu {
   @include topMenu($text, $backgroundDark);
-  animation: menuMove .5s;
-  @media all and(min-width: 801px) {
+  animation: menuMove 0.5s;
+  @media all and(min-width: $mediumQ) {
     @include menu;
- }
+  }
 }
-.topMenu.hidden{
-    animation: menuMoveBack .5s  ;
-    animation-iteration-count: 1;
-    animation-fill-mode: forwards;
-  @media all and(min-width: 801px) {
-   @include menu;
-}
+.topMenu.hidden {
+  animation: menuMoveBack 0.5s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  @media all and(min-width: $mediumQ) {
+    @include menu;
+  }
 }
 
 ///menu's animations///
 @keyframes menuMove {
-  0%{
+  0% {
     right: 200%;
   }
-  100%{
+  100% {
     right: 0%;
   }
 }
 @keyframes menuMoveBack {
-0%{
-  right: 0%;
-
+  0% {
+    right: 0%;
+  }
+  100% {
+    right: 200%;
+  }
 }
-100%{
-  right: 200%;;
-}
-}
-
-
 
 //////fond du header//////
-
-
-
 
 .headerHome {
   background: $gradient;
@@ -90,5 +83,4 @@
 }
 
 @media screen and(min-width: 901px) {
- 
 }

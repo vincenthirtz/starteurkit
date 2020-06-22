@@ -1,10 +1,8 @@
 @use './component/header.scss';
 @use './component/footer.scss';
 @use './component/burgerButton.scss';
-@import "./queries/media-queries.scss";
-@import "./theme/color.scss";
-
-
+@import './queries/media-queries.scss';
+@import './theme/color.scss';
 
 *,
 *::after,
@@ -13,8 +11,8 @@
 }
 
 body {
-  background: $bg;
-  color: black;
+  background-color: $dark;
+  color: $text;
   font-family: "Lato", sans-serif;
   margin: 0;
   padding: 0;
