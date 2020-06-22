@@ -1,66 +1,175 @@
-
-@mixin topMenu ($color, $backgroundColor) {
+@mixin topMenu($color, $backgroundColor) {
   overflow: hidden;
   display: flex;
   flex-direction: column;
   align-items: center;
   position: absolute;
   z-index: 9999;
-  background-color:$backgroundDark;
+  background-color: $backgroundDark;
   width: 100%;
   padding-top: 3rem;
   animation-duration: 40s;
-  animation-name: tamere;
-  animation-iteration-count:1;
+  animation-iteration-count: 1;
   animation-direction: normal;
-  a{
+  a {
     font-size: 1.5rem;
-    padding: 1rem 1rem 1.5rem 1rem ;
+    padding: 1rem 1rem 1.5rem 1rem;
     transform: translateY(-01rem);
     margin: 0.5rem auto;
     color: $text;
-    border-bottom:solid;
+    border-bottom: solid;
     border-width: 1px;
     text-align: center;
     width: 100%;
   }
-  .flag{
+  .flag {
     width: 1rem;
   }
 }
 
 @mixin menu() {
-    display: block;
-    position: initial;
-    background-color: $gradient;
-    width: 100%;
-    padding: 1rem 2.5rem;
-    text-align: center;
-    a {
-      font-size: 1.1rem;
-      color: $text;
+  display: block;
+  position: initial;
+  background-color: $gradient;
+  width: 100%;
+  padding: 1rem 2.5rem;
+  text-align: center;
+  a {
+    font-size: 1.1rem;
+    color: $text;
+    font-weight: bolder;
+    margin: 0rem;
+    padding: 1rem 1.5rem;
+    border-bottom: transparent;
+  }
+  a:hover {
+    border-bottom: solid;
+    border-width: 2px;
+    border-radius: 2px;
+    font-size: 1.01;
+    cursor: pointer;
+    background-color: color.scale($dark, $lightness: -20%, $alpha: -60%);
+  }
+  .flag {
+    cursor: pointer;
+  }
+}
+@mixin Header {
+  
+.headerHome {
+  background: $base;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.presentationHolder {
+  color: $text;
+  margin: auto;
+  padding: 10rem 0;
+  width: 50%;
+  .presentation {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 2rem;
+    }
+    .s1 {
+      font-size: 1.2rem;
       font-weight: bolder;
-      margin: 0rem;
-      padding: 1rem 1.5rem;
-      border-bottom: transparent;
+      margin-bottom: 1rem;
     }
-    a:hover {
-      border-bottom: solid;
-      border-width: 2px;
-      border-radius: 2px;
-      font-size: 1.01;
-      cursor: pointer;
-      background-color: color.scale($dark, $lightness: -20%, $alpha: -60%);
+    .s2 {
+      text-align: center;
+      font-size: 1.1rem;
+      font-weight: lighter;
+      margin-bottom: 2rem;
     }
-    .flag {
-      cursor: pointer;
-    }
+  }
+}
+
+.homeLogo {
+  color: $text;
+  display: flex;
+  justify-content: space-around;
+  margin: 2em 0;
+}
+}
+@mixin HomeContent {
+  *,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+h3 {
+  text-align: center;
+  margin: 0;
+  padding: 1rem 0;
+  color: $dark;
+  font-size: 2rem;
+  font-family: 'Montserrat';
+  letter-spacing: 0.1rem;
+}
+
+body {
+  background: $bg;
+  color: black;
+  font-family: "Lato", sans-serif;
+  margin: 0;
+  padding: 0;
+  size: 100%;
+  min-height: 100%;
+}
+
+.form-left {
+  text-align: left;
+}
+
+.form-content {
+  margin-bottom: 20px;
+}
+
+.HomeArticle {
+  margin: 8rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.gridwrapper {
+  margin: 8rem 0;
+  display: grid;
+  grid-template-columns: repeat(4, 2fr);
+  grid-gap: 10px;
+  grid-auto-rows: minmax(100px, auto);
+  .gridText {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    grid-column: 2;
+    grid-row: 1;
+  }
+  .gridIcon {
+    margin: auto;
+    grid-column: 3/4;
+    grid-row: 1;
+  }
+}
+.question {
+  font-size: 2em;
+}
 }
 
 @mixin About {
   $marginVertical: 4rem;
 
-.profilHolder{
+  .profilHolder {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -69,17 +178,56 @@
     width: 80%;
     margin: auto;
     .ui.card {
-        margin:$marginVertical 1rem;
-        
+      margin: $marginVertical 1rem;
     }
     .ui.card:last-child {
-     margin-bottom: $marginVertical;
+      margin-bottom: $marginVertical;
     }
     .ui.card:first-child {
-    margin-top: $marginVertical;
+      margin-top: $marginVertical;
     }
+  }
 }
 
+@mixin Contact {
+  .eight.wide.column{
+    margin: 13.5rem 0;
+  }
+}
 
-
+@mixin Footer {
+  .footer {
+    color: $text;
+    display: flex;
+    justify-content: space-around;
+    padding: 2rem 8rem ;
+    .row {
+      padding:0 4rem;
+      h4 {
+        font-size: 1.2rem;
+        font-weight: 800;
+    background-color: $bg;
+    color: $text;
+    border-radius: 0;
+      }
+      display: flex;
+      flex-direction: column;
+      justify-content: start;
+      align-items: flex-start;
+      ul {
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+        margin: 0;
+        a {
+          color: $text;
+          font-weight: 400;
+        }
+      }
+    }
+        .row.bot{
+            border-width: 0;
+          }
+  }
+  
 }

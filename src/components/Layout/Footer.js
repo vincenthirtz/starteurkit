@@ -34,7 +34,7 @@ const Footer = () => {
         <h4>{t("Simple")}</h4>
         <p>{t("Focus only on your application code")}</p>
       </div>
-      <div className="row">
+      <div className="row bot">
         <ul>
           <a href="#">{t("Sitemap")}</a>
           <a onClick={() => navigate("/contact")}>{t("Contact")}</a>
