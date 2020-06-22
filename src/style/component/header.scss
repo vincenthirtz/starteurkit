@@ -1,6 +1,7 @@
 @use 'sass:color';
 @import "./queries/mixins.scss";
 @import "./theme/color.scss";
+@import '../theme/font.scss';
 
 
 
@@ -12,6 +13,7 @@
  }
 }
 .topMenu.hidden{
+  font-family: "Montserrat";
     animation: menuMoveBack .5s  ;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;

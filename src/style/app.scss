@@ -1,9 +1,11 @@
+
 @use './component/header.scss';
 @use './component/footer.scss';
 @use './component/burgerButton.scss';
+@use './component/about.scss';
+@import './theme/font.scss';
 @import "./queries/media-queries.scss";
 @import "./theme/color.scss";
-
 
 
 *,
@@ -12,12 +14,24 @@
   box-sizing: border-box;
 }
 
+h3{
+  text-align: center;
+  margin: 0;
+  padding: 1rem 0;
+  color: $dark;
+  font-size: 2rem;
+  font-family: $Montserrat;
+  letter-spacing: 0.1rem;
+}
+
 body {
   background: $bg;
   color: black;
   font-family: "Lato", sans-serif;
   margin: 0;
   padding: 0;
+  size: 100%;
+  min-height: 100%;
 }
 
 .form-left {

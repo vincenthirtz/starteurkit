@@ -1,0 +1,6 @@
+@use '../theme/color.scss';
+@import '../queries/mixins.scss';
+
+@media all and(min-width: 801px) {
+    @include About;
+ }

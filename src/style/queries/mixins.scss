@@ -56,3 +56,30 @@
       cursor: pointer;
     }
 }
+
+@mixin About {
+  $marginVertical: 4rem;
+
+.profilHolder{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    min-height: 50rem;
+    flex-wrap: wrap;
+    width: 80%;
+    margin: auto;
+    .ui.card {
+        margin:$marginVertical 1rem;
+        
+    }
+    .ui.card:last-child {
+     margin-bottom: $marginVertical;
+    }
+    .ui.card:first-child {
+    margin-top: $marginVertical;
+    }
+}
+
+
+
+}
