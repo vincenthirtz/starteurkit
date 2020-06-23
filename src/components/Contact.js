@@ -71,7 +71,7 @@ const Contact = () => {
   };
 
   return (
-    <>
+    <div className="articles">
       <h3>Contact</h3>
       <Grid columns="equal">
         <Grid.Column />
@@ -95,7 +95,7 @@ const Contact = () => {
         </Grid.Column>
         <Grid.Column />
       </Grid>
-    </>
+    </div>
   );
 };
 export default Contact;

@@ -5,7 +5,7 @@ import { useTranslation } from "react-i18next";
 const Home = () => {
   const { t } = useTranslation();
   return (
-    <>
+    <div className="articles">
       <div className="gridwrapper">
         <div className="gridText">
           <h3> {t("For students and developers")}</h3>
@@ -28,7 +28,7 @@ const Home = () => {
         </p>
         <Icon name="heart" size="large" />
       </div>
-    </>
+    </div>
   );
 };
 

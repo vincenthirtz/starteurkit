@@ -41,7 +41,7 @@ const SidebarComponent = (props) => {
         </OutsideAlerter>
         {getWorkingPath() === "/" && <Header />}
       </div>
-      <div style={{ marginTop: "4rem" }}>{children}</div>
+      <div className="sidebar">{children}</div>
     </>
   );
 };

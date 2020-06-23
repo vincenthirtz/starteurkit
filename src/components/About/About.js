@@ -2,7 +2,7 @@ import React from "react";
 import Profile from "./Profile";
 
 const About = () => (
-  <div>
+  <div className="articles">
     <h3>About</h3>
     <div className="profilHolder">
       <Profile

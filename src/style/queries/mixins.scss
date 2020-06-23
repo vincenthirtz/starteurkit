@@ -5,7 +5,7 @@
   align-items: center;
   position: absolute;
   z-index: 9999;
-  background-color: $backgroundDark;
+  background-color: $backgroundColor;
   width: 100%;
   padding-top: 3rem;
   animation-duration: 40s;
@@ -30,10 +30,10 @@
 @mixin menu() {
   display: block;
   position: initial;
-  background-color: $gradient;
   width: 100%;
   padding: 1rem 2.5rem;
   text-align: center;
+  background-color: $bg;
   a {
     font-size: 1.1rem;
     color: $text;
@@ -166,7 +166,7 @@
 }
 
 @mixin About {
-  $marginVertical: 4rem;
+  $marginVertical: 2rem;
 
   .profilHolder {
     display: flex;

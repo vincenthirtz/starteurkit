@@ -4,8 +4,8 @@
 .profilHolder{
     .ui.card {
         margin: 1em auto;}
-
-@media all and(min-width: 801px) {
+      }
+      
+ @media all and(min-width: 801px) {
   @include About;
-}
-}
+ }
