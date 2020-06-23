@@ -25,6 +25,7 @@
   .flag {
     width: 1rem;
   }
+
 }
 
 @mixin menu() {
@@ -55,7 +56,7 @@
   }
 }
 @mixin Header {
-  
+
 .headerHome {
   background: $base;
   display: flex;
@@ -229,5 +230,5 @@ body {
             border-width: 0;
           }
   }
-  
+
 }

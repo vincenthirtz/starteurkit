@@ -1,5 +1,6 @@
 @use 'sass:color';
-@import "./queries/mixins.scss";
+@import '../queries/media-queries.scss';
+@import '../queries/mixins.scss';
 @import "./theme/color.scss";
 @import "../theme/font.scss";
 
@@ -80,9 +81,4 @@
   display: flex;
   justify-content: space-around;
   margin: 2em 0;
-}
-@media screen and(max-width: 800px) {
-}
-
-@media screen and(min-width: 901px) {
 }
