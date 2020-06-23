@@ -3,7 +3,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  position: absolute;
+  position: fixed;
   z-index: 9999;
   background-color: $backgroundColor;
   width: 100%;
@@ -163,6 +163,11 @@
   .question {
     font-size: 2em;
   }
+}
+
+@mixin Feature {
+  display: flex;
+  flex-direction: column;
 }
 
 @mixin About {

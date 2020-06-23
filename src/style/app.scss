@@ -4,6 +4,7 @@
 @use './component/about.scss';
 @use './component/contact.scss';
 @use './component/sidebar.scss';
+@use './component/feature.scss';
 @import "./theme/font.scss";
 @import "./queries/media-queries.scss";
 @import "./theme/color.scss";
@@ -32,9 +33,9 @@ body {
   padding: 0;
   size: 100%;
   min-height: 100%;
-  .articles{
-  background-color: $text;    
-    p{
+  .articles {
+    background-color: $text;
+    p {
       color: $dark2;
     }
   }
@@ -50,7 +51,7 @@ body {
 
 .HomeArticle {
   margin: 8rem 0 0 0;
-    padding: 0 0 8rem 0;
+  padding: 0 0 8rem 0;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -59,7 +60,7 @@ body {
 
 .gridwrapper {
   margin: 0 0 8rem 0;
-    padding: 8rem 0 0 0;
+  padding: 8rem 0 0 0;
   background-color: $text;
   display: grid;
   grid-template-columns: repeat(4, 2fr);
@@ -81,4 +82,11 @@ body {
 }
 .question {
   font-size: 2em;
+}
+
+.travelTop{
+  color: $text;
+  width: 100%;
+  position: sticky;
+  text-align: center;
 }
