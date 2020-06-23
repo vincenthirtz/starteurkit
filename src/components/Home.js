@@ -24,7 +24,7 @@ const Home = () => {
         <h3 className="question"> {t("Can we participate in the project")}</h3>
         <p>
           {t("Anyone can participate by offering pull requests")}
-          <a href="https://discord.com/invite/9UuNaV">Discord</a>.
+          <a href="https://discord.com/invite/9UuNaV"> Discord</a>.
         </p>
         <Icon name="heart" size="large" />
       </div>

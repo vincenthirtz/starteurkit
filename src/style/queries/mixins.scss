@@ -1,0 +1,58 @@
+@mixin topMenu($color, $backgroundColor) {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  z-index: 9999;
+  background-color: $backgroundDark;
+  width: 100%;
+  padding-top: 3rem;
+  animation-duration: 40s;
+  animation-name: tamere;
+  animation-iteration-count: 1;
+  animation-direction: normal;
+  a {
+    font-size: 1.5rem;
+    padding: 1rem 1rem 1.5rem;
+    transform: translateY(-01rem);
+    margin: 0.5rem auto;
+    color: $text;
+    border-bottom: solid;
+    border-width: 1px;
+    text-align: center;
+    width: 100%;
+  }
+  .flag {
+    width: 1rem;
+  }
+ 
+}
+
+@mixin menu() {
+  display: block;
+  position: initial;
+  background-color: $gradient;
+  width: 100%;
+  padding: 1rem 2.5rem;
+  text-align: center;
+  a {
+    font-size: 1.1rem;
+    color: $text;
+    font-weight: bolder;
+    margin: 0;
+    padding: 1rem 1.5rem;
+    border-bottom: transparent;
+  }
+  a:hover {
+    border-bottom: solid;
+    border-width: 2px;
+    border-radius: 2px;
+    font-size: 1.01;
+    cursor: pointer;
+    background-color: color.scale($dark, $lightness: -20%, $alpha: -60%);
+  }
+  .flag {
+    cursor: pointer;
+  }
+}

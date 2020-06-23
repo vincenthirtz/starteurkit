@@ -1,0 +1,81 @@
+@use 'sass:color';
+@import '../queries/media-queries.scss';
+@import '../queries/mixins.scss';
+@import "./theme/color.scss";
+
+.topMenu {
+  @include topMenu($text, $backgroundDark);
+  animation: menuMove 0.5s;
+  @media all and(min-width: $mediumQ) {
+    @include menu;
+  }
+}
+.topMenu.hidden {
+  animation: menuMoveBack 0.5s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  @media all and(min-width: $mediumQ) {
+    @include menu;
+  }
+}
+
+///menu's animations///
+@keyframes menuMove {
+  0% {
+    right: 200%;
+  }
+  100% {
+    right: 0%;
+  }
+}
+@keyframes menuMoveBack {
+  0% {
+    right: 0%;
+  }
+  100% {
+    right: 200%;
+  }
+}
+
+//////fond du header//////
+
+.headerHome {
+  background: $gradient;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.presentationHolder {
+  color: $text;
+  margin: auto;
+  padding: 10rem 0;
+  .presentation {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 2rem;
+    }
+    .s1 {
+      font-size: 1.2rem;
+      font-weight: bolder;
+      margin-bottom: 1rem;
+    }
+    .s2 {
+      text-align: center;
+      font-size: 1.1rem;
+      font-weight: lighter;
+      margin-bottom: 2rem;
+    }
+  }
+}
+
+.homeLogo {
+  color: $text;
+  display: flex;
+  justify-content: space-around;
+  margin: 2em 0;
+}
