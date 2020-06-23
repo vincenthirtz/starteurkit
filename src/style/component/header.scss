@@ -1,20 +1,22 @@
 @use 'sass:color';
-@import '../queries/media-queries.scss';
-@import '../queries/mixins.scss';
+@import "../queries/media-queries.scss";
+@import "../queries/mixins.scss";
 @import "./theme/color.scss";
+@import "../theme/font.scss";
 
 .topMenu {
   @include topMenu($text, $backgroundDark);
   animation: menuMove 0.5s;
-  @media all and(min-width: $mediumQ) {
+  @media all and(min-width: 801px) {
     @include menu;
   }
 }
 .topMenu.hidden {
+  font-family: "Montserrat";
   animation: menuMoveBack 0.5s;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
-  @media all and(min-width: $mediumQ) {
+  @media all and(min-width: 801px) {
     @include menu;
   }
 }
@@ -40,7 +42,7 @@
 //////fond du header//////
 
 .headerHome {
-  background: $gradient;
+  background: $base;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -50,6 +52,7 @@
   color: $text;
   margin: auto;
   padding: 10rem 0;
+  width: 50%;
   .presentation {
     display: flex;
     flex-direction: column;

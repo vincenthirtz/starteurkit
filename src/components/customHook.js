@@ -1,8 +1,3 @@
 import CustomHookFactory from "./CustomHookFactory";
 
-
-
-
-
-
-export default CustomHookFactory("OpenMenu",false);
+export default CustomHookFactory("OpenMenu", false);

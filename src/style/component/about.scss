@@ -1,0 +1,11 @@
+@use '../theme/color.scss';
+@import "../queries/mixins.scss";
+
+.profilHolder{
+    .ui.card {
+        margin: 1em auto;}
+
+@media all and(min-width: 801px) {
+  @include About;
+}
+}

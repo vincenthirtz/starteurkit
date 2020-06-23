@@ -5,7 +5,6 @@ import Footer from "./Footer";
 import "../../style/app.scss";
 import OpenMenuHook from "../customHook";
 
-
 const Layout = (props) => {
   const { children } = props;
   const [OpenMenu, setOpenMenu] = OpenMenuHook.useOpenMenu();
@@ -18,7 +17,7 @@ const Layout = (props) => {
           <span className="bun2" />
         </div>
       </button>
-      <Sidebar >{children}</Sidebar>
+      <Sidebar>{children}</Sidebar>
 
       <Footer />
     </>

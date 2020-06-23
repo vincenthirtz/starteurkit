@@ -1,29 +1,41 @@
+@import '../queries/mixins.scss';
 @import "./theme/color.scss";
 
-.footer {
+
+.footer{
   color: $text;
-  background: $gradient;
-  display: flex;
-  justify-content: space-around;
-  padding: 2rem 8rem 4rem;
-  .row {
-    h4 {
-      font-size: 1.2rem;
-      font-weight: 800;
-    }
+  background: $dark;
+  padding: 2rem;
+.row{
+  margin-top: 1rem;
+  
+  padding-bottom: 1rem;
+  h4{
+    font-family: 'Montserrat semi bold';
+    font-size: 1.3rem;
+    text-align: center;
+    color: $dark;
+    background-color: $text;
+    border-radius: 5rem 0;
+  width: 100%;
+  }
+   p{
+        text-align: center;
+      }
+  ul{
+    padding: 0;
+    margin:0;
     display: flex;
     flex-direction: column;
-    justify-content: start;
-    align-items: flex-start;
-    ul {
-      display: flex;
-      flex-direction: column;
-      padding: 0;
-      margin: 0;
-      a {
-        color: $text;
-        font-weight: 400;
-      }
+    align-items: center;
+    justify-content: space-evenly;
+    a{
+      color: $text;
+      margin-bottom: 0.5rem;
     }
   }
 }
+}
+    @media all and(min-width: 801px) {
+      @include Footer;
+    }
