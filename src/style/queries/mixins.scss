@@ -25,7 +25,6 @@
   .flag {
     width: 1rem;
   }
-
 }
 
 @mixin menu() {
@@ -56,115 +55,114 @@
   }
 }
 @mixin Header {
-
-.headerHome {
-  background: $base;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.presentationHolder {
-  color: $text;
-  margin: auto;
-  padding: 10rem 0;
-  width: 50%;
-  .presentation {
+  .headerHome {
+    background: $base;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    h1 {
-      font-size: 3rem;
-      margin-bottom: 2rem;
-    }
-    .s1 {
-      font-size: 1.2rem;
-      font-weight: bolder;
-      margin-bottom: 1rem;
-    }
-    .s2 {
-      text-align: center;
-      font-size: 1.1rem;
-      font-weight: lighter;
-      margin-bottom: 2rem;
+  }
+
+  .presentationHolder {
+    color: $text;
+    margin: auto;
+    padding: 10rem 0;
+    width: 50%;
+    .presentation {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      h1 {
+        font-size: 3rem;
+        margin-bottom: 2rem;
+      }
+      .s1 {
+        font-size: 1.2rem;
+        font-weight: bolder;
+        margin-bottom: 1rem;
+      }
+      .s2 {
+        text-align: center;
+        font-size: 1.1rem;
+        font-weight: lighter;
+        margin-bottom: 2rem;
+      }
     }
   }
-}
 
-.homeLogo {
-  color: $text;
-  display: flex;
-  justify-content: space-around;
-  margin: 2em 0;
-}
+  .homeLogo {
+    color: $text;
+    display: flex;
+    justify-content: space-around;
+    margin: 2em 0;
+  }
 }
 @mixin HomeContent {
   *,
-*::after,
-*::before {
-  box-sizing: border-box;
-}
+  *::after,
+  *::before {
+    box-sizing: border-box;
+  }
 
-h3 {
-  text-align: center;
-  margin: 0;
-  padding: 1rem 0;
-  color: $dark;
-  font-size: 2rem;
-  font-family: 'Montserrat';
-  letter-spacing: 0.1rem;
-}
+  h3 {
+    text-align: center;
+    margin: 0;
+    padding: 1rem 0;
+    color: $dark;
+    font-size: 2rem;
+    font-family: "Montserrat";
+    letter-spacing: 0.1rem;
+  }
 
-body {
-  background: $bg;
-  color: black;
-  font-family: "Lato", sans-serif;
-  margin: 0;
-  padding: 0;
-  size: 100%;
-  min-height: 100%;
-}
+  body {
+    background: $bg;
+    color: black;
+    font-family: "Lato", sans-serif;
+    margin: 0;
+    padding: 0;
+    size: 100%;
+    min-height: 100%;
+  }
 
-.form-left {
-  text-align: left;
-}
+  .form-left {
+    text-align: left;
+  }
 
-.form-content {
-  margin-bottom: 20px;
-}
+  .form-content {
+    margin-bottom: 20px;
+  }
 
-.HomeArticle {
-  margin: 8rem 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.gridwrapper {
-  margin: 8rem 0;
-  display: grid;
-  grid-template-columns: repeat(4, 2fr);
-  grid-gap: 10px;
-  grid-auto-rows: minmax(100px, auto);
-  .gridText {
+  .HomeArticle {
+    margin: 8rem 0;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    grid-column: 2;
-    grid-row: 1;
   }
-  .gridIcon {
-    margin: auto;
-    grid-column: 3/4;
-    grid-row: 1;
+
+  .gridwrapper {
+    margin: 8rem 0;
+    display: grid;
+    grid-template-columns: repeat(4, 2fr);
+    grid-gap: 10px;
+    grid-auto-rows: minmax(100px, auto);
+    .gridText {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      grid-column: 2;
+      grid-row: 1;
+    }
+    .gridIcon {
+      margin: auto;
+      grid-column: 3/4;
+      grid-row: 1;
+    }
   }
-}
-.question {
-  font-size: 2em;
-}
+  .question {
+    font-size: 2em;
+  }
 }
 
 @mixin About {
@@ -191,7 +189,7 @@ body {
 }
 
 @mixin Contact {
-  .eight.wide.column{
+  .eight.wide.column {
     margin: 13.5rem 0;
   }
 }
@@ -201,15 +199,15 @@ body {
     color: $text;
     display: flex;
     justify-content: space-around;
-    padding: 2rem 8rem ;
+    padding: 2rem 8rem;
     .row {
-      padding:0 4rem;
+      padding: 0 4rem;
       h4 {
         font-size: 1.2rem;
         font-weight: 800;
-    background-color: $bg;
-    color: $text;
-    border-radius: 0;
+        background-color: $bg;
+        color: $text;
+        border-radius: 0;
       }
       display: flex;
       flex-direction: column;
@@ -226,9 +224,8 @@ body {
         }
       }
     }
-        .row.bot{
-            border-width: 0;
-          }
+    .row.bot {
+      border-width: 0;
+    }
   }
-
 }

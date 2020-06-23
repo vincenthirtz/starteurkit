@@ -1,7 +1,6 @@
 @use 'sass:color';
-@import '../queries/media-queries.scss';
+@import "../queries/media-queries.scss";
 @import "./theme/color.scss";
-
 
 //////barre de menu//////
 .burgerMenu {
@@ -44,11 +43,11 @@
   animation-timing-function: cubic-bezier(0.53, -0.26, 0.58, 1);
   animation-fill-mode: forwards;
 }
-                @media all and(min-width:$mediumQ) {
-                  button{
-                    display: none;
-                  }
-                }
+@media all and(min-width:$mediumQ) {
+  button {
+    display: none;
+  }
+}
 
 ///button's animations///
 @keyframes buttonToLeft {
@@ -67,5 +66,4 @@
   100% {
     left: 88%;
   }
- 
 }
