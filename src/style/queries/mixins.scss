@@ -14,7 +14,7 @@
   animation-direction: normal;
   a {
     font-size: 1.5rem;
-    padding: 1rem 1rem 1.5rem 1rem;
+    padding: 1rem 1rem 1.5rem;
     transform: translateY(-01rem);
     margin: 0.5rem auto;
     color: $text;
@@ -40,7 +40,7 @@
     font-size: 1.1rem;
     color: $text;
     font-weight: bolder;
-    margin: 0rem;
+    margin: 0;
     padding: 1rem 1.5rem;
     border-bottom: transparent;
   }
