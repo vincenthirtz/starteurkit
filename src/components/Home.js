@@ -8,12 +8,12 @@ const Home = () => {
   const { t } = useTranslation();
   return (
     <div className="articles">
-      <AnimationTest />
       <div>
         <div className="HomeArticle">
           <h3 className="question"> {t("For students and developers")}</h3>
           <p>{t("Do you need a ready to use project")}</p>
-          <Icon name="coffee" size="massive" className="gridIcon" />
+          <AnimationTest />
+          {/* <Icon name="coffee" size="massive" className="gridIcon" /> */}
         </div>
       </div>
       <hr size="1" width="50%" />

@@ -24,12 +24,12 @@ const AnimationTest = (props) => {
   return (
     <div>
       <Lottie options={defaultOptions} height={200} width={200} isStopped={isStopped} isPaused={isPaused} />
-      <button style={buttonStyle} onClick={() => (setIsStopped = !isStopped)}>
+      {/* <button style={buttonStyle} onClick={() => (setIsStopped = !isStopped)}>
         stop/play
       </button>
       <button style={buttonStyle} onClick={() => (setIsPaused = !isPaused)}>
         pause
-      </button>
+      </button> */}
     </div>
   );
 };
