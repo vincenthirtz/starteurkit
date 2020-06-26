@@ -20,7 +20,7 @@ const Layout = (props) => {
       </button>
       <Sidebar>
         <a className="travelTop" href="#haut_de_page">
-          get to the top mohefoca
+          Back to the top
         </a>
         {children}
       </Sidebar>
