@@ -6,7 +6,7 @@ const Features = () => (
     <h3>Features</h3>
     <div>
       <div className="article">
-        {icon.IconCake()}
+        {icon.IconResponsive()}
         <div className="textOlder">
           <h4>Responsive</h4>
           <p>A description which may flow for several lines and give context to the content.</p>
@@ -14,7 +14,7 @@ const Features = () => (
       </div>
 
       <div className="article">
-        {icon.IconInternational()}
+        {icon.IconFast()}
         <div className="textOlder">
           <h4>Fast</h4>
           <p> A description which may flow for several lines and give context to the content.</p>
@@ -22,7 +22,7 @@ const Features = () => (
       </div>
 
       <div className="article">
-        {icon.IconCake()}
+        {icon.IconEdit()}
         <div className="textOlder">
           <h4>Customizable</h4>
           <p> A description which may flow for several lines and give context to the content.</p>
@@ -30,7 +30,7 @@ const Features = () => (
       </div>
 
       <div className="article">
-        {icon.IconCake()}
+        {icon.IconInternational()}
         <div className="textOlder">
           <h4>Internationalization</h4>
           <p>A description which may flow for several lines and give context to the content.</p>
@@ -38,7 +38,7 @@ const Features = () => (
       </div>
 
       <div className="article">
-        {icon.IconCake()}
+        {icon.IconUniversal()}
         <div className="textOlder">
           <h4>Universal access</h4>
           <p> A description which may flow for several lines and give context to the content.</p>
@@ -46,7 +46,7 @@ const Features = () => (
       </div>
 
       <div className="article">
-        {icon.IconCake()}
+        {icon.IconReady()}
         <div className="textOlder">
           <h4>Ready to use</h4>
           <p> A description which may flow for several lines and give context to the content.</p>
@@ -54,7 +54,7 @@ const Features = () => (
       </div>
 
       <div className="article">
-        {icon.IconCake()}
+        {icon.IconExport()}
         <div className="textOlder">
           <h4>Exportable</h4>
           <p> A description which may flow for several lines and give context to the content.</p>

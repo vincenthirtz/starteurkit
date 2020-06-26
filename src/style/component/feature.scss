@@ -1,27 +1,34 @@
-@import '../theme/color.scss';
+@import "../theme/color.scss";
 
-.featureWrap{
+.featureWrap {
   background-color: $text;
   padding: 0 0 2rem;
 
- .article{
-   display: flex;
-  margin: 1rem 0;
-  #iconCake, #iconInternational{
-    width:6rem;
-    height: auto;
-    margin: auto;
-    fill: $base;
-  }
-   .textOlder{
-     width:50%;
-     margin: auto;
-     h4{
-      margin-bottom: 0.4rem;
-     }
-     p{
-       color:$dark2;
-     }
+  .article {
+    display: flex;
+    margin: 1rem 0;
+    #iconCake,
+    #iconEdit,
+    #iconFast,
+    #iconReady,
+    #iconExport,
+    #iconUniversal,
+    #iconResponsive,
+    #iconInternational {
+      width: 6rem;
+      height: auto;
+      margin: auto;
+      fill: $base;
+    }
+    .textOlder {
+      width: 50%;
+      margin: auto;
+      h4 {
+        margin-bottom: 0.4rem;
+      }
+      p {
+        color: $dark2;
+      }
     }
   }
 }
