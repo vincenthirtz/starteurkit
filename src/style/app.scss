@@ -50,8 +50,8 @@ body {
 }
 
 .HomeArticle {
-  margin: 8rem 1.2rem 0;
-  padding: 0 0 8rem 0;
+  margin: 0 1.2rem 0;
+  padding: 8rem 0 ;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -84,9 +84,25 @@ body {
   font-size: 2em;
 }
 
-.travelTop{
-  color: $text;
-  width: 100%;
-  position: sticky;
-  text-align: center;
+
+  
+  .chevronHolder{
+    text-align: center;
+    position: fixed;
+    z-index: 999999;
+    margin:0 40% 0 40%;
+    text-align: center;
+    
+    .chevronTop {
+      width: 1rem;
+      height: auto;
+    }
+    .travelTop {
+      color: $dark2;
+    }
+  }
+  svg{
+    width: 10rem;
+    margin: auto;
 }
+  

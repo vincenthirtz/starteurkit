@@ -2,7 +2,6 @@ import React from "react";
 import { Icon } from "semantic-ui-react";
 import { useTranslation } from "react-i18next";
 import AnimationTest from "./animations/coffeDrift";
-// import { A } from "hookrouter";
 
 const Home = () => {
   const { t } = useTranslation();
@@ -13,7 +12,6 @@ const Home = () => {
           <h3 className="question"> {t("For students and developers")}</h3>
           <p>{t("Do you need a ready to use project")}</p>
           <AnimationTest />
-          {/* <Icon name="coffee" size="massive" className="gridIcon" /> */}
         </div>
       </div>
       <hr size="1" width="50%" />

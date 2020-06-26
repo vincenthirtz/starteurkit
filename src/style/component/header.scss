@@ -51,7 +51,8 @@
 .presentationHolder {
   color: $text;
   margin: auto;
-  padding: 10rem 0;
+  margin-bottom: 2rem;
+  padding: 7rem 0 1rem;
   width: 50%;
   .presentation {
     display: flex;
@@ -80,5 +81,8 @@
   color: $text;
   display: flex;
   justify-content: space-around;
-  margin: 2em 0;
+  flex-wrap: wrap;
+  .i.huge.icon{
+    margin: 1rem;
+  }
 }

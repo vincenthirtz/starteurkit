@@ -5,9 +5,9 @@ const base = (id, icon) => {
     <svg
       id={id}
       enableBackground="new 0 0 512 512"
-      height="512"
+      // height="512"
       viewBox="0 0 512 512"
-      width="512"
+      // width="512"
       xmlns="http://www.w3.org/2000/svg"
     >
       {icon}
@@ -91,8 +91,13 @@ const Humanity = (
   </g>
 );
 
+const Chevron = (
+  <path d="M.38,67.34,59.2,1.94h0a5.84,5.84,0,0,1,8.25-.44c.15.14.3.29.44.44l57.6,64.18a1.49,1.49,0,0,1-.11,2.12,1.52,1.52,0,0,1-2,0L59.21,10.63H67.9L2.5,69.46A1.5,1.5,0,0,1,.38,67.34Z" />
+);
+
 const IconCake = () => base("iconCake", Cake);
 
 const IconInternational = () => base("iconInternational", Humanity);
 
-export default { IconCake, IconInternational };
+const ChevronTop = () => base("chevronTop", Chevron);
+export default { IconCake, IconInternational, ChevronTop };
