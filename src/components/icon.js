@@ -21,4 +21,4 @@ const MobileIcon = () => {
   );
 };
 
-export default { MobileIcon };
+export default MobileIcon;

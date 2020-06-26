@@ -1,5 +1,5 @@
 import React from "react";
-import { MobileIcon } from "./icon";
+import MobileIcon from "./icon";
 
 const Features = () => (
   <div className="featureWrap">
