@@ -103,3 +103,17 @@ svg {
   width: 10rem;
   margin: auto;
 }
+.flags {
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  span {
+    padding: 10px;
+  }
+
+  svg {
+    cursor: pointer;
+    width: 40px;
+  }
+}
