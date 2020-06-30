@@ -3,9 +3,9 @@ import PropTypes from "prop-types";
 import i18n from "i18next";
 import { useTranslation } from "react-i18next";
 import { navigate, getWorkingPath } from "hookrouter";
-import { Flag } from "semantic-ui-react";
 import Header from "./Header";
 import OutsideAlerter from "./menuWrapper";
+import icon from "../icon";
 
 import OpenMenuHook from "../customHook";
 
@@ -35,13 +35,15 @@ const SidebarComponent = (props) => {
             <a onClick={() => navigate("/contact")} active={getWorkingPath() === "/contact"}>
               {t("Contact")}
             </a>
-            <Flag name="france" onClick={setLangFR} className="flag" />
-            <Flag name="uk" onClick={setLangEN} className="flag" />
           </div>
         </OutsideAlerter>
         {getWorkingPath() === "/" && <Header />}
       </div>
       <div className="sidebar">{children}</div>
+      <div className="flags">
+        <span onClick={setLangFR}>{icon.IconFrance()}</span>
+        <span onClick={setLangEN}>{icon.IconUnitedKingdom()}</span>
+      </div>
     </>
   );
 };
