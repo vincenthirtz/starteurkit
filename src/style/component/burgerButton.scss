@@ -45,10 +45,10 @@
   border-radius: 0 0 0 1rem;
 }
 @media all and(min-width:$mediumQ) {
-  .burgerMenu  {
+  .burgerMenu {
     display: none;
   }
-  .chevronHolder{
+  .chevronHolder {
     display: none;
   }
 }
@@ -59,7 +59,7 @@
     left: 80%;
     border-radius: 0 0 0 1rem;
   }
-  50%{
+  50% {
     border-radius: 0 0 1rem 1rem;
   }
   100% {
@@ -73,7 +73,7 @@
     right: 100%;
     border-radius: 0 0 1rem 0;
   }
-  50%{
+  50% {
     border-radius: 0 0 1rem 1rem;
   }
   100% {
