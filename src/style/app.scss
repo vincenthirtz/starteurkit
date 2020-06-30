@@ -38,6 +38,9 @@ body {
     p {
       color: $dark2;
     }
+    .homeP{
+      text-align: center;
+    }
   }
 }
 
@@ -51,55 +54,33 @@ body {
 
 .HomeArticle {
   margin: 0 1.2rem 0;
-  padding: 8rem 0;
+  padding: 2rem 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
 
-.gridwrapper {
-  margin: 0 0 8rem 0;
-  padding: 8rem 0 0 0;
-  background-color: $text;
-  display: grid;
-  grid-template-columns: repeat(4, 2fr);
-  grid-gap: 10px;
-  grid-auto-rows: minmax(100px, auto);
-  .gridText {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    grid-column: 2;
-    grid-row: 1;
-  }
-  .gridIcon {
-    margin: auto;
-    grid-column: 3/4;
-    grid-row: 1;
-  }
-}
 .question {
   font-size: 2em;
 }
 
 .chevronHolder {
-  text-align: center;
-  position: fixed;
+  position: absolute;
   z-index: 9998;
-  margin: 0 40% 0 40%;
   text-align: center;
+  width: 100%;
+  margin-top: 0.5rem;
 
-  .chevronTop {
-    width: 1rem;
+
+  #chevronTop {
+    width: 1.2rem;
     height: auto;
-  }
-  .travelTop {
-    color: $dark2;
+    fill:$text
   }
 }
 svg {
   width: 10rem;
   margin: auto;
+  padding-top: 0.6rem;
 }

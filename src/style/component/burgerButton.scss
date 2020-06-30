@@ -8,7 +8,7 @@
   z-index: 99999;
   height: 3rem;
   width: 3rem;
-  background-color: $bg;
+  background-color: #e84a5f;
   border: none;
   animation: buttonToLeft 0.5s;
   animation-iteration-count: 1;
@@ -42,9 +42,13 @@
   animation-iteration-count: 1;
   animation-timing-function: cubic-bezier(0.53, -0.26, 0.58, 1);
   animation-fill-mode: forwards;
+  border-radius: 0 0 0 1rem;
 }
 @media all and(min-width:$mediumQ) {
-  button {
+  .burgerMenu  {
+    display: none;
+  }
+  .chevronHolder{
     display: none;
   }
 }
@@ -53,17 +57,27 @@
 @keyframes buttonToLeft {
   0% {
     left: 80%;
+    border-radius: 0 0 0 1rem;
+  }
+  50%{
+    border-radius: 0 0 1rem 1rem;
   }
   100% {
     left: 0%;
+    border-radius: 0 0 1rem 0;
   }
 }
 
 @keyframes buttonToRight {
   0% {
-    left: 0%;
+    right: 100%;
+    border-radius: 0 0 1rem 0;
+  }
+  50%{
+    border-radius: 0 0 1rem 1rem;
   }
   100% {
-    left: 88%;
+    right: 0%;
+    border-radius: 0 0 0 1rem;
   }
 }

@@ -11,7 +11,6 @@ const Layout = (props) => {
   const [OpenMenu, setOpenMenu] = OpenMenuHook.useOpenMenu();
   return (
     <>
-      <span id="haut_de_page" />
       <button type="button" className={`burgerMenu ${OpenMenu ? "open" : ""}`} onClick={() => setOpenMenu(!OpenMenu)}>
         <div>
           <span className="bun1" />
@@ -19,15 +18,10 @@ const Layout = (props) => {
           <span className="bun2" />
         </div>
       </button>
-      <Sidebar>
-        <div className="chevronHolder">
-          <a className="travelTop" href="#haut_de_page">
-            {" "}
-            {icon.ChevronTop()}
-          </a>
-        </div>
-        {children}
-      </Sidebar>
+      <Sidebar>{children}</Sidebar>
+      <div className="chevronHolder" link="#haut_de_page">
+        <a href="#topPage"> {icon.ChevronTop()}</a>
+      </div>
       <Footer />
     </>
   );
