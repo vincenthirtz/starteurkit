@@ -8,7 +8,7 @@ const Home = () => {
   return (
     <div className="articles">
       <div>
-        <div className="HomeArticle">
+        <div className="HomeArticle" id="coffee">
           <h3 className="question"> {t("For students and developers")}</h3>
           <p>{t("Do you need a ready to use project")}</p>
           <AnimationTest />

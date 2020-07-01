@@ -34,6 +34,7 @@ body {
   size: 100%;
   min-height: 100%;
   .articles {
+    padding: 3em 0 2rem;
     background-color: $text;
     p {
       color: $dark2;
@@ -78,11 +79,11 @@ body {
     fill: $text;
   }
 }
-svg {
-  width: 10rem;
-  margin: auto;
-  padding-top: 0.6rem;
-}
+// svg {
+//   width: 10rem;
+//   margin: auto;
+//   padding-top: 0.6rem;
+// }
 .flags {
   position: absolute;
   top: 0;

@@ -2,7 +2,7 @@ import React from "react";
 import icon from "./icon";
 
 const Features = () => (
-  <div className="featureWrap">
+  <div className="featureWrap articles">
     <h3>Features</h3>
     <div>
       <div className="article">

@@ -8,10 +8,33 @@ const AnimationTest = (props) => {
   const [isPaused, setIsPaused] = useState(false);
   const [toto, setToto] = useState(false);
 
+  const [scrollY, setScrollY] = useState(0);
+
+  function logit() {
+    setScrollY(window.pageYOffset);
+  }
+
+  useEffect(() => {
+    function watchScroll() {
+      window.addEventListener("scroll", logit);
+    }
+    watchScroll();
+    return () => {
+      window.removeEventListener("scroll", logit);
+      setToto(false);
+    };
+  });
+
+  useEffect(() => {
+    console.log("scrollY ", scrollY);
+    if (scrollY > 290 && scrollY < 310) {
+      playing();
+    }
+  }, [scrollY]);
+
   const playing = () => {
     setTimeout(() => {
-      console.log("playing ", toto);
-      setToto(!toto);
+      setToto(true);
     }, 300);
   };
 
@@ -24,18 +47,15 @@ const AnimationTest = (props) => {
   }, [toto]);
 
   const animCoffee = {
-    // container: '#coffeeContainer',
     loop: false,
     autoplay: false,
     animationData: animationData,
+    isClickToPauseDisabled: true,
+    eventListeners: "enterFrame",
     rendererSettings: {
       preserveAspectRatio: "xMidYMid slice",
     },
   };
-
-  // document.addEventListener('onMouseOver', ()=>{
-  //   console.log('osskour');
-  // });
 
   return (
     <div onMouseOver={() => playing()}>
@@ -47,9 +67,6 @@ const AnimationTest = (props) => {
         isStopped={isStopped}
         isPaused={isPaused}
       />
-      {/* <button onClick={() => setIsPaused(true)} >paused</button>
-      <button onClick={() => setIsStopped(true)} >is stopped</button>
-      <button onClick={() => playing()}>play</button> */}
     </div>
   );
 };
