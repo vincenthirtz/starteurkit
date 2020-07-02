@@ -1,12 +1,16 @@
 /*eslint-disable*/
 import React, { useState, useEffect } from "react";
 import Lottie from "react-lottie";
-import * as animationData from "./tasseAnim.json";
+import * as animationData from "./allo.json";
 
 const AnimationTest = (props) => {
   const [isStopped, setIsStopped] = useState(false);
   const [isPaused, setIsPaused] = useState(false);
   const [toto, setToto] = useState(false);
+
+  const windowHeight = window.innerHeight;
+  const catchMid = windowHeight * 1.25;
+  console.log(catchMid, "catchmid");
 
   const [scrollY, setScrollY] = useState(0);
 
@@ -27,7 +31,8 @@ const AnimationTest = (props) => {
 
   useEffect(() => {
     console.log("scrollY ", scrollY);
-    if (scrollY > 290 && scrollY < 310) {
+    console.log(catchMid, "catchmiduseeffect");
+    if (scrollY > catchMid - 10 && scrollY < catchMid + 10) {
       playing();
     }
   }, [scrollY]);
