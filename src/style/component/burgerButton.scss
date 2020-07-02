@@ -64,14 +64,14 @@
   }
   100% {
     left: 0%;
-    border-radius: 0 0 1rem 0;
+    border-radius: 0 0 1rem;
   }
 }
 
 @keyframes buttonToRight {
   0% {
     right: 100%;
-    border-radius: 0 0 1rem 0;
+    border-radius: 0 0 1rem;
   }
   50% {
     border-radius: 0 0 1rem 1rem;
