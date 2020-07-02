@@ -9,7 +9,9 @@ const HeaderComponent = () => {
       <div className="presentation">
         <h1>Starte(u)rkit</h1>
         <span className="s1">{t("Subtitle1")}</span>
-        <span className="s2">{t("Subtitle2")}</span>
+        <span className="s2">
+          {t("Pre_commit_Hook")}, {t("Routing_Hook")}, {t("Prettier")}, {t("Eslint")}, {t("Parcel")}, {t("Sass")}
+        </span>
       </div>
       <div className="homeLogo">
         <Icon className="icon" name="react" size="huge" />

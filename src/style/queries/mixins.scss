@@ -3,7 +3,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  position: absolute;
+  position: fixed;
   z-index: 9999;
   background-color: $backgroundColor;
   width: 100%;
@@ -48,7 +48,7 @@
     border-radius: 2px;
     font-size: 1.01;
     cursor: pointer;
-    background-color: color.scale($dark, $lightness: -20%, $alpha: -60%);
+    background-color: $dark;
   }
   .flag {
     cursor: pointer;
@@ -60,36 +60,35 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-  }
 
-  .presentationHolder {
-    color: $text;
-    margin: auto;
-    padding: 10rem 0;
-    width: 50%;
-    .presentation {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      h1 {
-        font-size: 3rem;
-        margin-bottom: 2rem;
-      }
-      .s1 {
-        font-size: 1.2rem;
-        font-weight: bolder;
-        margin-bottom: 1rem;
-      }
-      .s2 {
-        text-align: center;
-        font-size: 1.1rem;
-        font-weight: lighter;
-        margin-bottom: 2rem;
+    .presentationHolder {
+      color: $text;
+      margin: auto;
+      padding: 10rem 0;
+      width: 50%;
+      .presentation {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        h1 {
+          font-size: 3rem;
+          margin-bottom: 2rem;
+        }
+        .s1 {
+          font-size: 1.2rem;
+          font-weight: bolder;
+          margin-bottom: 1rem;
+        }
+        .s2 {
+          text-align: center;
+          font-size: 1.1rem;
+          font-weight: lighter;
+          margin-bottom: 4rem;
+        }
       }
     }
   }
-
   .homeLogo {
     color: $text;
     display: flex;
@@ -97,6 +96,12 @@
     margin: 2em 0;
   }
 }
+@mixin HeaderTablet {
+  .s2 {
+    padding: 0 2.3rem;
+  }
+}
+
 @mixin HomeContent {
   *,
   *::after,
@@ -140,29 +145,14 @@
     justify-content: center;
   }
 
-  .gridwrapper {
-    margin: 8rem 0;
-    display: grid;
-    grid-template-columns: repeat(4, 2fr);
-    grid-gap: 10px;
-    grid-auto-rows: minmax(100px, auto);
-    .gridText {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      grid-column: 2;
-      grid-row: 1;
-    }
-    .gridIcon {
-      margin: auto;
-      grid-column: 3/4;
-      grid-row: 1;
-    }
-  }
   .question {
     font-size: 2em;
   }
+}
+
+@mixin Feature {
+  display: flex;
+  flex-direction: column;
 }
 
 @mixin About {

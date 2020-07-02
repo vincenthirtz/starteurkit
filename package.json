@@ -28,10 +28,12 @@
     "@formiz/validations": "^1.0.0-rc.10",
     "hookrouter": "^1.2.3",
     "i18next": "^19.4.5",
+    "lottie-web": "^5.7.0",
     "prop-types": "^15.7.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-i18next": "^11.5.1",
+    "react-lottie": "^1.2.3",
     "semantic-ui-react": "^0.88.2",
     "snyk": "^1.341.1"
   },
