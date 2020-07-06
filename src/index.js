@@ -86,7 +86,7 @@ i18n.use(initReactI18next).init({
 class AppComponent extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { theme: "default" };
+    this.state = { theme: process.env.THEME };
   }
 
   render() {
