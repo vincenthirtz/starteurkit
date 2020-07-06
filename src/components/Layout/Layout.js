@@ -1,8 +1,9 @@
 import React, { useContext } from "react";
 import PropTypes from "prop-types";
-import { ThemeContext } from "../../../context";
 import ThemeOnePage from "../themes/ThemeOnePage";
 import ThemeDefault from "../themes/ThemeDefault";
+import "../../style/app.scss";
+import { ThemeContext } from "../../context";
 
 const Layout = (props) => {
   const { children } = props;
