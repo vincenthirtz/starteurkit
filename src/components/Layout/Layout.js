@@ -9,7 +9,7 @@ import Home from "../Home";
 import "../../style/app.scss";
 import OpenMenuHook from "../customHook";
 import icon from "../icon";
-import { ThemeContext } from "../../../context";
+import { ThemeContext } from "../../context";
 
 const Layout = (props) => {
   const { children } = props;
