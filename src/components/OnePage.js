@@ -9,25 +9,23 @@ import "../style/app.scss";
 const OnePage = () => {
   return (
     <>
-      <ul id="onePageMenu">
-        <a href="#featuresOne">Features</a>
-        <a href="#aboutOne">About</a>
-        <a href="#contactOne">Contact</a>
-      </ul>
-      <Home id="homeOne" />
-      <div>
+      <div className="scroll-container">
+        <ul id="onePageMenu">
+          <a href="#homeOne">Home</a>
+          <a href="#featuresOne">Features</a>
+          <a href="#aboutOne">About</a>
+          <a href="#contactOne">Contact</a>
+        </ul>
+        <a id="homeOne" />
+        <Home />
         <a id="featuresOne" />
         <Features />
-      </div>
-      <div>
         <a id="aboutOne" />
         <About />
-      </div>
-      <div>
         <a id="contactOne" />
         <Contact />
+        <Footer />
       </div>
-      <Footer />
     </>
   );
 };
