@@ -1,11 +1,9 @@
 import React from "react";
-import Home from "components/Home";
 import Profile from "./Profile";
 
 const About = () => (
   <div className="articles">
     <h3>About</h3>
-    <Home />
     <div className="profilHolder">
       <Profile
         name="Vincent Hirtz"
