@@ -24,6 +24,13 @@ git clone https://github.com/vincenthirtz/starteurkit.git
 npm i
 ```
 
+## Themes
+
+In .env file:
+```javascript
+THEME="default" // default || onepage
+```
+
 ## Usage
 
 ```javascript
@@ -31,8 +38,7 @@ npm run dev
 ```
 
 ## Todo
-
-- Improve layout
+- Generator yeoman
 - Add Storybook
 - Unit tests
 
