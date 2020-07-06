@@ -3,10 +3,12 @@
 @use './component/burgerButton.scss';
 @use './component/about.scss';
 @use './component/contact.scss';
+@use './component/sidebar.scss';
+@use './component/feature.scss';
 @import "./theme/font.scss";
 @import "./queries/media-queries.scss";
 @import "./theme/color.scss";
-
+@import "../style/onePageStyle/onePageStyle.scss";
 *,
 *::after,
 *::before {
@@ -24,13 +26,24 @@ h3 {
 }
 
 body {
-  background-color: $dark;
-  color: $text;
+  background-color: $base;
+  color: $dark;
   font-family: "Lato", sans-serif;
   margin: 0;
   padding: 0;
   size: 100%;
   min-height: 100%;
+
+  .articles {
+    padding: 3em 0 2rem;
+    background-color: $text;
+    p {
+      color: $dark2;
+    }
+    .homeP {
+      text-align: center;
+    }
+  }
 }
 
 .form-left {
@@ -42,33 +55,47 @@ body {
 }
 
 .HomeArticle {
-  margin: 8rem 0;
+  margin: 0 1.2rem;
+  padding: 2rem 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
 
-.gridwrapper {
-  margin: 8rem 0;
-  display: grid;
-  grid-template-columns: repeat(4, 2fr);
-  grid-gap: 10px;
-  grid-auto-rows: minmax(100px, auto);
-  .gridText {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    grid-column: 2;
-    grid-row: 1;
-  }
-  .gridIcon {
-    margin: auto;
-    grid-column: 3/4;
-    grid-row: 1;
-  }
-}
 .question {
   font-size: 2em;
+}
+
+.chevronHolder {
+  position: absolute;
+  z-index: 9998;
+  text-align: center;
+  width: 100%;
+  margin-top: 0.5rem;
+
+  #chevronTop {
+    width: 1.2rem;
+    height: auto;
+    fill: $text;
+  }
+}
+// svg {
+//   width: 10rem;
+//   margin: auto;
+//   padding-top: 0.6rem;
+// }
+.flags {
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  span {
+    padding: 10px;
+  }
+
+  svg {
+    cursor: pointer;
+    width: 40px;
+  }
 }

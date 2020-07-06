@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
-
+import { ThemeContext } from "./context";
 import Router from "./router";
 
 i18n.use(initReactI18next).init({
@@ -31,7 +31,12 @@ i18n.use(initReactI18next).init({
         "Terms and Conditions": "Terms and Conditions",
         "Privacy Policy": "Privacy Policy",
         Subtitle1: "React Starter Kit with:",
-        Subtitle2: "Routing Hook, Parcel, Sass, Eslint, Prettier, Pre-commit Hook",
+        Routing_Hook: "Routing Hook",
+        Parcel: "Parcel",
+        Sass: "Sass",
+        Eslint: "Eslint",
+        Prettier: "Prettier",
+        Pre_commit_Hook: "Pre-commit Hook",
         "404": "Error 404",
       },
     },
@@ -60,7 +65,12 @@ i18n.use(initReactI18next).init({
         "Terms and Conditions": "Termes et conditions",
         "Privacy Policy": "Politique de confidentialité",
         Subtitle1: "React Starter Kit avec:",
-        Subtitle2: "Routing Hook, Parcel, Sass, Eslint, Prettier, Pre-commit Hook",
+        Routing_Hook: "Routing Hook ",
+        Parcel: "Parcel",
+        Sass: "Sass",
+        Eslint: "Eslint",
+        Prettier: "Prettier",
+        Pre_commit_Hook: "Pre-commit Hook",
         "404": "Erreur 404",
       },
     },
@@ -74,8 +84,17 @@ i18n.use(initReactI18next).init({
 });
 
 class AppComponent extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { theme: "default" };
+  }
+
   render() {
-    return <Router />;
+    return (
+      <ThemeContext.Provider value={this.state.theme}>
+        <Router />
+      </ThemeContext.Provider>
+    );
   }
 }
 
