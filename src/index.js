@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
-
+import { ThemeContext } from "./context";
 import Router from "./router";
 
 i18n.use(initReactI18next).init({
@@ -84,8 +84,17 @@ i18n.use(initReactI18next).init({
 });
 
 class AppComponent extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { theme: "default" };
+  }
+
   render() {
-    return <Router />;
+    return (
+      <ThemeContext.Provider value={this.state.theme}>
+        <Router />
+      </ThemeContext.Provider>
+    );
   }
 }
 

@@ -1,31 +1,28 @@
-import React from "react";
+import React, { useContext } from "react";
 import PropTypes from "prop-types";
-import Sidebar from "./Sidebar";
-import Footer from "./Footer";
+import ThemeOnePage from "../themes/ThemeOnePage";
+import ThemeDefault from "../themes/ThemeDefault";
 import "../../style/app.scss";
-import OpenMenuHook from "../customHook";
-import icon from "../icon";
+import { ThemeContext } from "../../context";
 
 const Layout = (props) => {
   const { children } = props;
-  const [OpenMenu, setOpenMenu] = OpenMenuHook.useOpenMenu();
-  return (
-    <>
-      <button type="button" className={`burgerMenu ${OpenMenu ? "open" : ""}`} onClick={() => setOpenMenu(!OpenMenu)}>
-        <div>
-          <span className="bun1" />
-          <span className="steak" />
-          <span className="bun2" />
-        </div>
-      </button>
-      <Sidebar>{children}</Sidebar>
-      <div className="chevronHolder" link="#haut_de_page">
-        <a href="#topPage"> {icon.ChevronTop()}</a>
-      </div>
-      <Footer />
-    </>
-  );
+  const theme = useContext(ThemeContext);
+
+  const switchTime = (child) => {
+    switch (theme) {
+      case "default":
+        return <ThemeDefault>{child}</ThemeDefault>;
+      case "onepage":
+        return <ThemeOnePage />;
+      default:
+        return null;
+    }
+  };
+
+  return switchTime(children);
 };
+
 export default Layout;
 
 Layout.propTypes = {
