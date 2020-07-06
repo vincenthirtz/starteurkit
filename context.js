@@ -1,9 +1,6 @@
 import React from "react";
 
-const themes = {
-  default: true,
-  onepage: false,
-};
+const theme = "default";
 
 // eslint-disable-next-line import/prefer-default-export
-export const ThemeContext = React.createContext(themes);
+export const ThemeContext = React.createContext(theme);

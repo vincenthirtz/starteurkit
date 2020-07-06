@@ -86,12 +86,12 @@ i18n.use(initReactI18next).init({
 class AppComponent extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { themes: { default: false, onepage: true } };
+    this.state = { theme: "onepage" };
   }
 
   render() {
     return (
-      <ThemeContext.Provider value={this.state.themes}>
+      <ThemeContext.Provider value={this.state.theme}>
         <Router />
       </ThemeContext.Provider>
     );

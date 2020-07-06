@@ -1,24 +1,25 @@
 @import "../theme/color.scss";
- html{
-    scroll-behavior: smooth;
- }
+html {
+  scroll-behavior: smooth;
+}
 
-ul#onePageMenu{
-    font-family: "Montserrat";
-    font-weight: bolder;
+ul#onePageMenu {
+  font-family: "Montserrat";
+  font-weight: bolder;
 
-    width: 100%;
-    // margin: auto;
-    text-align: center;
-    text-decoration: none;
-    background-color:$base;
-    padding: 1rem 0;
-    margin: 0;
-    position: fixed;
-    z-index: 9999;
-    
-    a{
-        color: $text;
-        margin:0 1rem;
-    }
+  width: 100%;
+  // margin: auto;
+  text-align: center;
+  text-decoration: none;
+  background-color: $base;
+  padding: 1rem 0;
+  margin: 0;
+  position: fixed;
+  z-index: 9999;
+
+  a {
+    color: $text;
+    margin: 0 1rem;
+  }
+  
 }
