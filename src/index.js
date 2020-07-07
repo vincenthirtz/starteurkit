@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
 import { ThemeContext } from "./context";
+import { ColorThemeContext } from "./ColorContext";
 import Router from "./router";
 
 i18n.use(initReactI18next).init({
@@ -86,13 +87,18 @@ i18n.use(initReactI18next).init({
 class AppComponent extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { theme: process.env.THEME };
+    this.state = {
+      theme: process.env.THEME,
+      color: `theme-${process.env.COLOR}`,
+    };
   }
 
   render() {
     return (
       <ThemeContext.Provider value={this.state.theme}>
-        <Router />
+        <ColorThemeContext.Provider value={this.state.color}>
+          <Router />
+        </ColorThemeContext.Provider>
       </ThemeContext.Provider>
     );
   }

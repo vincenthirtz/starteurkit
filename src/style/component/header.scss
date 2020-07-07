@@ -5,7 +5,7 @@
 @import "../theme/font.scss";
 
 .topMenu {
-  @include topMenu($text, $backgroundDark);
+  @include topMenu($text, $burgerMenuBackground);
   animation: menuMove 0.5s;
   @media all and(min-width: 801px) {
     @include menu;

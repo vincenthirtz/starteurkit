@@ -9,7 +9,7 @@ const Layout = (props) => {
   const { children } = props;
   const theme = useContext(ThemeContext);
 
-  const switchTime = (child) => {
+  const switchTheme = (child) => {
     switch (theme) {
       case "default":
         return <ThemeDefault>{child}</ThemeDefault>;
@@ -20,7 +20,7 @@ const Layout = (props) => {
     }
   };
 
-  return switchTime(children);
+  return switchTheme(children);
 };
 
 export default Layout;

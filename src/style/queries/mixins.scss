@@ -33,7 +33,7 @@
   width: 100%;
   padding: 1rem 2.5rem;
   text-align: center;
-  background-color: $bg;
+  background-color: $transparent;
   a {
     font-size: 1.1rem;
     color: $text;
@@ -48,7 +48,7 @@
     border-radius: 2px;
     font-size: 1.01;
     cursor: pointer;
-    background-color: $dark;
+    background-color: $highlight;
   }
   .flag {
     cursor: pointer;
@@ -113,14 +113,14 @@
     text-align: center;
     margin: 0;
     padding: 1rem 0;
-    color: $dark;
+    color: $highlight;
     font-size: 2rem;
     font-family: "Montserrat";
     letter-spacing: 0.1rem;
   }
 
   body {
-    background: $bg;
+    background: $transparent;
     color: black;
     font-family: "Lato", sans-serif;
     margin: 0;
@@ -195,7 +195,7 @@
       h4 {
         font-size: 1.2rem;
         font-weight: 800;
-        background-color: $bg;
+        background-color: $transparent;
         color: $text;
         border-radius: 0;
       }

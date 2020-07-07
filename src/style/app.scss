@@ -1,3 +1,4 @@
+@use 'sass:color';
 @use './component/header.scss';
 @use './component/footer.scss';
 @use './component/burgerButton.scss';
@@ -5,30 +6,82 @@
 @use './component/contact.scss';
 @use './component/sidebar.scss';
 @use './component/feature.scss';
+// @import "./theme/themes.scss";
+// @import './component/theming.scss';
 @import "./theme/font.scss";
 @import "./queries/media-queries.scss";
-@import "./theme/color.scss";
+// @import "./theme/color.scss";
 @import "../style/onePageStyle/onePageStyle.scss";
+
+$themes: (
+  light:(
+    $base: #32a3a7,
+    $text: #fff,
+    $subtle: #23060a,
+    $highlight: #e84a5f,
+    $transparent: transparent,
+    $burgerMenuBackground: color.scale($subtle, $alpha: -20%),
+  ),
+  dark:(
+    $base: #944f27,
+    $text: rgb(241, 225, 189),
+    $subtle: #080400,
+    $highlight: #a03c01,
+    $transparent: transparent,
+    $burgerMenuBackground: color.scale($subtle, $alpha: -20%),
+  ),
+);
+@mixin themify($themes: $themes) {
+  @each $theme, $map in $themes {
+
+    .theme-#{$theme} & {
+      $theme-map: () !global;
+      @each $key, $submap in $map {
+        $value: map-get(map-get($themes, $theme), '#{$key}');
+        $theme-map: map-merge($theme-map, ($key: $value)) !global;
+      }
+
+      @content;
+      $theme-map: null !global;
+    }
+
+  }
+}
+
+@function themed($key) {
+    @return map-get($theme-map, $key);
+  }
+
+
+
+
 *,
 *::after,
 *::before {
   box-sizing: border-box;
 }
 
-h3 {
+
+
+ h3 {
   text-align: center;
   margin: 0;
   padding: 1rem 0;
-  color: $dark;
+  @include themify($themes){
+  color: themed('highlight');
+  }
   font-size: 2rem;
+  
   font-family: "Montserrat";
   letter-spacing: 0.1rem;
 }
 
-body {
-  background-color: $base;
-  color: $dark;
+ body {
+  @include themify($themes){
+  background-color: themed('base'); 
+  color: themed('highlight');}
   font-family: "Lato", sans-serif;
+ 
   margin: 0;
   padding: 0;
   size: 100%;
@@ -38,7 +91,7 @@ body {
     padding: 3em 0 2rem;
     background-color: $text;
     p {
-      color: $dark2;
+      color: $subtle;
     }
     .homeP {
       text-align: center;
@@ -53,7 +106,6 @@ body {
 .form-content {
   margin-bottom: 20px;
 }
-
 .HomeArticle {
   margin: 0 1.2rem;
   padding: 2rem 0;
@@ -80,11 +132,6 @@ body {
     fill: $text;
   }
 }
-// svg {
-//   width: 10rem;
-//   margin: auto;
-//   padding-top: 0.6rem;
-// }
 .flags {
   position: absolute;
   top: 0;
@@ -98,4 +145,4 @@ body {
     cursor: pointer;
     width: 40px;
   }
-}
+ }

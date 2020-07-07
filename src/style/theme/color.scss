@@ -1,11 +1,7 @@
 @use 'sass:color';
-
-$dark: #e84a5f;
-$dark2: hsl(351, 70%, 8%);
-$gradient: linear-gradient(0deg, rgba(254, 206, 171, 1) 0%, rgba(232, 74, 95, 1) 100%);
-$text: #fff;
-$backgroundDark: color.scale($dark2, $alpha: -20%);
-$bg: transparent;
-
-/// color theme 2 ///
 $base: #32a3a7;
+$text: #fff;
+$subtle: #23060a;
+$highlight: #e84a5f;
+$transparent: transparent;
+$burgerMenuBackground: color.scale($subtle, $alpha: -20%);

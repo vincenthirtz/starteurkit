@@ -1,13 +1,16 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useTranslation } from "react-i18next";
 import { navigate } from "hookrouter";
+import { ColorThemeContext } from "../../ColorContext";
 
 const Footer = () => {
   const { t } = useTranslation();
+  const color = useContext(ColorThemeContext);
+
   return (
-    <div className="footer">
+    <div className={`${color} footer`}>
       <div className="row">
-        <h4>{t("Social")} </h4>
+        <h4 className={`${color}`}>{t("Social")} </h4>
         <ul>
           <a href="https://twitter.com/alukaard76">Twitter</a>
           <a href="https://github.com/vincenthirtz">Github</a>
@@ -16,12 +19,12 @@ const Footer = () => {
       </div>
 
       <div className="row">
-        <h4>{t("Fast")}</h4>
+        <h4 className={`${color}`}>{t("Fast")}</h4>
         <p>{t("Starting a project has never been easier")}</p>
       </div>
 
       <div className="row">
-        <h4>{t("Tech")}</h4>
+        <h4 className={`${color}`}>{t("Tech")}</h4>
         <ul>
           <a href="https://reactjs.org/">React</a>
           <a href="https://parceljs.org/">Parcel</a>
@@ -31,15 +34,23 @@ const Footer = () => {
       </div>
 
       <div className="row">
-        <h4>{t("Simple")}</h4>
+        <h4 className={`${color}`}>{t("Simple")}</h4>
         <p>{t("Focus only on your application code")}</p>
       </div>
       <div className="row bot">
-        <ul>
-          <a href="#">{t("Sitemap")}</a>
-          <a onClick={() => navigate("/contact")}>{t("Contact")}</a>
-          <a href="#">{t("Terms and Conditions")}</a>
-          <a href="#">{t("Privacy Policy")}</a>
+        <ul className={`${color}`}>
+          <a className={`${color}`} href="#">
+            {t("Sitemap")}
+          </a>
+          <a className={`${color}`} onClick={() => navigate("/contact")}>
+            {t("Contact")}
+          </a>
+          <a className={`${color}`} href="#">
+            {t("Terms and Conditions")}
+          </a>
+          <a className={`${color}`} href="#">
+            {t("Privacy Policy")}
+          </a>
         </ul>
       </div>
     </div>
