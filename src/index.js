@@ -95,11 +95,13 @@ class AppComponent extends React.Component {
 
   render() {
     return (
-      <ThemeContext.Provider value={this.state.theme}>
-        <ColorThemeContext.Provider value={this.state.color}>
-          <Router />
-        </ColorThemeContext.Provider>
-      </ThemeContext.Provider>
+      <div className={this.state.color}>
+        <ThemeContext.Provider value={this.state.theme}>
+          <ColorThemeContext.Provider value={this.state.color}>
+            <Router />
+          </ColorThemeContext.Provider>
+        </ThemeContext.Provider>
+      </div>
     );
   }
 }

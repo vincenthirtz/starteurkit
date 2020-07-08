@@ -1,11 +1,14 @@
-@use 'sass:color';
-@import "../queries/media-queries.scss";
-@import "../queries/mixins.scss";
-@import "./theme/color.scss";
+// @use 'sass:color';
+@import '../theme/themes.scss';
+@import "./queries/themify.scss";
+// @import "../queries/media-queries.scss";
+@import "./queries/mixins.scss";
+// @import "./theme/color.scss";
 @import "../theme/font.scss";
 
+
 .topMenu {
-  @include topMenu($text, $burgerMenuBackground);
+  @include topMenu();
   animation: menuMove 0.5s;
   @media all and(min-width: 801px) {
     @include menu;
@@ -42,9 +45,10 @@
 //////fond du header//////
 
 .headerHome {
-  background: $base;
+  @include themify($themes){
+    background-color: themed('base');
+  }
   .presentationHolder {
-    color: $text;
     margin: auto;
     padding: 4.8rem 0;
     width: 50%;
@@ -54,6 +58,9 @@
       justify-content: center;
       align-items: center;
       h1 {
+        @include themify($themes){
+          color: themed('text');
+        }
         font-size: 3rem;
         margin-bottom: 2rem;
       }
@@ -71,6 +78,9 @@
         word-wrap: break-word;
       }
     }
+    @include themify($themes){
+      background: themed('base');
+    }
   }
   @media all and(min-width: 801px) {
     @include Header;
@@ -82,7 +92,9 @@
 }
 
 .homeLogo {
-  color: $text;
+  @include themify($themes){
+    color: themed('text');
+  }
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
@@ -91,3 +103,4 @@
     margin: 1rem;
   }
 }
+

@@ -1,4 +1,6 @@
-@import "../theme/color.scss";
+// @import "../theme/color.scss";
+@import "../theme/themes.scss";
+@import "../queries/themify.scss";
 html {
   scroll-behavior: smooth;
 }
@@ -11,14 +13,18 @@ html {
   // margin: auto;
   text-align: center;
   text-decoration: none;
-  background-color: $base;
+  @include themify($themes){
+  background-color: themed('base');
+}
   padding: 1rem 0;
   margin: 0;
   position: fixed;
   z-index: 9999;
 
   a {
-    color: $text;
+    @include themify($themes){
+    color: themed('text');
+    }
     margin: 0 1rem;
   }
 }

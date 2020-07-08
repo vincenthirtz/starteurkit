@@ -1,11 +1,16 @@
-@mixin topMenu($color, $backgroundColor) {
+@import '../theme/themes.scss';
+@import "./queries/themify.scss";
+
+@mixin topMenu() {
   overflow: hidden;
   display: flex;
   flex-direction: column;
   align-items: center;
   position: fixed;
   z-index: 9999;
-  background-color: $backgroundColor;
+  @include themify($themes){
+    background-color: themed('backgroundColor');
+  }
   width: 100%;
   padding-top: 3rem;
   animation-duration: 40s;
@@ -16,7 +21,6 @@
     padding: 1rem 1rem 1.5rem;
     transform: translateY(-01rem);
     margin: 0.5rem auto;
-    color: $text;
     border-bottom: solid;
     border-width: 1px;
     text-align: center;
@@ -33,10 +37,14 @@
   width: 100%;
   padding: 1rem 2.5rem;
   text-align: center;
-  background-color: $transparent;
+  @include themify($themes){
+  background-color: themed('transparent');
+}
   a {
     font-size: 1.1rem;
-    color: $text;
+    @include themify($themes){
+color: themed('text');
+}
     font-weight: bolder;
     margin: 0;
     padding: 1rem 1.5rem;
@@ -48,7 +56,9 @@
     border-radius: 2px;
     font-size: 1.01;
     cursor: pointer;
-    background-color: $highlight;
+    @include themify($themes){
+      background-color: themed('subtle');
+    }
   }
   .flag {
     cursor: pointer;
@@ -56,13 +66,16 @@
 }
 @mixin Header {
   .headerHome {
-    background: $base;
+    @include themify($themes){
+    background: themed('base');}
     display: flex;
     flex-direction: column;
     align-items: center;
 
     .presentationHolder {
-      color: $text;
+      @include themify($themes){
+color: themed('text');
+}
       margin: auto;
       padding: 10rem 0;
       width: 50%;
@@ -90,7 +103,9 @@
     }
   }
   .homeLogo {
-    color: $text;
+    @include themify($themes){
+color: themed('text');
+}
     display: flex;
     justify-content: space-around;
     margin: 2em 0;
@@ -113,15 +128,18 @@
     text-align: center;
     margin: 0;
     padding: 1rem 0;
-    color: $highlight;
+    @include themify($themes){
+    color: themed('highlight');}
     font-size: 2rem;
     font-family: "Montserrat";
     letter-spacing: 0.1rem;
   }
 
   body {
-    background: $transparent;
-    color: black;
+    @include themify($themes){
+    background: themed('transparent');
+    color: themed('text');
+  }
     font-family: "Lato", sans-serif;
     margin: 0;
     padding: 0;
@@ -184,32 +202,36 @@
   }
 }
 
-@mixin Footer {
+@mixin FooterDesktop {
   .footer {
-    color: $text;
     display: flex;
     justify-content: space-around;
+    align-items: baseline;
+
     padding: 2rem 8rem;
     .row {
       padding: 0 4rem;
       h4 {
         font-size: 1.2rem;
         font-weight: 800;
-        background-color: $transparent;
-        color: $text;
+        @include themify($themes){
+          background-color: themed('transparent');
+            color: themed('text');
+            }
         border-radius: 0;
       }
       display: flex;
       flex-direction: column;
       justify-content: start;
-      align-items: flex-start;
       ul {
         display: flex;
         flex-direction: column;
         padding: 0;
         margin: 0;
         a {
-          color: $text;
+          @include themify($themes){
+            color: themed('text');
+            }
           font-weight: 400;
         }
       }

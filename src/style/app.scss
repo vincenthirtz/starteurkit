@@ -1,4 +1,4 @@
-@use 'sass:color';
+// @use 'sass:color';
 @use './component/header.scss';
 @use './component/footer.scss';
 @use './component/burgerButton.scss';
@@ -7,16 +7,10 @@
 @use './component/sidebar.scss';
 @use './component/feature.scss';
 @import "./theme/themes.scss";
-// @import './component/theming.scss';
+@import "./queries/themify.scss";
 @import "./theme/font.scss";
 @import "./queries/media-queries.scss";
-@import "./queries/themify.scss";
-// @import "./theme/color.scss";
 @import "../style/onePageStyle/onePageStyle.scss";
-
-@function themed($key) {
-    @return map-get($theme-map, $key);
-  }
 
 *,
 *::after,
@@ -24,20 +18,31 @@
   box-sizing: border-box;
 }
 
+body{
+  width: 100%;
+  margin: 0;
+}
+
+a{
+  @include themify($themes){
+    color: themed('text');
+  }
+  text-decoration: none;
+  }
+
  h3 {
   text-align: center;
   margin: 0;
   padding: 1rem 0;
   @include themify($themes){
-  color: themed('highlight');
-  }
+  color: themed('highlight'); }
   font-size: 2rem;
 
   font-family: "Montserrat";
   letter-spacing: 0.1rem;
 }
 
- body {
+ #app {
   @include themify($themes){
   background-color: themed('base');
   color: themed('highlight');}
@@ -50,9 +55,12 @@
 
   .articles {
     padding: 3em 0 2rem;
-    background-color: $text;
+    @include themify($themes){
+      background-color: themed('text');
+    }
     p {
-      color: $subtle;
+      @include themify($themes){
+      color: themed('subtle');}
     }
     .homeP {
       text-align: center;
@@ -90,7 +98,8 @@
   #chevronTop {
     width: 1.2rem;
     height: auto;
-    fill: $text;
+    @include themify($themes){
+    fill: themed('text');}
   }
 }
 .flags {

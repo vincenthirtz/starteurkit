@@ -1,7 +1,11 @@
 @import "../theme/color.scss";
+@import "../theme/themes.scss";
+@import "../queries/themify.scss";
 
 .featureWrap {
-  background-color: $text;
+  @include themify($themes){
+    background-color: themed('text');
+}
   padding: 0 0 2rem;
 
   .article {
@@ -18,7 +22,9 @@
       width: 6rem;
       height: auto;
       margin: auto;
-      fill: $base;
+      @include themify($themes){
+        fill: themed('base');
+      }
     }
     .textOlder {
       width: 50%;
@@ -27,7 +33,8 @@
         margin-bottom: 0.4rem;
       }
       p {
-        color: $subtle;
+        @include themify($themes){
+        color: themed('subtle');}
       }
     }
   }

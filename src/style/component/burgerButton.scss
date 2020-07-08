@@ -1,6 +1,9 @@
-@use 'sass:color';
+// @use 'sass:color';
+// @import "./theme/color.scss";
+@import "../theme/themes.scss";
+@import "../queries/themify.scss";
 @import "../queries/media-queries.scss";
-@import "./theme/color.scss";
+
 
 //////barre de menu//////
 .burgerMenu {
@@ -8,7 +11,8 @@
   z-index: 99999;
   height: 3rem;
   width: 3rem;
-  background-color: #e84a5f;
+  @include themify($themes){
+  background-color: themed('highlight');}
   border: none;
   animation: buttonToLeft 0.5s;
   animation-iteration-count: 1;
@@ -19,7 +23,9 @@
     height: 50%;
     span {
       display: block;
-      background-color: $text;
+      @include themify($themes){
+        background-color: themed('subtle');
+}
       width: 2rem;
       height: 0.3rem;
       border-radius: 1rem;
