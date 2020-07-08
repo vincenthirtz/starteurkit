@@ -1,19 +1,21 @@
-// @use'sass:color';
-// $themes: (
-//   light:(
-//     $base: #32a3a7,
-//     $text: #fff,
-//     $subtle: #23060a,
-//     $highlight: #e84a5f,
-//     $transparent: transparent,
-//     $burgerMenuBackground: color.scale($subtle, $alpha: -20%),
-//   ),
-//   dark:(
-//     $base: #32a3a7,
-//     $text: #fff,
-//     $subtle: #23060a,
-//     $highlight: #e84a5f,
-//     $transparent: transparent,
-//     $burgerMenuBackground: color.scale($subtle, $alpha: -20%),
-//   ),
-// );
+@use'sass:color';
+$themes: (
+  light: (
+    base: #fff,
+    highlight: #408bbd,
+    buttonTextColor: #408bbd,
+    buttonTextTransform: none,
+    buttonTextHoverColor: #61b0e7,
+    buttonColor: #fff,
+    buttonBorder: 2px solid #fff,
+  ),
+  dark: (
+    base: #222,
+    highlight: #ddd,
+    buttonTextColor: #aaa,
+    buttonTextTransform: uppercase,
+    buttonTextHoverColor: #ddd,
+    buttonColor: #333,
+    buttonBorder: 1px solid #aaa,
+  ),
+);
