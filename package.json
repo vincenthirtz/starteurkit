@@ -7,6 +7,7 @@
     "dev": "parcel src/index.html --open --no-cache",
     "build": "NODE_ENV=development parcel build src/index.html --no-minify",
     "prod": "parcel build src/index.html",
+    "yo": "yo ./.generator",
     "snyk-protect": "snyk protect"
   },
   "keywords": [],
