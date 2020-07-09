@@ -26,7 +26,7 @@ html {
     @include themify($themes){
     color: themed('text');
     }
-    padding: 1rem 1rem;
+    padding: 1rem;
     &:hover{
       @include themify($themes){
         background-color: themed('highlight');
