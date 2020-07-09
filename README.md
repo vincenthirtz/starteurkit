@@ -15,7 +15,7 @@ React Starter kit
 - Prettier
 - Eslint
 - Sass
-- Semantic UI
+- Semantic UI (deleted soon)
 
 ## Install
 
@@ -29,12 +29,19 @@ npm i
 In .env file:
 ```javascript
 THEME="default" // default || onepage
+COLOR="light" // light || dark
 ```
 
 ## Usage
 
 ```javascript
 npm run dev
+```
+
+## Prod
+
+```javascript
+npm run prod
 ```
 
 ## Todo
