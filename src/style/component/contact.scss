@@ -1,11 +1,30 @@
 @import '../queries/mixins.scss';
+@import "./theme/font.scss";
 
 
-.ui.segment{
+.form-content > div {
+    margin: 1rem 0;
+}
+
+.formWrapper{
     margin: 8rem auto;
     width: 50%;
 }
+.formTitle{
+    margin: 0;
+    font-family: "Montserrat";
+    font-weight: lighter;
+}
+
 
 @media all and(min-width: 801px){
     @include Contact;
+}
+
+.demo-button{
+    border: none;
+    padding: 1rem 1.5rem;
+    border-radius: 0.5rem;
+    font-family: "Montserrat";
+    font-size: 1rem;
 }
