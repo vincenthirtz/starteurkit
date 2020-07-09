@@ -1,0 +1,18 @@
+@use'sass:color';
+$themes: (
+  light: (
+    base: #32a3a7,
+    text: #fff,
+    subtle: #23060a,
+    highlight: #e84a5f,
+    transparent: transparent,
+  ),
+  dark: (
+    base: rgb(59, 12, 12),
+    text: OLDLACE,
+    text2: grey ,
+    subtle: CHOCOLATE,
+    highlight: BROWN,
+    transparent: transparent,
+  ),
+);

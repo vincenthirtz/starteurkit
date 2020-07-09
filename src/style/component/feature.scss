@@ -1,12 +1,18 @@
 @import "../theme/color.scss";
+@import "../theme/themes.scss";
+@import "../queries/themify.scss";
 
 .featureWrap {
-  background-color: $text;
+  @include themify($themes){
+    background-color: themed('transparent');
+}
   padding: 0 0 2rem;
 
   .article {
     display: flex;
-    margin: 1rem 0;
+    justify-content: center;
+    margin: 1rem auto;
+    width: 50%;
     #iconCake,
     #iconEdit,
     #iconFast,
@@ -17,17 +23,23 @@
     #iconInternational {
       width: 6rem;
       height: auto;
-      margin: auto;
-      fill: $base;
+      margin: 1rem;
+      @include themify($themes){
+        fill: themed('base');
+      }
     }
     .textOlder {
       width: 50%;
-      margin: auto;
+      margin: 1rem;
       h4 {
         margin-bottom: 0.4rem;
+        @include themify($themes){
+          color: themed('highlight');
+        }
       }
       p {
-        color: $dark2;
+        @include themify($themes){
+        color: themed('text2');}
       }
     }
   }

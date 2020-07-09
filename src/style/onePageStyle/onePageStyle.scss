@@ -1,9 +1,11 @@
-@import "../theme/color.scss";
+// @import "../theme/color.scss";
+@import "../theme/themes.scss";
+@import "../queries/themify.scss";
 html {
   scroll-behavior: smooth;
 }
 
-ul#onePageMenu {
+ ul#onePageMenu {
   font-family: "Montserrat";
   font-weight: bolder;
 
@@ -11,14 +13,25 @@ ul#onePageMenu {
   // margin: auto;
   text-align: center;
   text-decoration: none;
-  background-color: $base;
+  @include themify($themes){
+  background-color: themed('base');
+}
   padding: 1rem 0;
   margin: 0;
   position: fixed;
   z-index: 9999;
+  
 
   a {
-    color: $text;
-    margin: 0 1rem;
+    @include themify($themes){
+    color: themed('text');
+    }
+    padding: 1rem 1rem;
+    &:hover{
+      @include themify($themes){
+        background-color: themed('highlight');
+      }
+      border-radius: 0 0 0.2rem 0.2rem;
+    }
   }
 }

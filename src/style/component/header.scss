@@ -1,11 +1,14 @@
-@use 'sass:color';
-@import "../queries/media-queries.scss";
-@import "../queries/mixins.scss";
-@import "./theme/color.scss";
+// @use 'sass:color';
+@import '../theme/themes.scss';
+@import "./queries/themify.scss";
+// @import "../queries/media-queries.scss";
+@import "./queries/mixins.scss";
+// @import "./theme/color.scss";
 @import "../theme/font.scss";
 
+
 .topMenu {
-  @include topMenu($text, $backgroundDark);
+  @include topMenu();
   animation: menuMove 0.5s;
   @media all and(min-width: 801px) {
     @include menu;
@@ -42,18 +45,23 @@
 //////fond du header//////
 
 .headerHome {
-  background: $base;
+  @include themify($themes){
+    background-color: themed('transparent');
+  }
   .presentationHolder {
-    color: $text;
     margin: auto;
     padding: 4.8rem 0;
-    width: 50%;
+    width: 100%;
     .presentation {
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
+      @include themify($themes){
+        color: themed('text');
+      }
       h1 {
+        
         font-size: 3rem;
         margin-bottom: 2rem;
       }
@@ -65,11 +73,13 @@
       .s2 {
         text-align: center;
         font-size: 1.1rem;
-        font-weight: lighter;
         margin-bottom: 2rem;
         padding: 0 1.3rem;
         word-wrap: break-word;
       }
+    }
+    @include themify($themes){
+      background: themed('base');
     }
   }
   @media all and(min-width: 801px) {
@@ -82,7 +92,9 @@
 }
 
 .homeLogo {
-  color: $text;
+  @include themify($themes){
+    color: themed('text');
+  }
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
@@ -91,3 +103,4 @@
     margin: 1rem;
   }
 }
+

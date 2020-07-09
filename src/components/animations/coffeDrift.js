@@ -10,7 +10,6 @@ const AnimationTest = (props) => {
 
   const windowHeight = window.innerHeight;
   const catchMid = windowHeight * 1.25;
-  console.log(catchMid, "catchmid");
 
   const [scrollY, setScrollY] = useState(0);
 
@@ -30,8 +29,6 @@ const AnimationTest = (props) => {
   });
 
   useEffect(() => {
-    console.log("scrollY ", scrollY);
-    console.log(catchMid, "catchmiduseeffect");
     if (scrollY > catchMid - 10 && scrollY < catchMid + 10) {
       playing();
     }

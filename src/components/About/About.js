@@ -3,7 +3,7 @@ import Profile from "./Profile";
 
 const About = () => (
   <div className="articles">
-    <h3>About</h3>
+    <h3 className="sectionTitle" >About</h3>
     <div className="profilHolder">
       <Profile
         name="Vincent Hirtz"
