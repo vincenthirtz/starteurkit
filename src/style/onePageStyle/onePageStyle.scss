@@ -20,11 +20,18 @@ html {
   margin: 0;
   position: fixed;
   z-index: 9999;
+  
 
   a {
     @include themify($themes){
     color: themed('text');
     }
-    margin: 0 1rem;
+    padding: 1rem 1rem;
+    &:hover{
+      @include themify($themes){
+        background-color: themed('highlight');
+      }
+      border-radius: 0 0 0.2rem 0.2rem;
+    }
   }
 }

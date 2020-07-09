@@ -46,21 +46,22 @@
 
 .headerHome {
   @include themify($themes){
-    background-color: themed('base');
+    background-color: themed('transparent');
   }
   .presentationHolder {
     margin: auto;
     padding: 4.8rem 0;
-    width: 50%;
+    width: 100%;
     .presentation {
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
+      @include themify($themes){
+        color: themed('text');
+      }
       h1 {
-        @include themify($themes){
-          color: themed('text');
-        }
+        
         font-size: 3rem;
         margin-bottom: 2rem;
       }
@@ -72,7 +73,6 @@
       .s2 {
         text-align: center;
         font-size: 1.1rem;
-        font-weight: lighter;
         margin-bottom: 2rem;
         padding: 0 1.3rem;
         word-wrap: break-word;

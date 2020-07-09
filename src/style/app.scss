@@ -21,6 +21,7 @@
 body{
   width: 100%;
   margin: 0;
+  // overflow-x: hidden;
 }
 
 a{
@@ -37,9 +38,13 @@ a{
   @include themify($themes){
   color: themed('highlight'); }
   font-size: 2rem;
-
   font-family: "Montserrat";
   letter-spacing: 0.1rem;
+}
+.sectionTitle{
+  @include themify($themes){
+    color: themed('base');
+  }
 }
 
  #app {
@@ -68,6 +73,12 @@ a{
     }
   }
 }
+.discordLink{
+  @include themify($themes){
+    color: themed('base');
+  }
+  &:hover{font-weight: bolder;}
+}
 
 .form-left {
   text-align: left;
@@ -87,6 +98,11 @@ a{
 
 .question {
   font-size: 2em;
+}
+.heart{
+  @include themify($themes){
+    color: themed('highlight');
+  }
 }
 
 .chevronHolder {
@@ -116,4 +132,9 @@ a{
     cursor: pointer;
     width: 40px;
   }
+ }
+
+ #__lottie_element_37 {
+  @include themify($themes){
+    fill: themed('base');}
  }

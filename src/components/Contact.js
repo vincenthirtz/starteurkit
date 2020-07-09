@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Grid, Segment, Button, Form, Message } from "semantic-ui-react";
+import { Segment, Button, Form, Message } from "semantic-ui-react";
 import { Formiz, useForm } from "@formiz/core";
 import { isEmail } from "@formiz/validations";
 import MyField from "./Form/Field";
@@ -72,10 +72,7 @@ const Contact = () => {
 
   return (
     <div className="articles">
-      <h3>Contact</h3>
-      <Grid columns="equal">
-        <Grid.Column />
-        <Grid.Column width={8}>
+      <h3 className="sectionTitle">Contact</h3>
           <Segment>
             {" "}
             <MyForm />
@@ -92,9 +89,6 @@ const Contact = () => {
               </Message>
             )}
           </Segment>
-        </Grid.Column>
-        <Grid.Column />
-      </Grid>
     </div>
   );
 };

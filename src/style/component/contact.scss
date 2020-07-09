@@ -1,5 +1,11 @@
 @import '../queries/mixins.scss';
 
+
+.ui.segment{
+    margin: 8rem auto;
+    width: 50%;
+}
+
 @media all and(min-width: 801px){
     @include Contact;
 }
