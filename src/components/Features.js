@@ -3,7 +3,7 @@ import icon from "./icon";
 
 const Features = () => (
   <div className="featureWrap articles">
-    <h3>Features</h3>
+    <h3 className="sectionTitle">Features</h3>
     <div>
       <div className="article">
         {icon.IconResponsive()}

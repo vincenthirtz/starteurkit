@@ -1,3 +1,4 @@
+// @use 'sass:color';
 @use './component/header.scss';
 @use './component/footer.scss';
 @use './component/burgerButton.scss';
@@ -5,45 +6,78 @@
 @use './component/contact.scss';
 @use './component/sidebar.scss';
 @use './component/feature.scss';
+@import "./theme/themes.scss";
+@import "./queries/themify.scss";
 @import "./theme/font.scss";
 @import "./queries/media-queries.scss";
-@import "./theme/color.scss";
 @import "../style/onePageStyle/onePageStyle.scss";
+
 *,
 *::after,
 *::before {
   box-sizing: border-box;
 }
 
-h3 {
+body{
+  width: 100%;
+  margin: 0;
+  // overflow-x: hidden;
+}
+
+a{
+  @include themify($themes){
+    color: themed('text');
+  }
+  text-decoration: none;
+  }
+
+ h3 {
   text-align: center;
   margin: 0;
   padding: 1rem 0;
-  color: $dark;
+  @include themify($themes){
+  color: themed('highlight'); }
   font-size: 2rem;
   font-family: "Montserrat";
   letter-spacing: 0.1rem;
 }
+.sectionTitle{
+  @include themify($themes){
+    color: themed('base');
+  }
+}
 
-body {
-  background-color: $base;
-  color: $dark;
+ #app {
+  @include themify($themes){
+  background-color: themed('base');
+  color: themed('highlight');}
   font-family: "Lato", sans-serif;
+
   margin: 0;
   padding: 0;
   size: 100%;
   min-height: 100%;
+  width: 100%;
 
   .articles {
     padding: 3em 0 2rem;
-    background-color: $text;
+    @include themify($themes){
+      background-color: themed('text');
+    }
     p {
-      color: $dark2;
+      @include themify($themes){
+      color: themed('subtle');}
     }
     .homeP {
       text-align: center;
     }
   }
+}
+.discordLink{
+  @include themify($themes){
+    color: themed('base');
+  }
+  &:hover{font-weight: bolder;}
 }
 
 .form-left {
@@ -53,7 +87,6 @@ body {
 .form-content {
   margin-bottom: 20px;
 }
-
 .HomeArticle {
   margin: 0 1.2rem;
   padding: 2rem 0;
@@ -66,6 +99,11 @@ body {
 .question {
   font-size: 2em;
 }
+.heart{
+  @include themify($themes){
+    color: themed('highlight');
+  }
+}
 
 .chevronHolder {
   position: absolute;
@@ -77,14 +115,10 @@ body {
   #chevronTop {
     width: 1.2rem;
     height: auto;
-    fill: $text;
+    @include themify($themes){
+    fill: themed('text');}
   }
 }
-// svg {
-//   width: 10rem;
-//   margin: auto;
-//   padding-top: 0.6rem;
-// }
 .flags {
   position: absolute;
   top: 0;
@@ -98,4 +132,9 @@ body {
     cursor: pointer;
     width: 40px;
   }
-}
+ }
+
+ #__lottie_element_37 {
+  @include themify($themes){
+    fill: themed('base');}
+ }

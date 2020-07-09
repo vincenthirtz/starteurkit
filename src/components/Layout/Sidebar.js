@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import PropTypes from "prop-types";
 import i18n from "i18next";
 import { useTranslation } from "react-i18next";
@@ -6,6 +6,7 @@ import { navigate, getWorkingPath } from "hookrouter";
 import Header from "./Header";
 import OutsideAlerter from "./menuWrapper";
 import icon from "../icon";
+import { ColorThemeContext } from "../../ColorContext";
 
 import OpenMenuHook from "../customHook";
 
@@ -16,11 +17,12 @@ const SidebarComponent = (props) => {
   const setLangFR = () => i18n.changeLanguage("fr-FR");
 
   const setLangEN = () => i18n.changeLanguage("en-US");
+  const color = useContext(ColorThemeContext);
 
   const [OpenMenu] = OpenMenuHook.useOpenMenu();
   return (
     <>
-      <div className="headerHome">
+      <div className={`${color} headerHome`}>
         <OutsideAlerter>
           <div className={`topMenu ${OpenMenu ? "" : "hidden"}`}>
             <a onClick={() => navigate("/")} active={getWorkingPath() === "/"}>

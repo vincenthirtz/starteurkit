@@ -1,9 +1,12 @@
 import React, { useState } from "react";
-import { Grid, Segment, Button, Form, Message } from "semantic-ui-react";
+import { 
+  // Button,
+   Form, Message } from "semantic-ui-react";
 import { Formiz, useForm } from "@formiz/core";
-import { isEmail } from "@formiz/validations";
-import MyField from "./Form/Field";
-import MyTextArea from "./Form/Textarea";
+// import { isEmail } from "@formiz/validations";
+// import MyField from "./Form/Field";
+// import MyTextArea from "./Form/Textarea";
+import { InputField, TextArea } from "./contactElements/TextArea";
 
 const Contact = () => {
   const [messageSuccess, setMessageSuccess] = useState(false);
@@ -36,7 +39,7 @@ const Contact = () => {
         <Formiz onValidSubmit={submitForm} connect={myForm}>
           <Form noValidate onSubmit={myForm.submit} className="demo-form" style={{ minHeight: "16rem" }}>
             <div className="form-content">
-              <MyField name="name" label="Name" />
+              {/* <MyField name="name" label="Name" />
 
               <MyField
                 name="email"
@@ -50,18 +53,22 @@ const Contact = () => {
                   },
                 ]}
               />
-              <MyTextArea name="message" label="Message" required="Message is required" />
+              <MyTextArea name="message" label="Message" required="Message is required" /> */}
+
+              {/* input fait main  */}
+              <InputField label='Name' />
+              <InputField label='Email*' />
+              <TextArea label='Message*' />
             </div>
 
             <div className="demo-form__footer">
               <div className="ml-auto" style={{ minWidth: "6rem" }}>
-                <Button
+                <button
                   className="demo-button is-full is-primary"
                   type="submit"
-                  disabled={isLoading || (!myForm.isValid && myForm.isSubmitted)}
-                >
+                  disabled={isLoading || (!myForm.isValid && myForm.isSubmitted)}>
                   {isLoading ? "Loading..." : "Send"}
-                </Button>
+                </button>
               </div>
             </div>
           </Form>
@@ -72,29 +79,23 @@ const Contact = () => {
 
   return (
     <div className="articles">
-      <h3>Contact</h3>
-      <Grid columns="equal">
-        <Grid.Column />
-        <Grid.Column width={8}>
-          <Segment>
-            {" "}
-            <MyForm />
-            {messageSuccess && (
-              <Message positive>
-                <Message.Header>Message successfully sent!</Message.Header>
-                <p>We will respond as soon as possible</p>
-              </Message>
-            )}
-            {messageNegative && (
-              <Message negative>
-                <Message.Header>Message not sent!</Message.Header>
-                <p>sorry for the inconvenience</p>
-              </Message>
-            )}
-          </Segment>
-        </Grid.Column>
-        <Grid.Column />
-      </Grid>
+      <h3 className="sectionTitle">Contact</h3>
+      <div className="formWrapper">
+        {" "}
+        <MyForm />
+        {messageSuccess && (
+          <Message positive>
+            <Message.Header>Message successfully sent!</Message.Header>
+            <p>We will respond as soon as possible</p>
+          </Message>
+        )}
+        {messageNegative && (
+          <Message negative>
+            <Message.Header>Message not sent!</Message.Header>
+            <p>sorry for the inconvenience</p>
+          </Message>
+        )}
+      </div>
     </div>
   );
 };
