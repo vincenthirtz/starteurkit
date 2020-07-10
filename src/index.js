@@ -38,7 +38,26 @@ i18n.use(initReactI18next).init({
         Eslint: "Eslint",
         Prettier: "Prettier",
         Pre_commit_Hook: "Pre-commit Hook",
+        Responsive: "Responsive",
+        ResponsiveDescription:
+          "Display of any page on a site automatically adapts to the screen size of the terminal that reads it.",
         "404": "Error 404",
+        FastDescription:
+          "In addition to ultra-fast deployment on a hosting service like Netlify, the Parcel library ensures an equally comfortable development.",
+        Customizable: "Customizable",
+        CustomizableDescription:
+          "With SASS, it's never been easier to edit a site. We also have preconceived themes and colors.",
+        Internationalization: "Internationalization",
+        InternationalizationDescription:
+          "We embed an easy-to-use language system so that your site speaks to everyone.",
+        ReadyToUse: "Ready to use",
+        ReadyToUseDescription: "An .env file to create and enjoy!",
+        Exportable: "Exportable",
+        ExportableDescription:
+          "Fork or pull request, inspiration or copy. Come participate in the project as you see fit.",
+        UniversalAccess: "Universal Access",
+        UniversalAccessDescription:
+          "No linguistic, technological or physical barriers. Any developer will manage on this project.",
       },
     },
     fr: {
@@ -72,7 +91,26 @@ i18n.use(initReactI18next).init({
         Eslint: "Eslint",
         Prettier: "Prettier",
         Pre_commit_Hook: "Pre-commit Hook",
+        Responsive: "Responsive",
+        ResponsiveDescription:
+          "L’affichage d’une quelconque page d’un site s’adapte de façon automatique à la taille de l’écran du terminal qui le lit.",
         "404": "Erreur 404",
+        FastDescription:
+          "En plus du déploiement ultra rapide sur un service d'hébergement comme Netlify, la librairie Parcel assure un développement tout aussi confortable.",
+        Customizable: "Personnalisable",
+        CustomizableDescription:
+          "Avec SASS, il n'a jamais été aussi facile de modifier un site. Nous avons aussi des thèmes et couleurs préconcus.",
+        Internationalization: "Internationalisation",
+        InternationalizationDescription:
+          "Nous embarquons un système de langues simple à utiliser pour que votre site parle à tout le monde.",
+        ReadyToUse: "Prêt à coder",
+        ReadyToUseDescription: "Un fichier .env à créer et c'est parti !",
+        Exportable: "Exportable",
+        ExportableDescription:
+          "Fork ou pull request, inspiration ou copie. Venez participer au projet comme bon vous semble.",
+        UniversalAccess: "Accès Universel",
+        UniversalAccessDescription:
+          "Aucune barrière linguistique, technologique ou physique. N'importe quel développeur se sébrouillera sur ce projet.",
       },
     },
   },
