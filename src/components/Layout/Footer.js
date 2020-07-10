@@ -26,7 +26,7 @@ const Footer = () => {
       <div className={`${color} row`}>
         <h4 className={`${color}`}>{t("Tech")}</h4>
         <ul>
-          <a className={`${color} linkfooter`} id="NIKTOISEMANTICUI" href="https://reactjs.org/">
+          <a className={`${color} linkfooter`}  href="https://reactjs.org/">
             React
           </a>
           <a className={`${color} linkfooter`} href="https://parceljs.org/">

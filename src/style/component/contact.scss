@@ -28,3 +28,29 @@
     font-family: "Montserrat";
     font-size: 1rem;
 }
+form {
+    display: flex;
+    flex-direction: column;
+    .contactStyle{
+        padding: 0.5rem;
+        border-radius: 0.2rem;
+        border: solid;
+        border-width: 1px;
+        border-color: #ece5e5;
+        resize: vertical;
+    }
+    margin-bottom: 1rem;
+}
+
+.contactMessage{
+    // background-color: brown;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    color: white;
+    &.negative{
+        background-color: brown;
+    }
+    &.positive{
+        background-color: rgb(56, 165, 42);
+    }
+}

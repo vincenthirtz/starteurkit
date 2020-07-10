@@ -19,6 +19,7 @@ const About = () => (
         work="Working on ..."
         github="https://github.com/"
         date="Contact us to join"
+        country="france"
       />
       <Profile
         name="Bébou"

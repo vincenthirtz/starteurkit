@@ -1,5 +1,7 @@
 @use '../theme/color.scss';
 @import "../queries/mixins.scss";
+@import "./queries/themify.scss";
+
 
 
 .profilHolder {
@@ -10,4 +12,49 @@
 
 @media all and(min-width: 801px) {
   @include About;
+}
+
+
+.card{
+  // @include themify ($themes){
+  //   background-color: themed('text');
+  // }
+  background-color: white;
+  max-width: 15rem;
+  height: fit-content;
+  filter: drop-shadow(0 0 0.4rem rgb(216, 212, 213));
+  border-radius: 0.5rem;
+  overflow: hidden;
+  .imgWrapper{
+    width: 100%;
+    height: 15rem;
+    overflow: hidden;
+    margin-bottom:1rem;
+    display: flex;
+    justify-content: center;
+    img{
+      height: 100%;
+      width: auto;
+    }
+  }
+  .cardInfo{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 0.5rem 0.5rem
+  }
+  .cardGitLink{
+    size: 2rem;
+    padding: 0.5rem;
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    i{
+      @include themify($themes){
+        color: themed('base');
+      }
+      font-size:1.5rem;
+  
+    }
+  }
 }
