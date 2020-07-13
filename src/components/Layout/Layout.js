@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import PropTypes from "prop-types";
 import ThemeOnePage from "../themes/ThemeOnePage";
+import ThemeHorizontal from "../themes/ThemeHorizontal";
 import ThemeDefault from "../themes/ThemeDefault";
 import "../../style/app.scss";
 import { ThemeContext } from "../../context";
@@ -13,6 +14,8 @@ const Layout = (props) => {
     switch (theme) {
       case "default":
         return <ThemeDefault>{child}</ThemeDefault>;
+      case "horizontal":
+        return <ThemeHorizontal />;
       case "onepage":
         return <ThemeOnePage />;
       default:
