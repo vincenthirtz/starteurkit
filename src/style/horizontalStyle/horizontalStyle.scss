@@ -1,0 +1,30 @@
+@use'sass:color';
+
+html{
+    // overflow: hidden;
+    scroll-behavior: smooth;
+}
+
+.presentationHolder{
+    height: 900px !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+}
+.presentationHolder{
+    height: 100%;
+    padding: 20rem !important  ;
+    flex-direction: column;
+}
+
+.gridWrap{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+.article{
+    &.bot{
+        grid-column: 2;
+
+    }
+}

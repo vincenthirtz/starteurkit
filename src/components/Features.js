@@ -4,7 +4,7 @@ import icon from "./icon";
 const Features = () => (
   <div className="featureWrap articles">
     <h3 className="sectionTitle">Features</h3>
-    <div>
+    <div className="gridWrap">
       <div className="article">
         {icon.IconResponsive()}
         <div className="textOlder">
@@ -53,7 +53,7 @@ const Features = () => (
         </div>
       </div>
 
-      <div className="article">
+      <div className="article bot">
         {icon.IconExport()}
         <div className="textOlder">
           <h4>Exportable</h4>

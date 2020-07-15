@@ -6,11 +6,13 @@
 @use './component/contact.scss';
 @use './component/sidebar.scss';
 @use './component/feature.scss';
+@use './component/modal.scss';
 @import "./theme/themes.scss";
 @import "./queries/themify.scss";
 @import "./theme/font.scss";
 @import "./queries/media-queries.scss";
 @import "../style/onePageStyle/onePageStyle.scss";
+@import "../style/horizontalStyle/horizontalStyle.scss";
 
 *,
 *::after,
