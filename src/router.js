@@ -5,41 +5,18 @@ import About from "./components/About/About";
 import Features from "./components/Features";
 import Contact from "./components/Contact";
 import NotFoundPage from "./components/NotFoundPage";
-import Layout from "./components/Layout/Layout";
 
 function Router() {
   const routes = {
-    "/": () => (
-      <Layout>
-        <Home />
-      </Layout>
-    ),
-    "/about": () => (
-      <Layout>
-        <About />
-      </Layout>
-    ),
-    "/features": () => (
-      <Layout>
-        <Features />
-      </Layout>
-    ),
-    "/contact": () => (
-      <Layout>
-        <Contact />
-      </Layout>
-    ),
+    "/": () => <Home />,
+    "/about": () => <About />,
+    "/features": () => <Features />,
+    "/contact": () => <Contact />,
     // '/products/:id': ({id}) => <ProductDetails id={id} />
   };
 
   const routeResult = useRoutes(routes);
 
-  return (
-    routeResult || (
-      <Layout>
-        <NotFoundPage />
-      </Layout>
-    )
-  );
+  return routeResult || <NotFoundPage />;
 }
 export default Router;

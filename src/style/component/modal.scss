@@ -1,4 +1,6 @@
 @use 'sass:color';
+@import '../queries/themify.scss';
+
 
 .modalWrap{
     position: absolute;
@@ -8,4 +10,32 @@
     width: 100%;
     height: 100%;
     background-color: #01000abf;
+    overflow: hidden;
+
+    button{
+        position: absolute;
+        right: 0;
+        margin: 1.5rem;
+    }
+    .modalBackground{
+        background-color: white;
+        width: 90vw;
+        height: 190vh;
+        margin: auto;
+        border-radius: 0.5rem;
+        filter: drop-shadow(2px 4px 6px black);
+        overflow:hidden;
+        position: relative;
+
+
+    }
+            .close{
+                width: 2rem;
+                height: 2rem;
+                fill: white;
+                position: sticky;
+                right: 0;
+                margin: 1.5rem 1.5rem 0.5rem 96vw;
+                cursor: pointer;
+            }
 }
