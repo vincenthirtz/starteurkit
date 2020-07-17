@@ -3,13 +3,16 @@ import { Icon } from "semantic-ui-react";
 import { useTranslation } from "react-i18next";
 import AnimationTest from "./animations/coffeDrift";
 import { ColorThemeContext } from "../ColorContext";
+import {ThemeContext} from "../context";
+
 
 const Home = () => {
   const { t } = useTranslation();
   const color = useContext(ColorThemeContext);
+  const theme = useContext(ThemeContext);
 
   return (
-    <div className={`${color} articles`}>
+    <div className={`${color} articles ${theme}`}>
       <div>
         <div className={`${color} HomeArticle`} id="coffee">
           <h3 className={`${color} question`}> {t("For students and developers")}</h3>

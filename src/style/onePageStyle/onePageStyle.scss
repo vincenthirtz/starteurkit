@@ -35,3 +35,11 @@ html {
     }
   }
 }
+
+.articles.onepage{
+  border-bottom: solid;
+  border-width: 1px;
+  @include themify($themes){
+    border-color: themed('text');
+  }
+}

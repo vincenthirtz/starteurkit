@@ -1,41 +1,50 @@
 @use 'sass:color';
-@import '../queries/themify.scss';
+@import "../queries/themify.scss";
+@import "../theme/themes.scss";
+@import "../queries/mixins.scss";
 
-
-.modalWrap{
+.modalWrap {
+  position: absolute;
+  z-index: 99999;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #01000abf;
+  overflow: hidden;
+  // display: flex;
+  // align-items: center; //ça ne veux pas fonctionner avec une query 
+  
+  button {
     position: absolute;
-    z-index: 99999;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #01000abf;
+    right: 0;
+    margin: 1.5rem;
+  }
+  .modalBackground {
+    background-color: white;
+    width: 90vw;
+    height: auto;
+    margin: 3VH auto;
+    border-radius: 0.5rem;
+    filter: drop-shadow(2px 4px 6px black);
     overflow: hidden;
-
-    button{
-        position: absolute;
-        right: 0;
-        margin: 1.5rem;
+    position: relative;
+  }
+  .close {
+    width: 2rem;
+    height: 2rem;
+    @include themify($themes){
+      fill: themed("base");
     }
-    .modalBackground{
-        background-color: white;
-        width: 90vw;
-        height: 190vh;
-        margin: auto;
-        border-radius: 0.5rem;
-        filter: drop-shadow(2px 4px 6px black);
-        overflow:hidden;
-        position: relative;
-
-
-    }
-            .close{
-                width: 2rem;
-                height: 2rem;
-                fill: white;
-                position: sticky;
-                right: 0;
-                margin: 1.5rem 1.5rem 0.5rem 96vw;
-                cursor: pointer;
-            }
-}
+    position: fixed;
+    z-index: 9;
+    right: 7.5vw;
+    top: 4vh;
+    cursor: pointer;
+  }
+      @media all and(min-width: 801px){
+       @include WithModalDesktop;
+      }
+         
+  }
+  

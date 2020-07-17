@@ -8,8 +8,10 @@
 
 .formWrapper{
     margin: 8rem auto;
-    width: 50%;
+    width: 80%;
 }
+
+
 .formTitle{
     margin: 0;
     font-family: "Montserrat";
@@ -19,6 +21,7 @@
 
 @media all and(min-width: 801px){
     @include Contact;
+   
 }
 
 .demo-button{

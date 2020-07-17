@@ -25,10 +25,10 @@ const Modal = (props) => {
 
   return (
     <div className="modalWrap">
+      <div className="modalBackground">
       <div onClick={handleClickOutside}>
         <Cancel />
       </div>
-      <div className="modalBackground">
         <OutsideModal>{children}</OutsideModal>
       </div>
     </div>

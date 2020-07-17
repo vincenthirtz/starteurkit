@@ -12,7 +12,7 @@
 @import "./theme/font.scss";
 @import "./queries/media-queries.scss";
 @import "../style/onePageStyle/onePageStyle.scss";
-@import "../style/horizontalStyle/horizontalStyle.scss";
+@import "../style/withModalStyle/withModalStyle.scss";
 
 *,
 *::after,
@@ -20,39 +20,41 @@
   box-sizing: border-box;
 }
 
-body{
+body {
   width: 100%;
   margin: 0;
   // overflow-x: hidden;
 }
 
-a{
-  @include themify($themes){
-    color: themed('text');
+a {
+  @include themify($themes) {
+    color: themed("text");
   }
   text-decoration: none;
-  }
+}
 
- h3 {
+h3 {
   text-align: center;
   margin: 0;
   padding: 1rem 0;
-  @include themify($themes){
-  color: themed('highlight'); }
+  @include themify($themes) {
+    color: themed("highlight");
+  }
   font-size: 2rem;
   font-family: "Montserrat";
   letter-spacing: 0.1rem;
 }
-.sectionTitle{
-  @include themify($themes){
-    color: themed('base');
+.sectionTitle {
+  @include themify($themes) {
+    color: themed("base");
   }
 }
 
- #app {
-  @include themify($themes){
-  background-color: themed('base');
-  color: themed('highlight');}
+#app {
+  @include themify($themes) {
+    background-color: themed("base");
+    color: themed("highlight");
+  }
   font-family: "Lato", sans-serif;
 
   margin: 0;
@@ -63,23 +65,27 @@ a{
 
   .articles {
     padding: 3em 0 2rem;
-    @include themify($themes){
-      background-color: themed('text');
+    // margin-top: 3rem;
+    @include themify($themes) {
+      background-color: themed("text");
     }
     p {
-      @include themify($themes){
-      color: themed('subtle');}
+      @include themify($themes) {
+        color: themed("subtle");
+      }
     }
     .homeP {
       text-align: center;
     }
   }
 }
-.discordLink{
-  @include themify($themes){
-    color: themed('base');
+.discordLink {
+  @include themify($themes) {
+    color: themed("base");
   }
-  &:hover{font-weight: bolder;}
+  &:hover {
+    font-weight: bolder;
+  }
 }
 
 .form-left {
@@ -101,9 +107,9 @@ a{
 .question {
   font-size: 2em;
 }
-.heart{
-  @include themify($themes){
-    color: themed('highlight');
+.heart {
+  @include themify($themes) {
+    color: themed("highlight");
   }
 }
 
@@ -117,8 +123,9 @@ a{
   #chevronTop {
     width: 1.2rem;
     height: auto;
-    @include themify($themes){
-    fill: themed('text');}
+    @include themify($themes) {
+      fill: themed("text");
+    }
   }
 }
 .flags {
@@ -134,11 +141,10 @@ a{
     cursor: pointer;
     width: 40px;
   }
- }
+}
 
- #__lottie_element_37 {
-  @include themify($themes){
-    fill: themed('base');}
- }
-
- 
+#__lottie_element_37 {
+  @include themify($themes) {
+    fill: themed("base");
+  }
+}

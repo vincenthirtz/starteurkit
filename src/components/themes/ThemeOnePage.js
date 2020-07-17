@@ -14,6 +14,7 @@ const Theme_OnePage = () => {
   return (
     <>
       <ul id="onePageMenu">
+        <a href="#topPage">logo</a>
         <a href="#homeOne">Home</a>
         <a href="#featuresOne">Features</a>
         <a href="#aboutOne">About</a>
@@ -21,8 +22,8 @@ const Theme_OnePage = () => {
       </ul>
       <div className="scroll-container">
         <div className={`${color} headerHome `}>
-          <a id="homeOne" />
           <HeaderComponent />
+          <a id="homeOne" />
           <Home />
         </div>
         <a id="featuresOne" />

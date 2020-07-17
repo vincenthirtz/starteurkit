@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import i18n from "i18next";
 import { useTranslation } from "react-i18next";
@@ -7,12 +7,20 @@ import Header from "./Header";
 import OutsideAlerter from "./menuWrapper";
 import icon from "../icon";
 import { ColorThemeContext } from "../../ColorContext";
-
 import OpenMenuHook from "../customHook";
 
 const SidebarComponent = (props) => {
   const { children } = props;
   const { t } = useTranslation();
+  const [hasChange, setHasChange] = useState(false);
+
+  const setOnClick = () => {
+    setHasChange(true);
+  }
+
+  useEffect(() => {
+    setHasChange(false);
+  }, [hasChange])
 
   const setLangFR = () => i18n.changeLanguage("fr-FR");
 
@@ -25,16 +33,16 @@ const SidebarComponent = (props) => {
       <div className={`${color} headerHome`}>
         <OutsideAlerter>
           <div className={`topMenu ${OpenMenu ? "" : "hidden"}`}>
-            <a onClick={() => navigate("/")} active={getWorkingPath() === "/"}>
+            <a onClick={() => {navigate("/"); setOnClick()}} active={getWorkingPath() === "/"}>
               {t("Home")}
             </a>
-            <a onClick={() => navigate("/features")} active={getWorkingPath() === "/features"}>
+            <a onClick={() => {navigate("/features"); setOnClick()}} active={getWorkingPath() === "/features"}>
               {t("Features")}
             </a>
-            <a onClick={() => navigate("/about")} active={getWorkingPath() === "/about"}>
+            <a onClick={() => {navigate("/about"); setOnClick()}} active={getWorkingPath() === "/about"}>
               {t("About")}
             </a>
-            <a onClick={() => navigate("/contact")} active={getWorkingPath() === "/contact"}>
+            <a onClick={() => {navigate("/contact"); setOnClick()}} active={getWorkingPath() === "/contact"}>
               {t("Contact")}
             </a>
           </div>

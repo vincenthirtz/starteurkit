@@ -1,12 +1,27 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Formiz, useForm } from "@formiz/core";
 import { isEmail } from "@formiz/validations";
 import MyField from "./Form/Field";
 import MyTextArea from "./Form/Textarea";
 
+
 const Contact = () => {
+
   const [messageSuccess, setMessageSuccess] = useState(false);
   const [messageNegative, setMessageNegative] = useState(false);
+
+  const windowWidth = window.innerWidth;
+  const [largeClass, setLargeClass] = useState('')
+  
+  useEffect(()=>{
+    if(windowWidth > 800){
+      setLargeClass("large")
+    }else{
+      setLargeClass('')
+    }
+  },[windowWidth])
+
+    
 
   const MyForm = () => {
     const myForm = useForm();
@@ -70,9 +85,9 @@ const Contact = () => {
   };
 
   return (
-    <div className="articles">
+    <div className={`articles`}>
       <h3 className="sectionTitle">Contact</h3>
-      <div className="formWrapper">
+      <div className={`formWrapper ${largeClass}`}>
         {" "}
         <MyForm />
         {messageSuccess && (

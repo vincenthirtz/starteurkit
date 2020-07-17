@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import ReactDOM from "react-dom";
 import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
@@ -6,7 +6,7 @@ import { ThemeContext } from "./context";
 import { ColorThemeContext } from "./ColorContext";
 import Router from "./router";
 import Layout from "./components/Layout/Layout";
-import ModalHook from "./components/ModalHook";
+// import ModalHook from "./components/ModalHook";
 
 i18n.use(initReactI18next).init({
   resources: {
@@ -89,16 +89,16 @@ i18n.use(initReactI18next).init({
 const AppComponent = () => {
   const [theme] = useState(process.env.THEME);
   const [color] = useState(`theme-${process.env.COLOR}`);
-  const [modalHook] = ModalHook.useModalHook();
+  // const [modalHook] = ModalHook.useModalHook();
 
-  useEffect(() => {
-    if (!modalHook) {
-      const bodyHTML = document.getElementsByTagName("body")[0];
-      if (bodyHTML && bodyHTML.style) {
-        bodyHTML.style.overflow = "auto";
-      }
-    }
-  }, [modalHook]);
+  // useEffect(() => {
+  //   if (!modalHook) {
+  //     const bodyHTML = document.getElementsByTagName("body")[0];
+  //     if (bodyHTML && bodyHTML.style) {
+  //       bodyHTML.style.overflow = "auto";
+  //     }
+  //   }
+  // }, [modalHook]);
 
   return (
     <div className={color}>

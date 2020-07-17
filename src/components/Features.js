@@ -1,10 +1,25 @@
-import React from "react";
+import React, { useState, useEffect, useContext } from "react";
 import icon from "./icon";
+import {ThemeContext} from "../context";
 
-const Features = () => (
-  <div className="featureWrap articles">
+const Features = () => {
+  const theme = useContext(ThemeContext);
+  const windowWidth = window.innerWidth;
+  const [gridClass, setgridClass] = useState('')
+  
+  useEffect(()=>{
+    if(windowWidth > 800){
+      setgridClass("gridWrap")
+    }else{
+      setgridClass('')
+    }
+  },[windowWidth])
+
+  
+  return(
+  <div className={`featureWrap articles ${theme}`}>
     <h3 className="sectionTitle">Features</h3>
-    <div className="gridWrap">
+    <div className={`${gridClass}`}>
       <div className="article">
         {icon.IconResponsive()}
         <div className="textOlder">
@@ -61,7 +76,7 @@ const Features = () => (
         </div>
       </div>
     </div>
-  </div>
-);
+   </div>
+)};
 
 export default Features;

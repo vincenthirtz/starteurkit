@@ -7,12 +7,13 @@
     background-color: themed('transparent');
 }
   padding: 0 0 2rem;
+  min-height: 72vh;
 
   .article {
     display: flex;
     justify-content: center;
     margin: 1rem auto;
-    width: 50%;
+    // width: 50%;
     #iconCake,
     #iconEdit,
     #iconFast,

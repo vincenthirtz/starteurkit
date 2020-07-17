@@ -1,12 +1,13 @@
 @use'sass:color';
 
+
 html{
     // overflow: hidden;
     scroll-behavior: smooth;
 }
 
-.presentationHolder{
-    height: 900px !important;
+.presentationHolder.modal{
+    height: 100vh ;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -14,8 +15,11 @@ html{
 }
 .presentationHolder{
     height: 100%;
-    padding: 20rem !important  ;
+    padding: 20rem  ;
     flex-direction: column;
+}
+.homeLogo.modal{
+margin:0;
 }
 
 .gridWrap{
