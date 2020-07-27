@@ -1,24 +1,22 @@
 @import "../queries/mixins.scss";
 @import "./theme/color.scss";
 
-
 div.footer {
-  @include themify($themes){
-    background-color: themed('highlight');
-    color: themed('text');
-  padding: 2rem;
-  .row {
-
-     h4 {
-      font-family: "Montserrat semi bold";
-      font-size: 1.3rem;
-      text-align: center;
-      @include themify($themes){
-            color: themed('text');
-            }
+  @include themify($themes) {
+    background-color: themed("highlight");
+    color: themed("text");
+    .row {
+      padding: 1rem 0;
+      h4 {
+        font-family: "Montserrat semi bold";
+        font-size: 1.3rem;
+        text-align: center;
+        @include themify($themes) {
+          color: themed("text");
         }
+      }
       border-radius: 0 0 5rem 5rem;
-      width: 100%;
+      // width: 100%;
     }
     p {
       text-align: center;
@@ -30,8 +28,8 @@ div.footer {
       flex-direction: column;
       align-items: center;
       justify-content: space-evenly;
-    
-        margin-bottom: 0.5rem;
+
+      margin-bottom: 0.5rem;
       .bot {
         border-top: solid;
         border-width: 1px;
@@ -39,7 +37,7 @@ div.footer {
       }
     }
   }
-};
+}
 @media all and(min-width: 801px) {
   @include FooterDesktop;
 }

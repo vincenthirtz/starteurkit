@@ -1,15 +1,17 @@
 // @use 'sass:color';
-@import '../theme/themes.scss';
+@import "../theme/themes.scss";
 @import "./queries/themify.scss";
 // @import "../queries/media-queries.scss";
 @import "./queries/mixins.scss";
 // @import "./theme/color.scss";
 @import "../theme/font.scss";
 
-
 .topMenu {
   @include topMenu();
   animation: menuMove 0.5s;
+  @include themify($themes) {
+    background-color: themed("highlight");
+  }
   @media all and(min-width: 801px) {
     @include menu;
   }
@@ -19,6 +21,9 @@
   animation: menuMoveBack 0.5s;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
+  @include themify($themes) {
+    background-color: themed("base");
+  }
   @media all and(min-width: 801px) {
     @include menu;
   }
@@ -45,8 +50,8 @@
 //////fond du header//////
 
 .headerHome {
-  @include themify($themes){
-    background-color: themed('transparent');
+  @include themify($themes) {
+    background-color: themed("transparent");
   }
   .presentationHolder {
     margin: auto;
@@ -57,11 +62,10 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      @include themify($themes){
-        color: themed('text');
+      @include themify($themes) {
+        color: themed("text");
       }
       h1 {
-        
         font-size: 3rem;
         margin-bottom: 2rem;
       }
@@ -78,8 +82,8 @@
         word-wrap: break-word;
       }
     }
-    @include themify($themes){
-      background: themed('base');
+    @include themify($themes) {
+      background: themed("base");
     }
   }
   @media all and(min-width: 801px) {
@@ -92,8 +96,8 @@
 }
 
 .homeLogo {
-  @include themify($themes){
-    color: themed('text');
+  @include themify($themes) {
+    color: themed("text");
   }
   display: flex;
   justify-content: space-around;
@@ -103,4 +107,3 @@
     margin: 1rem;
   }
 }
-

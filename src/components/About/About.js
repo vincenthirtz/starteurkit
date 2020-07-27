@@ -1,8 +1,11 @@
-import React from "react";
+import React, {useContext} from "react";
 import Profile from "./Profile";
+import {ThemeContext} from '../../context';
 
-const About = () => (
-  <div className="articles">
+const About = () => {
+  const theme = useContext(ThemeContext);
+  return(
+  <div className={`articles ${theme}`}>
     <h3 className="sectionTitle" >About</h3>
     <div className="profilHolder">
       <Profile
@@ -19,6 +22,7 @@ const About = () => (
         work="Working on ..."
         github="https://github.com/"
         date="Contact us to join"
+        country="france"
       />
       <Profile
         name="Bébou"
@@ -29,7 +33,7 @@ const About = () => (
         country="france"
       />
     </div>
-  </div>
-);
+  </div>)
+};
 
 export default About;

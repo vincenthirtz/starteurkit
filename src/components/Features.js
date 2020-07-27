@@ -1,14 +1,27 @@
-import React from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { useTranslation } from "react-i18next";
 import icon from "./icon";
+import { ThemeContext } from "../context";
 
 const Features = () => {
+  const theme = useContext(ThemeContext);
+  const windowWidth = window.innerWidth;
+  const [gridClass, setgridClass] = useState("");
+
+  useEffect(() => {
+    if (windowWidth > 800) {
+      setgridClass("gridWrap");
+    } else {
+      setgridClass("");
+    }
+  }, [windowWidth]);
+
   const { t } = useTranslation();
 
   return (
-    <div className="featureWrap articles">
+    <div className={`featureWrap articles ${theme}`}>
       <h3 className="sectionTitle">{t("Features")}</h3>
-      <div>
+      <div className={`${gridClass}`}>
         <div className="article">
           {icon.IconResponsive()}
           <div className="textOlder">
@@ -57,7 +70,7 @@ const Features = () => {
           </div>
         </div>
 
-        <div className="article">
+        <div className="article bot">
           {icon.IconExport()}
           <div className="textOlder">
             <h4>{t("Exportable")}</h4>

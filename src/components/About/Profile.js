@@ -1,27 +1,27 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Card, Icon, Image, Flag } from "semantic-ui-react";
+import { Icon, Flag } from "semantic-ui-react";
 
 const Profile = (props) => {
   const { img, name, date, work, github, country } = props;
 
   return (
-    <Card>
-      <Image src={img} wrapped ui={false} />
-      <Card.Content>
-        <Card.Header>{name}</Card.Header>
-        <Card.Meta>
-          <span className="date">{date}</span>
-        </Card.Meta>
-        <Card.Description>{work}</Card.Description>
-      </Card.Content>
-      <Card.Content extra>
+    <div className="card">
+      <div className='imgWrapper'>
+        <img src={img} />
+      </div>
+      <div className="cardInfo">
+        <span>{name}</span>
+        <span className="date">{date}</span>
+        <span>{work}</span>
+      </div>
+      <div className="cardGitLink">
         <a href={github}>
           <Icon name="github" />
         </a>
         {country && <Flag name={country} />}
-      </Card.Content>
-    </Card>
+      </div>
+    </div>
   );
 };
 

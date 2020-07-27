@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import ReactDOM from "react-dom";
 import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
 import { ThemeContext } from "./context";
 import { ColorThemeContext } from "./ColorContext";
 import Router from "./router";
+import Layout from "./components/Layout/Layout";
+// import ModalHook from "./components/ModalHook";
 
 i18n.use(initReactI18next).init({
   resources: {
@@ -122,28 +124,23 @@ i18n.use(initReactI18next).init({
   },
 });
 
-class AppComponent extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      theme: process.env.THEME,
-      color: `theme-${process.env.COLOR}`,
-    };
-  }
+const AppComponent = () => {
+  const [theme] = useState(process.env.THEME);
+  const [color] = useState(`theme-${process.env.COLOR}`);
 
-  render() {
-    return (
-      <div className={this.state.color}>
-        <ThemeContext.Provider value={this.state.theme}>
-          <ColorThemeContext.Provider value={this.state.color}>
+  return (
+    <div className={color}>
+      <ThemeContext.Provider value={theme}>
+        <ColorThemeContext.Provider value={color}>
+          <Layout>
             <Router />
-          </ColorThemeContext.Provider>
-        </ThemeContext.Provider>
-      </div>
-    );
-  }
-}
+          </Layout>
+        </ColorThemeContext.Provider>
+      </ThemeContext.Provider>
+    </div>
+  );
+};
 
 const App = document.getElementById("app");
 
-ReactDOM.render(<AppComponent />, App);
+export default ReactDOM.render(<AppComponent />, App);

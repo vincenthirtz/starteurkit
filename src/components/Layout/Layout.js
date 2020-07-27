@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import PropTypes from "prop-types";
 import ThemeOnePage from "../themes/ThemeOnePage";
+import ThemeModal from "../themes/ThemeModal";
 import ThemeDefault from "../themes/ThemeDefault";
 import "../../style/app.scss";
 import { ThemeContext } from "../../context";
@@ -13,6 +14,8 @@ const Layout = (props) => {
     switch (theme) {
       case "default":
         return <ThemeDefault>{child}</ThemeDefault>;
+      case "modal":
+        return <ThemeModal />;
       case "onepage":
         return <ThemeOnePage />;
       default:

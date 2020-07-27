@@ -1,0 +1,25 @@
+import { useEffect, useRef } from "react";
+
+export default (eventName, handler, element = window) => {
+  const savedHandler = useRef();
+
+  useEffect(() => {
+    if (handler) {
+      savedHandler.current = handler;
+    }
+  }, [handler]);
+
+  useEffect(() => {
+    const isSupported = element && element.addEventListener;
+    if (!isSupported) return;
+
+    const eventListener = (event) => savedHandler.current(event);
+
+    element.addEventListener(eventName, eventListener);
+
+    // eslint-disable-next-line consistent-return
+    return () => {
+      element.removeEventListener(eventName, eventListener);
+    };
+  }, [eventName, element]);
+};

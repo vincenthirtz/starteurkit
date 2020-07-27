@@ -27,9 +27,10 @@ npm i
 ## Themes
 
 In .env file:
+
 ```javascript
-THEME="default" // default || onepage
-COLOR="light" // light || dark
+THEME = "default"; // default || onepage
+COLOR = "light"; //dark || greenish || saumon || greatOldOne || honey || pharmaceutical || playduh || grandmaLeavingRoom || camouflage || bigout || princessBBG || luna ||fifties || ghost ||nightWatch ||slayer || initial || sunset || unicorn || twentyUnder
 ```
 
 ## Usage
@@ -45,6 +46,7 @@ npm run prod
 ```
 
 ## Todo
+
 - Generator yeoman
 - Add Storybook
 - Unit tests

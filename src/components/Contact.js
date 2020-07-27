@@ -1,16 +1,27 @@
-import React, { useState } from "react";
-import { 
-  // Button,
-   Form, Message } from "semantic-ui-react";
+import React, { useEffect, useState } from "react";
 import { Formiz, useForm } from "@formiz/core";
-// import { isEmail } from "@formiz/validations";
-// import MyField from "./Form/Field";
-// import MyTextArea from "./Form/Textarea";
-import { InputField, TextArea } from "./contactElements/TextArea";
+import { isEmail } from "@formiz/validations";
+import MyField from "./Form/Field";
+import MyTextArea from "./Form/Textarea";
+
 
 const Contact = () => {
+
   const [messageSuccess, setMessageSuccess] = useState(false);
   const [messageNegative, setMessageNegative] = useState(false);
+
+  const windowWidth = window.innerWidth;
+  const [largeClass, setLargeClass] = useState('')
+  
+  useEffect(()=>{
+    if(windowWidth > 800){
+      setLargeClass("large")
+    }else{
+      setLargeClass('')
+    }
+  },[windowWidth])
+
+    
 
   const MyForm = () => {
     const myForm = useForm();
@@ -37,9 +48,9 @@ const Contact = () => {
     return (
       <>
         <Formiz onValidSubmit={submitForm} connect={myForm}>
-          <Form noValidate onSubmit={myForm.submit} className="demo-form" style={{ minHeight: "16rem" }}>
+          <form noValidate onSubmit={myForm.submit} className="demo-form" style={{ minHeight: "16rem" }}>
             <div className="form-content">
-              {/* <MyField name="name" label="Name" />
+              <MyField name="name" label="Name" className="contactStyle"/>
 
               <MyField
                 name="email"
@@ -53,12 +64,8 @@ const Contact = () => {
                   },
                 ]}
               />
-              <MyTextArea name="message" label="Message" required="Message is required" /> */}
+              <MyTextArea name="message" label="Message" required="Message is required" className="contactStyle" />
 
-              {/* input fait main  */}
-              <InputField label='Name' />
-              <InputField label='Email*' />
-              <TextArea label='Message*' />
             </div>
 
             <div className="demo-form__footer">
@@ -71,29 +78,29 @@ const Contact = () => {
                 </button>
               </div>
             </div>
-          </Form>
+          </form>
         </Formiz>
       </>
     );
   };
 
   return (
-    <div className="articles">
+    <div className={`articles`}>
       <h3 className="sectionTitle">Contact</h3>
-      <div className="formWrapper">
+      <div className={`formWrapper ${largeClass}`}>
         {" "}
         <MyForm />
         {messageSuccess && (
-          <Message positive>
-            <Message.Header>Message successfully sent!</Message.Header>
+          <div positive className="contactMessage positive" >
+            <h4>Message successfully sent!</h4>
             <p>We will respond as soon as possible</p>
-          </Message>
+          </div>
         )}
         {messageNegative && (
-          <Message negative>
-            <Message.Header>Message not sent!</Message.Header>
+          <div negative className="contactMessage negative">
+            <h4>Message not sent!</h4>
             <p>sorry for the inconvenience</p>
-          </Message>
+          </div>
         )}
       </div>
     </div>

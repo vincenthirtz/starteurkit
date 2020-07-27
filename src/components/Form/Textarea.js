@@ -1,6 +1,5 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { TextArea, Form } from "semantic-ui-react";
 import { useField } from "@formiz/core";
 
 const MyTextArea = (props) => {
@@ -10,18 +9,18 @@ const MyTextArea = (props) => {
   const showError = !isValid && (!isPristine || isSubmitted);
 
   return (
-    <Form.Field>
-      <div className={`form-left demo-form-group ${showError && !isFocused ? "is-error" : ""}`}>
+    <form className={`form-left demo-form-group ${showError && !isFocused ? "is-error" : ""}`} >
         <label htmlFor={id}>
           {label}
           {required && " *"}
         </label>
-        <TextArea
+        <textarea
+        rows = "5"
           key={resetKey}
           id={id}
           type={type || "text"}
           value={value || ""}
-          className="demo-input"
+          className="contactStyle"
           onChange={(e) => setValue(e.target.value)}
           onFocus={() => setIsFocused(true)}
           onBlur={() => setIsFocused(false)}
@@ -33,8 +32,7 @@ const MyTextArea = (props) => {
             {errorMessage}
           </div>
         )}
-      </div>
-    </Form.Field>
+    </form>
   );
 };
 
