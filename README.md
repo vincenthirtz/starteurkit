@@ -15,7 +15,7 @@ React Starter kit
 - Prettier
 - Eslint
 - Sass
-- Semantic UI
+- Semantic UI (deleted soon)
 
 ## Install
 
@@ -37,6 +37,12 @@ COLOR = "light"; //dark || greenish || saumon || greatOldOne || honey || pharmac
 
 ```javascript
 npm run dev
+```
+
+## Prod
+
+```javascript
+npm run prod
 ```
 
 ## Todo
