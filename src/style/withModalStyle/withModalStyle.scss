@@ -12,11 +12,12 @@ html{
     align-items: center;
     justify-content: center;
     margin: auto;
+    padding: 1.5rem 0;
 }
 .presentationHolder{
     height: 100%;
-    padding: 20rem  ;
     flex-direction: column;
+    
 }
 .homeLogo.modal{
 margin:0;
@@ -29,6 +30,5 @@ margin:0;
 .article{
     &.bot{
         grid-column: 2;
-
     }
 }

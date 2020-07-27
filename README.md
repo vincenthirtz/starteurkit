@@ -27,9 +27,10 @@ npm i
 ## Themes
 
 In .env file:
+
 ```javascript
-THEME="default" // default || onepage
-COLOR="light" //dark || greenish || saumon || greatOldOne || honey || pharmaceutical || playduh || grandmaLeavingRoom || camouflage || bigout || princessBBG || luna ||fifties || ghost ||nightWatch ||slayer || initial || sunset || unicorn || twentyUnder 
+THEME = "default"; // default || onepage
+COLOR = "light"; //dark || greenish || saumon || greatOldOne || honey || pharmaceutical || playduh || grandmaLeavingRoom || camouflage || bigout || princessBBG || luna ||fifties || ghost ||nightWatch ||slayer || initial || sunset || unicorn || twentyUnder
 ```
 
 ## Usage
@@ -39,6 +40,7 @@ npm run dev
 ```
 
 ## Todo
+
 - Generator yeoman
 - Add Storybook
 - Unit tests

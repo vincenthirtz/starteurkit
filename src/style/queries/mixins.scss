@@ -16,6 +16,8 @@
   animation-duration: 40s;
   animation-iteration-count: 1;
   animation-direction: normal;
+  padding: 3rem 0 0;
+  margin: 0;
   a {
     font-size: 1.5rem;
     padding: 1rem 1rem 1.5rem;
@@ -70,8 +72,8 @@
       background: themed("base");
       border-bottom: solid;
       border-width: 1px;
-      @include themify($themes){
-        border-color: themed('base');
+      @include themify($themes) {
+        border-color: themed("base");
       }
     }
     display: flex;
@@ -83,8 +85,8 @@
         color: themed("text");
       }
       display: flex;
-    align-items: center;
-    justify-content: center;
+      align-items: center;
+      justify-content: center;
       margin: auto;
       padding: 10rem 0;
 
@@ -212,9 +214,9 @@
   .eight.wide.column {
     margin: 13.5rem 0;
   }
-  .formWrapper{
+  .formWrapper {
     width: 50%;
-}
+  }
 }
 
 @mixin FooterDesktop {
@@ -248,14 +250,12 @@
   }
 }
 
-
 @mixin WithModalDesktop {
-  .modalWrap{
+  .modalWrap {
     display: flex;
-    align-items: center; 
-  
-}
-  .close{
+    align-items: center;
+  }
+  .close {
     position: fixed;
     z-index: 9;
     right: 2.5vw;
@@ -266,21 +266,21 @@
   ul.onePageMenu {
     font-family: "Montserrat";
     font-weight: bolder;
-  
+
     width: 100%;
     text-align: center;
     text-decoration: none;
-    @include themify($themes){
-    background-color: themed('base');
-  }
+    @include themify($themes) {
+      background-color: themed("base");
+    }
     padding: 1rem 0;
     margin: 0;
     position: fixed;
     z-index: 9999;
     display: flex;
     justify-content: center;
-}
-a{
-  margin: 0 1rem;
-}
+  }
+  a {
+    margin: 0 1rem;
+  }
 }

@@ -10,6 +10,9 @@
 .topMenu {
   @include topMenu();
   animation: menuMove 0.5s;
+  @include themify($themes) {
+    background-color: themed("highlight");
+  }
   @media all and(min-width: 801px) {
     @include menu;
   }
@@ -19,6 +22,9 @@
   animation: menuMoveBack 0.5s;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
+  @include themify($themes) {
+    background-color: themed("base");
+  }
   @media all and(min-width: 801px) {
     @include menu;
   }

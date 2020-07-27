@@ -13,8 +13,8 @@
   background-color: #01000abf;
   overflow: hidden;
   // display: flex;
-  // align-items: center; //ça ne veux pas fonctionner avec une query 
-  
+  // align-items: center; //ça ne veux pas fonctionner avec une query
+
   button {
     position: absolute;
     right: 0;
@@ -24,7 +24,7 @@
     background-color: white;
     width: 90vw;
     height: auto;
-    margin: 3VH auto;
+    margin: 3vh auto;
     border-radius: 0.5rem;
     filter: drop-shadow(2px 4px 6px black);
     overflow: hidden;
@@ -33,7 +33,7 @@
   .close {
     width: 2rem;
     height: 2rem;
-    @include themify($themes){
+    @include themify($themes) {
       fill: themed("base");
     }
     position: fixed;
@@ -42,9 +42,7 @@
     top: 4vh;
     cursor: pointer;
   }
-      @media all and(min-width: 801px){
-       @include WithModalDesktop;
-      }
-         
+  @media all and(min-width: 801px) {
+    @include WithModalDesktop;
   }
-  
+}

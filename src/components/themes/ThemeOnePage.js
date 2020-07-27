@@ -24,7 +24,7 @@ const Theme_OnePage = () => {
             <span className={`${color} bun2`} />
           </div>
         </button>
-        <ul className={`onePageMenu ${OpenMenu ? "open" : ""}`}>
+        <ul className={`topMenu ${OpenMenu ? "" : "hidden"}`}>
           <a href="#topPage">logo</a>
           <a href="#homeOne">Home</a>
           <a href="#featuresOne">Features</a>

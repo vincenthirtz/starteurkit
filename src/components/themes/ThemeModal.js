@@ -35,7 +35,7 @@ const Theme_Modal = () => {
             <span className={`${color} bun2`} />
           </div>
         </button>
-        <ul className={`onePageMenu ${OpenMenu ? "open" : ""}`}>
+        <ul className={`topMenu ${OpenMenu ? "" : "hidden"}`}>
           <a href="#homeOne" onClick={() => triggerModal(<Home />)}>
             Presentation
           </a>
