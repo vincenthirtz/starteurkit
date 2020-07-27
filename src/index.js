@@ -89,16 +89,6 @@ i18n.use(initReactI18next).init({
 const AppComponent = () => {
   const [theme] = useState(process.env.THEME);
   const [color] = useState(`theme-${process.env.COLOR}`);
-  // const [modalHook] = ModalHook.useModalHook();
-
-  // useEffect(() => {
-  //   if (!modalHook) {
-  //     const bodyHTML = document.getElementsByTagName("body")[0];
-  //     if (bodyHTML && bodyHTML.style) {
-  //       bodyHTML.style.overflow = "auto";
-  //     }
-  //   }
-  // }, [modalHook]);
 
   return (
     <div className={color}>

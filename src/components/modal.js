@@ -20,15 +20,18 @@ const Modal = (props) => {
         bodyHTML.style.overflow = "hidden";
         bodyModal.style.overflow = "auto";
       }
+    } else {
+      const bodyHTML = document.getElementsByTagName("body")[0];
+      bodyHTML.style.overflow = "auto";
     }
   }, [modalHook]);
 
   return (
     <div className="modalWrap">
       <div className="modalBackground">
-      <div onClick={handleClickOutside}>
-        <Cancel />
-      </div>
+        <div onClick={handleClickOutside}>
+          <Cancel />
+        </div>
         <OutsideModal>{children}</OutsideModal>
       </div>
     </div>

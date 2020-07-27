@@ -9,6 +9,8 @@ import "../../style/app.scss";
 import { ColorThemeContext } from "../../ColorContext";
 import Modal from "../modal";
 import ModalHook from "../ModalHook";
+import OutsideAlerter from "../Layout/menuWrapper";
+import OpenMenuHook from "../customHook";
 
 const Theme_Modal = () => {
   const color = useContext(ColorThemeContext);
@@ -21,22 +23,34 @@ const Theme_Modal = () => {
     setPageName(page);
   };
 
+  const [OpenMenu, setOpenMenu] = OpenMenuHook.useOpenMenu();
+
   return (
     <>
-      <ul id="onePageMenu">
-        <a href="#homeOne" onClick={() => triggerModal(<Home />)}>
-          Presentation
-        </a>
-        <a href="#featuresOne" onClick={() => triggerModal(<Features />)}>
-          Features
-        </a>
-        <a href="#aboutOne" onClick={() => triggerModal(<About />)}>
-          About
-        </a>
-        <a href="#contactOne" onClick={() => triggerModal(<Contact />)}>
-          Contact
-        </a>
-      </ul>
+      <OutsideAlerter>
+        <button type="button" className={`burgerMenu ${OpenMenu ? "open" : ""}`} onClick={() => setOpenMenu(!OpenMenu)}>
+          <div>
+            <span className={`${color} bun1`} />
+            <span className={`${color} steak`} />
+            <span className={`${color} bun2`} />
+          </div>
+        </button>
+        <ul className={`onePageMenu ${OpenMenu ? "open" : ""}`}>
+          <a href="#homeOne" onClick={() => triggerModal(<Home />)}>
+            Presentation
+          </a>
+          <a href="#featuresOne" onClick={() => triggerModal(<Features />)}>
+            Features
+          </a>
+          <a href="#aboutOne" onClick={() => triggerModal(<About />)}>
+            About
+          </a>
+          <a href="#contactOne" onClick={() => triggerModal(<Contact />)}>
+            Contact
+          </a>
+        </ul>
+      </OutsideAlerter>
+
       <div>
         <div>
           <div className={`${color} headerHome `}>

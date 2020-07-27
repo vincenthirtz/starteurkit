@@ -6,9 +6,8 @@ div.footer {
   @include themify($themes){
     background-color: themed('highlight');
     color: themed('text');
-  padding: 2rem;
   .row {
-
+padding: 1rem 0;
      h4 {
       font-family: "Montserrat semi bold";
       font-size: 1.3rem;
@@ -18,7 +17,7 @@ div.footer {
             }
         }
       border-radius: 0 0 5rem 5rem;
-      width: 100%;
+      // width: 100%;
     }
     p {
       text-align: center;

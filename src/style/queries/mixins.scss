@@ -1,4 +1,4 @@
-@import "./queries/themify.scss";
+@import "./themify.scss";
 @import "../theme/themes.scss";
 
 @mixin topMenu() {
@@ -222,10 +222,8 @@
     display: flex;
     justify-content: space-around;
     align-items: baseline;
-
-    padding: 2rem 8rem;
+    padding: 2rem 0;
     .row {
-      padding: 0 4rem;
       h4 {
         font-size: 1.2rem;
         font-weight: 800;
@@ -235,14 +233,7 @@
         }
         border-radius: 0;
       }
-      display: flex;
-      flex-direction: column;
-      justify-content: start;
       ul {
-        display: flex;
-        flex-direction: column;
-        padding: 0;
-        margin: 0;
         a {
           @include themify($themes) {
             color: themed("text");
@@ -261,7 +252,7 @@
 @mixin WithModalDesktop {
   .modalWrap{
     display: flex;
-    align-items: center; //ça ne veux pas fonctionner avec une query 
+    align-items: center; 
   
 }
   .close{
@@ -269,4 +260,27 @@
     z-index: 9;
     right: 2.5vw;
   }
+}
+
+@mixin MenuOnePageDesktop {
+  ul.onePageMenu {
+    font-family: "Montserrat";
+    font-weight: bolder;
+  
+    width: 100%;
+    text-align: center;
+    text-decoration: none;
+    @include themify($themes){
+    background-color: themed('base');
+  }
+    padding: 1rem 0;
+    margin: 0;
+    position: fixed;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+}
+a{
+  margin: 0 1rem;
+}
 }

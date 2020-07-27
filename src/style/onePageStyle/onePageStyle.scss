@@ -1,16 +1,19 @@
 // @import "../theme/color.scss";
 @import "../theme/themes.scss";
 @import "../queries/themify.scss";
+@import "../queries/mixins.scss";
+
 html {
   scroll-behavior: smooth;
 }
-
- ul#onePageMenu {
+ul.onePageMenu{
+  display: none;
+}
+ ul.onePageMenu.open {
   font-family: "Montserrat";
   font-weight: bolder;
 
   width: 100%;
-  // margin: auto;
   text-align: center;
   text-decoration: none;
   @include themify($themes){
@@ -20,7 +23,11 @@ html {
   margin: 0;
   position: fixed;
   z-index: 9999;
-  
+  display: flex;
+  flex-direction: column;
+@include themify ($themes){
+  filter: drop-shadow(1px 1px 1px themed('highlight') );
+}
 
   a {
     @include themify($themes){
@@ -34,6 +41,10 @@ html {
       border-radius: 0 0 0.2rem 0.2rem;
     }
   }
+
+}
+ @media all and(min-width: 801px) {
+    @include MenuOnePageDesktop
 }
 
 .articles.onepage{
