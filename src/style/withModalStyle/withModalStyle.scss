@@ -1,34 +1,32 @@
-@use'sass:color';
+@use 'sass:color';
 
-
-html{
-    // overflow: hidden;
-    scroll-behavior: smooth;
-}
-
-.presentationHolder.modal{
-    height: 100vh ;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: auto;
-    padding: 1.5rem 0;
-}
-.presentationHolder{
-    height: 100%;
-    flex-direction: column;
-    
-}
-.homeLogo.modal{
-margin:0;
+html {
+  // overflow: hidden;
+  scroll-behavior: smooth;
 }
 
-.gridWrap{
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+.presentationHolder.modal {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  padding: 1.5rem 0;
 }
-.article{
-    &.bot{
-        grid-column: 2;
-    }
+.presentationHolder {
+  height: 100%;
+  flex-direction: column;
+}
+.homeLogo.modal {
+  margin: 0;
+}
+
+.gridWrap {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+.article {
+  &.bot {
+    grid-column: 2;
+  }
 }
