@@ -1,0 +1,28 @@
+#main {
+    display: grid;
+    grid-template-columns: 10em 1fr;
+    grid-template-rows: min-content 1fr min-content;
+    height: 300px;
+  }
+header {
+    grid-column: 1  / span 2;
+    grid-row: 1;
+    background-color: aqua;
+    height: 120px;
+  }
+  nav {
+    grid-column: 1;
+    grid-row: 2;
+    background-color: blueviolet;
+  }
+  article {
+    grid-column: 2;
+    grid-row: 2;
+    background-color: pink;
+    height: 80vh;
+  }
+  footer {
+    grid-column: 1  / span 2;
+    grid-row: 3;
+    background-color: royalblue;
+  }

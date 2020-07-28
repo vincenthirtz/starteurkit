@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import PropTypes from "prop-types";
+import ThemeDashBoard from "../themes/ThemeDashBoard";
 import ThemeOnePage from "../themes/ThemeOnePage";
 import ThemeModal from "../themes/ThemeModal";
 import ThemeDefault from "../themes/ThemeDefault";
@@ -18,6 +19,8 @@ const Layout = (props) => {
         return <ThemeModal />;
       case "onepage":
         return <ThemeOnePage />;
+      case "dashboard":
+        return <ThemeDashBoard />;
       default:
         return null;
     }
