@@ -9,6 +9,7 @@ import "../../style/app.scss";
 import { ColorThemeContext } from "../../ColorContext";
 import OpenMenuHook from "../customHook";
 import OutsideAlerter from "../Layout/menuWrapper";
+import icon from "../icon";
 
 const Theme_OnePage = () => {
   const color = useContext(ColorThemeContext);
@@ -25,7 +26,9 @@ const Theme_OnePage = () => {
           </div>
         </button>
         <ul className={`topMenu ${OpenMenu ? "" : "hidden"}`}>
-          <a href="#topPage">logo</a>
+          <a href="#topPage" style={{ width: "10px" }} className="menuTopArrow">
+            {icon.ChevronTop()}
+          </a>
           <a href="#homeOne">Home</a>
           <a href="#featuresOne">Features</a>
           <a href="#aboutOne">About</a>

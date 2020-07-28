@@ -42,6 +42,21 @@ ul.onePageMenu.open {
 }
 @media all and(min-width: 801px) {
   @include MenuOnePageDesktop;
+  .topMenu.hidden{
+    position: fixed;
+    top: 0;
+    left: 0;
+    .menuTopArrow{
+      svg{
+        vertical-align: middle;
+        padding-top: 2px;
+        width: 1.5rem;
+        @include themify($themes) {
+          fill: themed("text");
+        }
+      }
+    }
+  }
 }
 
 .articles.onepage {
