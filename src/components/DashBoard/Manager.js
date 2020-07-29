@@ -1,11 +1,15 @@
 let dash = [];
 
 const setDashboard = (params) => {
-   dash = params;
+    dash = params;
 };
 
 const getDashboard = () => {
     return dash;
 };
 
-export default { getDashboard, setDashboard };
+const getDashboardById = (id) => {
+    return dash.filter(element => element.id = id);
+};
+
+export default { getDashboard, setDashboard, getDashboardById };

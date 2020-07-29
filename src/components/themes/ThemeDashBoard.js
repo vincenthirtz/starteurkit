@@ -1,54 +1,35 @@
-import React, { useEffect } from "react";
+import React from "react";
 import Manager from "../DashBoard/Manager";
-import Footer from "../Layout/Footer";
-import './Theme.css';
-// import { ColorThemeContext } from "../../ColorContext";
+// import Rono from './dashboard/rono.png';
+import './dashboard/Theme.css';
+import { structure } from "./dashboard/structure";
+import { ColorThemeContext } from "../../ColorContext";
 // import OpenMenuHook from "../customHook";
 
-const test = [
-    {
-        "id": 0,
-        "code": "header",
-        "title": "First",
-        "body": <div>coucou header</div>
-    },
-    {
-        "id": 1,
-        "code": "nav",
-        "title": "Second",
-        "body": <div>coucou nav</div>
-    },
-    {
-        "id": 2,
-        "code": "article",
-        "title": "Third",
-        "body": <div>coucou article</div>
-    },
-    {
-        "id": 3,
-        "code": "footer",
-        "title": "Fourth",
-        "body": <div>coucou footer</div>
-    }
-]
-
 const ThemeDashBoard = () => {
-    //   const color = useContext(ColorThemeContext);
-    Manager.setDashboard(test);
+    Manager.setDashboard(structure);
 
     const dashboard = Manager.getDashboard();
+    const Header = dashboard.find(dash => dash.code === "header");
+    const Footer = dashboard.find(dash => dash.code === "footer");
+    const Article = dashboard.find(dash => dash.code === "article");
+    const Nav = dashboard.find(dash => dash.code === "nav");
+    const options = { align: "right", colorGeneral: "#cddc39" };
 
     return (
         <>
             <div id="main">
-                {dashboard.map(elementDash => {
-                    return (<>
-                        {elementDash.code === "header" && <header>{elementDash.body}</header>}
-                        {elementDash.code === "nav" && <nav>{elementDash.body}</nav>}
-                        {elementDash.code === "article" && <article>{elementDash.body}</article>}
-                        {elementDash.code === "footer" && <footer>{elementDash.body}</footer>}
-                    </>)
-                })}
+                <header>
+               {Header.body(options)}
+                </header>
+                <div className="articleWrapper">
+                    <nav>{Nav.body()}</nav>
+                    <article>{Article.body()}</article>
+                    {/* {elementDash.code === "image-M" && <div><img src={Rono}/></div>}  */}
+                </div>
+                <footer>
+                    {Footer.body()}
+                </footer>
             </div>
         </>
     );
