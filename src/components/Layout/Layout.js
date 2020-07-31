@@ -16,11 +16,11 @@ const Layout = (props) => {
       case "default":
         return <ThemeDefault>{child}</ThemeDefault>;
       case "modal":
-        return <ThemeModal />;
+        return <ThemeModal>{child}</ThemeModal>;
       case "onepage":
-        return <ThemeOnePage />;
+        return <ThemeOnePage>{child}</ThemeOnePage>;
       case "dashboard":
-        return <ThemeDashBoard />;
+        return <ThemeDashBoard>{child}</ThemeDashBoard>;
       default:
         return null;
     }
