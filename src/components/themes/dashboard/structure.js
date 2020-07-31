@@ -9,13 +9,13 @@ export const structure = [
         "id": 0,
         "code": "header",
         "title": "First",
-        "body": (options) => <Header options={options} headerTitle="oui le titre" logo="https://img.aws.la-croix.com/2019/11/29/1201063416/17e-album-Renaud-sonne-comme-celui-sagesse_1_729_486.jpg" />,
+        "body": (options) => <Header options={options} headerTitle="Titre point comme" logo="https://img.aws.la-croix.com/2019/11/29/1201063416/17e-album-Renaud-sonne-comme-celui-sagesse_1_729_486.jpg" />,
     },
     {
         "id": 1,
         "code": "nav",
         "title": "Second",
-        "body": (options) => <Nav options={options} navStuff= "un, deux, trois" />
+        "body": (options) => <Nav options={options} navStuff= "un, deux, trois, quatre, cinq, six, sept" />
     },
     {
         "id": 2,

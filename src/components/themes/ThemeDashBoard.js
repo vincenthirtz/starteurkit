@@ -1,12 +1,17 @@
-import React from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Manager from "../DashBoard/Manager";
-// import Rono from './dashboard/rono.png';
 import './dashboard/Theme.css';
 import { structure } from "./dashboard/structure";
-import { ColorThemeContext } from "../../ColorContext";
-// import OpenMenuHook from "../customHook";
+import DashMenuOpen from "../dashCustomHook";
+import SubMenuOpen from "../subMenuCustom";
 
-const ThemeDashBoard = () => {
+
+const ThemeDashBoard = (props) => {
+    const [dashMenuOpen, setDashMenuOpen] = DashMenuOpen.useDashMenuOpen();
+    const [currentClass, setCurrentClass] = useState("");
+
+    console.log('openMenu ,', dashMenuOpen);
+
     Manager.setDashboard(structure);
 
     const dashboard = Manager.getDashboard();
@@ -15,17 +20,26 @@ const ThemeDashBoard = () => {
     const Article = dashboard.find(dash => dash.code === "article");
     const Nav = dashboard.find(dash => dash.code === "nav");
     const options = { align: "right", colorGeneral: "#cddc39" };
+    const ref = useRef()
+
+    const [openMenuGreen, setOpenMenuGreen] = SubMenuOpen.useSubMenuOpen()
+   
+    useEffect(()=>{
+        dashMenuOpen ? setOpenMenuGreen(true) : setOpenMenuGreen(false);
+        console.log("menugreen Nav", openMenuGreen)
+    },[dashMenuOpen])
 
     return (
         <>
             <div id="main">
                 <header>
-               {Header.body(options)}
+                    {Header.body(options)}
                 </header>
                 <div className="articleWrapper">
-                    <nav>{Nav.body()}</nav>
+                    <nav ref={ref} className={openMenuGreen ? `navMenu open` : `navMenu`}>
+                        {Nav.body()}
+                    </nav>
                     <article>{Article.body()}</article>
-                    {/* {elementDash.code === "image-M" && <div><img src={Rono}/></div>}  */}
                 </div>
                 <footer>
                     {Footer.body()}
