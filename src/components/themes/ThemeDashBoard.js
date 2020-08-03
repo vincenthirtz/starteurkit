@@ -7,37 +7,31 @@ import SubMenuOpen from "../subMenuCustom";
 
 
 const ThemeDashBoard = (props) => {
-    const [dashMenuOpen, setDashMenuOpen] = DashMenuOpen.useDashMenuOpen();
     const [currentClass, setCurrentClass] = useState("");
 
-    console.log('openMenu ,', dashMenuOpen);
-
     Manager.setDashboard(structure);
+    const refButton = useRef();
 
     const dashboard = Manager.getDashboard();
     const Header = dashboard.find(dash => dash.code === "header");
     const Footer = dashboard.find(dash => dash.code === "footer");
     const Article = dashboard.find(dash => dash.code === "article");
     const Nav = dashboard.find(dash => dash.code === "nav");
-    const options = { align: "right", colorGeneral: "#cddc39" };
-    const ref = useRef()
+    const optionsHeader = { align: "right", colorGeneral: "#cddc39", reference: refButton };
+    const optionsNav = { reference: refButton };
+    const [openMenuGreen,
+    ] = SubMenuOpen.useSubMenuOpen()
 
-    const [openMenuGreen, setOpenMenuGreen] = SubMenuOpen.useSubMenuOpen()
-   
-    useEffect(()=>{
-        dashMenuOpen ? setOpenMenuGreen(true) : setOpenMenuGreen(false);
-        console.log("menugreen Nav", openMenuGreen)
-    },[dashMenuOpen])
 
     return (
         <>
             <div id="main">
-                <header>
-                    {Header.body(options)}
+                <header reference={refButton}>
+                    {Header.body(optionsHeader)}
                 </header>
                 <div className="articleWrapper">
-                    <nav ref={ref} className={openMenuGreen ? `navMenu open` : `navMenu`}>
-                        {Nav.body()}
+                    <nav reference={refButton} className={openMenuGreen ? `navMenu open` : `navMenu`}>
+                        {Nav.body(optionsNav)}
                     </nav>
                     <article>{Article.body()}</article>
                 </div>
