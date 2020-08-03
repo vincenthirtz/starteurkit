@@ -1,4 +1,5 @@
 import React, { useContext, useState } from "react";
+import { getWorkingPath } from "hookrouter";
 import Home from "../Home";
 import Footer from "../Layout/Footer";
 import Contact from "../Contact";
@@ -12,7 +13,8 @@ import ModalHook from "../ModalHook";
 import OutsideAlerter from "../Layout/menuWrapper";
 import OpenMenuHook from "../customHook";
 
-const Theme_Modal = () => {
+const ThemeModal = (child) => {
+  const { children } = child;
   const color = useContext(ColorThemeContext);
 
   const [modalHook, setModalHook] = ModalHook.useModalHook();
@@ -25,7 +27,7 @@ const Theme_Modal = () => {
 
   const [OpenMenu, setOpenMenu] = OpenMenuHook.useOpenMenu();
 
-  return (
+  const Default = (
     <>
       <OutsideAlerter>
         <button type="button" className={`burgerMenu ${OpenMenu ? "open" : ""}`} onClick={() => setOpenMenu(!OpenMenu)}>
@@ -62,5 +64,9 @@ const Theme_Modal = () => {
       {modalHook && <Modal> {pageName} </Modal>}
     </>
   );
+
+  const render = getWorkingPath() === "/" ? Default : children;
+
+  return render;
 };
-export default Theme_Modal;
+export default ThemeModal;

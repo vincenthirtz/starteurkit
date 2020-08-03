@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import { getWorkingPath } from "hookrouter";
 import Footer from "../Layout/Footer";
 import Contact from "../Contact";
 import About from "../About/About";
@@ -10,11 +11,12 @@ import { ColorThemeContext } from "../../ColorContext";
 import OpenMenuHook from "../customHook";
 import OutsideAlerter from "../Layout/menuWrapper";
 
-const Theme_OnePage = () => {
+const ThemeOnePage = (child) => {
   const color = useContext(ColorThemeContext);
   const [OpenMenu, setOpenMenu] = OpenMenuHook.useOpenMenu();
+  const { children } = child;
 
-  return (
+  const Default = (
     <>
       <OutsideAlerter>
         <button type="button" className={`burgerMenu ${OpenMenu ? "open" : ""}`} onClick={() => setOpenMenu(!OpenMenu)}>
@@ -32,6 +34,7 @@ const Theme_OnePage = () => {
           <a href="#contactOne">Contact</a>
         </ul>
       </OutsideAlerter>
+
       <div className="scroll-container">
         <div className={`${color} headerHome `}>
           <HeaderComponent />
@@ -48,6 +51,10 @@ const Theme_OnePage = () => {
       </div>
     </>
   );
+
+  const render = getWorkingPath() === "/" ? Default : children;
+
+  return render;
 };
 
-export default Theme_OnePage;
+export default ThemeOnePage;
