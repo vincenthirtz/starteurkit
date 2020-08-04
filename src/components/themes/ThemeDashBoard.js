@@ -1,13 +1,11 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import Manager from "../DashBoard/Manager";
 import './dashboard/Theme.css';
 import { structure } from "./dashboard/structure";
-import DashMenuOpen from "../dashCustomHook";
 import SubMenuOpen from "../subMenuCustom";
 
 
-const ThemeDashBoard = (props) => {
-    const [currentClass, setCurrentClass] = useState("");
+const ThemeDashBoard = () => {
 
     Manager.setDashboard(structure);
     const refButton = useRef();
@@ -17,11 +15,75 @@ const ThemeDashBoard = (props) => {
     const Footer = dashboard.find(dash => dash.code === "footer");
     const Article = dashboard.find(dash => dash.code === "article");
     const Nav = dashboard.find(dash => dash.code === "nav");
-    const optionsHeader = { align: "right", colorGeneral: "#cddc39", reference: refButton };
-    const optionsNav = { reference: refButton };
-    const [openMenuGreen,
-    ] = SubMenuOpen.useSubMenuOpen()
+    const optionsHeader = { align: "left", colorGeneral: "#ffffff", reference: refButton };
+    const optionsNav = { align: "center", reference: refButton };
+    const wrapOption = { align: "center" };
+    const [openMenuGreen,] = SubMenuOpen.useSubMenuOpen()
 
+    let navWrapStyle = "";
+    let articleWrapStyle = ""
+    let actualWidth = window.screen.availWidth;
+
+    if(actualWidth <= 330){
+        wrapOption.align = 'mobile';
+    }
+
+    switch (wrapOption.align) {
+        case 'mobile':{
+            navWrapStyle = {
+                gridColumn: "1/ 4",
+                gridRow: "1",
+                backgroundColor: "#00a0ec",
+            };
+            articleWrapStyle = {
+                gridColumn: " 1 /4",
+                gridRow: "1/span 3",
+            };
+        };
+        break;
+        case 'left':
+            navWrapStyle = {
+                gridColumn: "1/2",
+                gridRow: "1/span 3",
+                backgroundColor: "#00a0ec",
+            };
+            articleWrapStyle = {
+                gridColumn: " 2/4",
+                gridRow: "1/span 3",
+            };
+            break;
+        case 'center':
+            navWrapStyle = {
+                gridColumn: " span 3",
+                gridRow: "1/2",
+                backgroundColor: "#00a0ec",
+                display: "flex",
+                justifyContent: "center",
+
+            };
+            articleWrapStyle = {
+                gridColumn: " span 3",
+                gridRow: "2/3",
+            };
+            break;
+        case 'right':
+            navWrapStyle = {
+                gridColumn: " 3/4",
+                gridRow: "1/2",
+                backgroundColor: "#00a0ec",
+            };
+            articleWrapStyle = {
+                gridColumn: " 1/3",
+                gridRow: "1/span 3",
+                
+            };
+            break;
+    };
+useEffect(()=>{
+    if(actualWidth <= 330){
+        wrapOption.align = 'mobile';
+    }
+}, [actualWidth])
 
     return (
         <>
@@ -29,11 +91,16 @@ const ThemeDashBoard = (props) => {
                 <header reference={refButton}>
                     {Header.body(optionsHeader)}
                 </header>
-                <div className="articleWrapper">
-                    <nav reference={refButton} className={openMenuGreen ? `navMenu open` : `navMenu`}>
+                <div className="articleWrapper" >
+                    <nav reference={refButton}
+                        style={navWrapStyle}
+                        className={openMenuGreen ? `navMenu open` : `navMenu`}
+                    >
                         {Nav.body(optionsNav)}
                     </nav>
-                    <article>{Article.body()}</article>
+                    <article
+                        style={articleWrapStyle}
+                    >{Article.body()}</article>
                 </div>
                 <footer>
                     {Footer.body()}

@@ -4,7 +4,7 @@ import Footer from "./parts/Footer"
 import Nav from "./parts/Nav"
 import Article from "./parts/Article"
 
-export const structure = [
+const structure = [
     {
         "id": 0,
         "code": "header",
@@ -21,14 +21,14 @@ export const structure = [
         "id": 2,
         "code": "article",
         "title": "Third",
-        "body": (options) => <Article options={options} />
+        "body": (options) => <Article optionsArticle={options} />
     },
 
     {
         "id": 3,
         "code": "footer",
         "title": "Fourth",
-        "body": (options) => <Footer options={options} />
+        "body": (options) => <Footer optionsFooter={options} />
     },
     {
         "id": 4,
@@ -37,3 +37,5 @@ export const structure = [
         "body": <img src="./rono" />,
     },
 ]
+
+export default structure;

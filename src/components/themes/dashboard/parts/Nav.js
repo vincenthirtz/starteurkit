@@ -1,17 +1,41 @@
-import React, { useEffect, useRef, useState, useLayoutEffect } from "react";
-import DashMenuOpen from "../../../dashCustomHook";
+import React, { useEffect, useRef} from "react";
 import SubMenuOpen from "../../../subMenuCustom";
 
 const Nav = (props) => {
-    const { navStuff, optionsNav } = props
-    const { reference } = optionsNav;
-    const [openMenuGreen, setOpenMenuGreen] = SubMenuOpen.useSubMenuOpen()
+    const { navStuff, optionsNav } = props;
+    const { align, reference } = optionsNav;
+    const [, setOpenMenuGreen] = SubMenuOpen.useSubMenuOpen();
     const node = useRef();
-
     const menuInput = navStuff.split(",");
     const menu = menuInput.map(m =>
         <span>{m}</span>
     );
+
+    let navPosition = "";
+    let navClass = "";
+
+        switch (align) {
+            case 'left':
+                navClass='navLeft'; 
+                navPosition = {
+                    width: "100%",
+                    height:"100%"
+                };
+                break;
+            case 'center':
+                navClass='navCenter'; 
+                navPosition = {
+                    width: "100%",
+                };
+                break;
+            case 'right':
+                navClass='navRight'; 
+                navPosition={
+                    width: "100%",
+                };
+                break;
+        };
+    
 
     useEffect(() => {
 
@@ -31,10 +55,11 @@ const Nav = (props) => {
         };
     }, [])
 
-    //trouver un moyen de passer l'état de openMenuGreen à dashOpenMenu
     return (
-        <div ref={node}  >
-            <h3>menu</h3>
+        <div ref={node} 
+        style={navPosition} 
+        className={navClass}
+        >
             <ul >
                 {menu}
             </ul>
