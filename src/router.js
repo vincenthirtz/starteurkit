@@ -4,6 +4,7 @@ import Home from "./components/Home";
 import About from "./components/About/About";
 import Features from "./components/Features";
 import Contact from "./components/Contact";
+import Layout from "./components/Layout/Layout";
 import NotFoundPage from "./components/NotFoundPage";
 import { ThemeContext } from "./context";
 
@@ -19,7 +20,7 @@ function Router() {
   };
 
   const routesOnepage = {
-    "/": () => <fragment />,
+    "/": () => <Layout />,
     "/404": () => <NotFoundPage />,
   };
 

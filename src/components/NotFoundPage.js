@@ -1,4 +1,6 @@
+/* eslint-disable react/button-has-type */
 import React from "react";
+import { navigate } from "hookrouter";
 import { useTranslation } from "react-i18next";
 import "./Notfound.css";
 
@@ -6,8 +8,9 @@ const NotFound = () => {
   const { t } = useTranslation();
 
   return (
-    <div id="test">
-      <div id="body">
+    <div className="body">
+      <button onClick={() => navigate("/")}>Retour à l'accueil</button>
+      <main id="test">
         <div className="error">
           <div className="wrap">
             <div className="404">
@@ -45,7 +48,7 @@ const NotFound = () => {
             </div>
           </div>
         </div>
-      </div>
+      </main>
     </div>
   );
 };
