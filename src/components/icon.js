@@ -594,6 +594,7 @@ const IconCake = () => base("iconCake", Cake);
 const IconInternational = () => base("iconInternational", Humanity);
 
 const ChevronTop = () => base("chevronTop", Chevron);
+
 export default {
   ChevronTop,
   IconCake,

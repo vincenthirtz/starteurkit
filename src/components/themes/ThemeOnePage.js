@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { getWorkingPath } from "hookrouter";
 import Footer from "../Layout/Footer";
 import Contact from "../Contact";
@@ -10,11 +10,28 @@ import "../../style/app.scss";
 import { ColorThemeContext } from "../../ColorContext";
 import OpenMenuHook from "../customHook";
 import OutsideAlerter from "../Layout/menuWrapper";
+import icon from "../icon";
 
 const ThemeOnePage = (child) => {
   const color = useContext(ColorThemeContext);
   const [OpenMenu, setOpenMenu] = OpenMenuHook.useOpenMenu();
   const { children } = child;
+
+  const [showScroll, setShowScroll] = useState(false);
+
+  const checkScrollTop = () => {
+    if (!showScroll && window.pageYOffset > 400) {
+      setShowScroll(true);
+    } else if (showScroll && window.pageYOffset <= 400) {
+      setShowScroll(false);
+    }
+  };
+
+  const scrollTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  window.addEventListener("scroll", checkScrollTop);
 
   const Default = (
     <>
@@ -27,7 +44,6 @@ const ThemeOnePage = (child) => {
           </div>
         </button>
         <ul className={`topMenu ${OpenMenu ? "" : "hidden"}`}>
-          <a href="#topPage">logo</a>
           <a href="#homeOne">Home</a>
           <a href="#featuresOne">Features</a>
           <a href="#aboutOne">About</a>
@@ -49,6 +65,11 @@ const ThemeOnePage = (child) => {
         <Contact />
         <Footer />
       </div>
+      {showScroll && (
+        <div className={`${color} chevronTopPage`} link="#haut_de_page" onClick={scrollTop}>
+          <a href=""> {icon.ChevronTop()}</a>
+        </div>
+      )}
     </>
   );
 
