@@ -1,113 +1,110 @@
+/* eslint-disable no-lone-blocks */
 import React, { useEffect, useRef } from "react";
-import Manager from "../DashBoard/Manager";
-import './dashboard/Theme.css';
+import "./dashboard/Theme.css";
 import { structure } from "./dashboard/structure";
 import SubMenuOpen from "../subMenuCustom";
 
-
 const ThemeDashBoard = () => {
+  const refButton = useRef();
+  const Header = structure.find((dash) => dash.code === "header");
+  const Footer = structure.find((dash) => dash.code === "footer");
+  const Article = structure.find((dash) => dash.code === "article");
+  const Nav = structure.find((dash) => dash.code === "nav");
+  const optionsHeader = { align: "left", colorGeneral: "#ffffff", reference: refButton };
+  const optionsNav = { align: "center", reference: refButton };
+  const wrapOption = { align: "center" };
+  const [openMenuGreen] = SubMenuOpen.useSubMenuOpen();
 
-    Manager.setDashboard(structure);
-    const refButton = useRef();
+  let navWrapStyle = {};
+  let articleWrapStyle = {};
+  const actualWidth = window.screen.availWidth;
 
-    const dashboard = Manager.getDashboard();
-    const Header = dashboard.find(dash => dash.code === "header");
-    const Footer = dashboard.find(dash => dash.code === "footer");
-    const Article = dashboard.find(dash => dash.code === "article");
-    const Nav = dashboard.find(dash => dash.code === "nav");
-    const optionsHeader = { align: "left", colorGeneral: "#ffffff", reference: refButton };
-    const optionsNav = { align: "center", reference: refButton };
-    const wrapOption = { align: "center" };
-    const [openMenuGreen,] = SubMenuOpen.useSubMenuOpen()
+  if (actualWidth <= 330) {
+    wrapOption.align = "mobile";
+  }
 
-    let navWrapStyle = "";
-    let articleWrapStyle = ""
-    let actualWidth = window.screen.availWidth;
-
-    if(actualWidth <= 330){
-        wrapOption.align = 'mobile';
-    }
-
-    switch (wrapOption.align) {
-        case 'mobile':{
-            navWrapStyle = {
-                gridColumn: "1/ 4",
-                gridRow: "1",
-                backgroundColor: "#00a0ec",
-            };
-            articleWrapStyle = {
-                gridColumn: " 1 /4",
-                gridRow: "1/span 3",
-            };
+  switch (wrapOption.align) {
+    case "mobile":
+      {
+        navWrapStyle = {
+          gridColumn: "1/ 4",
+          gridRow: "1",
+          backgroundColor: "#00a0ec",
         };
-        break;
-        case 'left':
-            navWrapStyle = {
-                gridColumn: "1/2",
-                gridRow: "1/span 3",
-                backgroundColor: "#00a0ec",
-            };
-            articleWrapStyle = {
-                gridColumn: " 2/4",
-                gridRow: "1/span 3",
-            };
-            break;
-        case 'center':
-            navWrapStyle = {
-                gridColumn: " span 3",
-                gridRow: "1/2",
-                backgroundColor: "#00a0ec",
-                display: "flex",
-                justifyContent: "center",
+        articleWrapStyle = {
+          gridColumn: " 1 /4",
+          gridRow: "1/span 3",
+        };
+      }
+      break;
+    case "left":
+      navWrapStyle = {
+        gridColumn: "1/2",
+        gridRow: "1/span 3",
+        backgroundColor: "#00a0ec",
+      };
+      articleWrapStyle = {
+        gridColumn: " 2/4",
+        gridRow: "1/span 3",
+      };
+      break;
+    case "center":
+      navWrapStyle = {
+        gridColumn: " span 3",
+        gridRow: "1/2",
+        backgroundColor: "#00a0ec",
+        display: "flex",
+        justifyContent: "center",
+      };
+      articleWrapStyle = {
+        gridColumn: " span 3",
+        gridRow: "2/3",
+      };
+      break;
+    case "right":
+      navWrapStyle = {
+        gridColumn: " 3/4",
+        gridRow: "1/2",
+        backgroundColor: "#00a0ec",
+      };
+      articleWrapStyle = {
+        gridColumn: " 1/3",
+        gridRow: "1/span 3",
+      };
+      break;
+    default:
+      navWrapStyle = {
+        gridColumn: "1/2",
+        gridRow: "1/span 3",
+        backgroundColor: "#00a0ec",
+      };
+      articleWrapStyle = {
+        gridColumn: " 2/4",
+        gridRow: "1/span 3",
+      };
+      break;
+  }
 
-            };
-            articleWrapStyle = {
-                gridColumn: " span 3",
-                gridRow: "2/3",
-            };
-            break;
-        case 'right':
-            navWrapStyle = {
-                gridColumn: " 3/4",
-                gridRow: "1/2",
-                backgroundColor: "#00a0ec",
-            };
-            articleWrapStyle = {
-                gridColumn: " 1/3",
-                gridRow: "1/span 3",
-                
-            };
-            break;
-    };
-useEffect(()=>{
-    if(actualWidth <= 330){
-        wrapOption.align = 'mobile';
+  useEffect(() => {
+    if (actualWidth <= 330) {
+      wrapOption.align = "mobile";
     }
-}, [actualWidth])
+  }, [actualWidth]);
 
-    return (
-        <>
-            <div id="main">
-                <header reference={refButton}>
-                    {Header.body(optionsHeader)}
-                </header>
-                <div className="articleWrapper" >
-                    <nav reference={refButton}
-                        style={navWrapStyle}
-                        className={openMenuGreen ? `navMenu open` : `navMenu`}
-                    >
-                        {Nav.body(optionsNav)}
-                    </nav>
-                    <article
-                        style={articleWrapStyle}
-                    >{Article.body()}</article>
-                </div>
-                <footer>
-                    {Footer.body()}
-                </footer>
-            </div>
-        </>
-    );
+  return (
+    <>
+      <div id="main">
+        <header reference={refButton}>{Header.body(optionsHeader)}</header>
+        <div className="articleWrapper">
+          <nav reference={refButton} style={navWrapStyle} className={openMenuGreen ? `navMenu open` : `navMenu`}>
+            {Nav.body(optionsNav)}
+          </nav>
+          <article style={articleWrapStyle}>{Article.body()}</article>
+        </div>
+        <footer>{Footer.body()}</footer>
+      </div>
+    </>
+  );
 };
 
 export default ThemeDashBoard;
