@@ -29,7 +29,7 @@ npm i
 In .env file:
 
 ```javascript
-THEME = "default"; // default || onepage
+THEME = "default"; // default || onepage || modal || dashboard
 COLOR = "light"; //dark || greenish || saumon || greatOldOne || honey || pharmaceutical || playduh || grandmaLeavingRoom || camouflage || bigout || princessBBG || luna || fifties || ghost || nightWatch || slayer || initial || sunset || unicorn || twentyUnder
 ```
 
