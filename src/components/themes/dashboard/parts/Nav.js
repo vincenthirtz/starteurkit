@@ -13,7 +13,7 @@ const Nav = (props) => {
       {n.name}
     </a>
   ));
-  const menu = menuInput.map((m) => <span key={m}>{m}</span>);
+  // const menu = menuInput.map((m) => <span key={m}>{m}</span>);
   let navPosition = {};
   let navClass = "";
 
@@ -65,7 +65,7 @@ const Nav = (props) => {
 
   return (
     <div ref={node} style={navPosition} className={navClass}>
-      <ul>{menu}</ul>
+      <ul>{menuInput}</ul>
     </div>
   );
 };

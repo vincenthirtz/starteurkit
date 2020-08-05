@@ -68,7 +68,7 @@ const Header = (props) => {
         <div className="logoContainer" style={pictureAlign}>
           {logo && <img src={`${logo}`} />}
         </div>
-        <div onClick={(e) => testTurfu(e)} ref={reference} style={{ gridRow: "1" }}>
+        <div className="burgerMenuDash" onClick={(e) => testTurfu(e)} ref={reference} style={{ gridRow: "1" }}>
           <div className="burger" />
           <div className="burger" style={{ margin: "0.2rem 0" }} />
           <div className="burger" />

@@ -21,7 +21,7 @@ const ThemeDashBoard = (child) => {
   let articleWrapStyle = {};
   const actualWidth = window.screen.availWidth;
 
-  if (actualWidth <= 330) {
+  if (actualWidth <= 400) {
     wrapOption.align = "mobile";
   }
 
@@ -93,7 +93,7 @@ const ThemeDashBoard = (child) => {
   }
 
   useEffect(() => {
-    if (actualWidth <= 330) {
+    if (actualWidth <= 400) {
       wrapOption.align = "mobile";
     }
   }, [actualWidth]);
@@ -103,7 +103,12 @@ const ThemeDashBoard = (child) => {
       <div id="main">
         <header reference={refButton}>{Header.body(optionsHeader)}</header>
         <div className="articleWrapper">
-          <nav reference={refButton} style={navWrapStyle} className={openMenuGreen ? `navMenu open` : `navMenu`}>
+          <nav
+            reference={refButton}
+            style={navWrapStyle}
+            className={openMenuGreen ? `navMenu open` : `navMenu`}
+            isMobile={actualWidth}
+          >
             {Nav.body(optionsNav)}
           </nav>
           <article className="pef" style={articleWrapStyle}>

@@ -81,6 +81,9 @@ footer {
 }
 
 @media all and (min-width: 400px) {
+  .burgerMenuDash{
+    display: none;
+  }
   nav {
     grid-column: 1/2;
     grid-row: 1 / span 3;
