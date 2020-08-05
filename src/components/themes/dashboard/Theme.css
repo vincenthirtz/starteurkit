@@ -81,7 +81,7 @@ footer {
 }
 
 @media all and (min-width: 400px) {
-  .burgerMenuDash{
+  .burgerMenuDash {
     display: none;
   }
   nav {
