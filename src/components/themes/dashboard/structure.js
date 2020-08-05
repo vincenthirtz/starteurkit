@@ -22,7 +22,15 @@ export const structure = [
     id: 1,
     code: "nav",
     title: "Second",
-    body: (optionsNav) => <Nav optionsNav={optionsNav} navStuff="un, deux, trois, quatre, cinq, six, sept" />,
+    body: (optionsNav) => (
+      <Nav
+        optionsNav={optionsNav}
+        navStuff={[
+          { id: 1, name: "home", route: "/home" },
+          { id: 2, name: "contact", route: "/contact" },
+        ]}
+      />
+    ),
   },
   {
     id: 2,

@@ -8,11 +8,15 @@ const Nav = (props) => {
   const [, setOpenMenuGreen] = SubMenuOpen.useSubMenuOpen();
   const node = useRef();
 
- for (i=0; i<navStuff.length; i+=1){
-   return {}
- }
- 
-  const menuInput = navStuff.map((n)=> <a key={n.id} href={n.route}>{n.name}</a>);
+  //  for (i=0; i<navStuff.length; i+=1){
+  //    return {}
+  //  }
+
+  const menuInput = navStuff.map((n) => (
+    <a key={n.id} href={n.route}>
+      {n.name}
+    </a>
+  ));
   const menu = menuInput.map((m) => <span key={m}>{m}</span>);
   let navPosition = {};
   let navClass = "";
