@@ -34,7 +34,7 @@ const Header = (props) => {
                 gridRow: "1"
             };
             break;
-        case 'right': {
+        case 'right':
             pictureAlign = {
                 gridColumn: "3/4",
                 textAlign: align,
@@ -43,14 +43,22 @@ const Header = (props) => {
                 gridRow: "1"
             };
             break;
+            default:
+                pictureAlign = {
+                    gridColumn: "1/2",
+                    textAlign: align,
+                    width: "5rem",
+                    height: "5rem",
+                    gridRow: "1"
+                }
         }
-    }
 
-    console.log("pictureAlign,", pictureAlign);
     return (
         <div
             style={{
-                color: colorGeneral ? colorGeneral : "dark",
+                color: colorGeneral 
+                // ? colorGeneral : "dark"
+                ,
                 display: "grid",
                 gridTemplateColumns: "20vh auto 20vh",
                 placeItems: "center"

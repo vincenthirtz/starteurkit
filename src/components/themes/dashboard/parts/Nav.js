@@ -7,9 +7,13 @@ const Nav = (props) => {
   const { align, reference } = optionsNav;
   const [, setOpenMenuGreen] = SubMenuOpen.useSubMenuOpen();
   const node = useRef();
-  const menuInput = navStuff.split(",");
-  const menu = menuInput.map((m) => <span key={m}>{m}</span>);
 
+ for (i=0; i<navStuff.length; i+=1){
+   return {}
+ }
+ 
+  const menuInput = navStuff.map((n)=> <a key={n.id} href={n.route}>{n.name}</a>);
+  const menu = menuInput.map((m) => <span key={m}>{m}</span>);
   let navPosition = {};
   let navClass = "";
 
@@ -69,11 +73,11 @@ const Nav = (props) => {
 export default Nav;
 
 Nav.propTypes = {
-  navStuff: PropTypes.string,
+  navStuff: PropTypes.arrayOf,
   optionsNav: PropTypes.shape({
     align: PropTypes.string,
     colorGeneral: PropTypes.string,
-    reference: PropTypes.string,
+    reference: PropTypes.shape,
   }),
 };
 
