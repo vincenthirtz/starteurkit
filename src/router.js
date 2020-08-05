@@ -11,6 +11,7 @@ import ContactDash from "./components/themes/dashboard/pages/ContactDash";
 
 import { ThemeContext } from "./context";
 import ThemeDefault from "./components/themes/ThemeDefault";
+import ThemeDashBoard from "./components/themes/ThemeDashBoard";
 
 function Router() {
   const theme = useContext(ThemeContext);
@@ -49,9 +50,16 @@ function Router() {
   };
 
   const routesDashboard = {
-    "/": () => <Layout />,
-    "/home": () => <HomeDash />,
-    "/contact": () => <ContactDash />,
+    "/": () => (
+      <ThemeDashBoard>
+        <HomeDash />
+      </ThemeDashBoard>
+    ),
+    "/contact": () => (
+      <ThemeDashBoard>
+        <ContactDash />
+      </ThemeDashBoard>
+    ),
     "/404": () => <NotFoundPage />,
   };
 

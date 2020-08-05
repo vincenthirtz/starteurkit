@@ -1,15 +1,13 @@
-import React from 'react';
+import React from "react";
 
 const ContactDash = () => {
-
-
-    return (
-        <>
-            <div>
-                yo soy el contact de el dash board ! ola!!
-            </div>
-        </>
-    );
-}
+  return (
+    <>
+      <div>
+        <h2>J'EXISTE!</h2>
+      </div>
+    </>
+  );
+};
 
 export default ContactDash;

@@ -36,6 +36,7 @@ const ThemeDashBoard = (child) => {
         articleWrapStyle = {
           gridColumn: " 1 /4",
           gridRow: "1/span 3",
+          height: "100%",
         };
       }
       break;
@@ -48,6 +49,7 @@ const ThemeDashBoard = (child) => {
       articleWrapStyle = {
         gridColumn: " 2/4",
         gridRow: "1/span 3",
+        height: "100%",
       };
       break;
     case "center":
@@ -61,6 +63,7 @@ const ThemeDashBoard = (child) => {
       articleWrapStyle = {
         gridColumn: " span 3",
         gridRow: "2/3",
+        height: "100%",
       };
       break;
     case "right":
@@ -72,6 +75,7 @@ const ThemeDashBoard = (child) => {
       articleWrapStyle = {
         gridColumn: " 1/3",
         gridRow: "1/span 3",
+        height: "100%",
       };
       break;
     default:
@@ -83,6 +87,7 @@ const ThemeDashBoard = (child) => {
       articleWrapStyle = {
         gridColumn: " 2/4",
         gridRow: "1/span 3",
+        height: "100%",
       };
       break;
   }
@@ -101,7 +106,9 @@ const ThemeDashBoard = (child) => {
           <nav reference={refButton} style={navWrapStyle} className={openMenuGreen ? `navMenu open` : `navMenu`}>
             {Nav.body(optionsNav)}
           </nav>
-          <article style={articleWrapStyle}>{Article.body(optionsArticle)}</article>
+          <article className="pef" style={articleWrapStyle}>
+            {Article.body(optionsArticle)}
+          </article>
         </div>
         <footer>{Footer.body()}</footer>
       </div>

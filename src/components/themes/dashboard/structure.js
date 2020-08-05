@@ -26,8 +26,8 @@ export const structure = [
       <Nav
         optionsNav={optionsNav}
         navStuff={[
-          { id: 1, name: "home", route: "/home" },
-          { id: 2, name: "contact", route: "/contact" },
+          { id: 1, name: "Home", route: "/" },
+          { id: 2, name: "Contact", route: "/contact" },
         ]}
       />
     ),

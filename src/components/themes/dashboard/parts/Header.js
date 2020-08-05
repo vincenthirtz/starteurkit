@@ -74,11 +74,6 @@ const Header = (props) => {
           <div className="burger" />
         </div>
       </div>
-      <div onClick={(e) => testTurfu(e)} ref={reference} style={{ gridRow: "1" }}>
-        <div className="burger" />
-        <div className="burger" style={{ margin: "0.2rem 0" }} />
-        <div className="burger" />
-      </div>
     </div>
   );
 };
