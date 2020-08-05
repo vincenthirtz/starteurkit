@@ -28,14 +28,14 @@ export const structure = [
     id: 2,
     code: "article",
     title: "Third",
-    body: (options) => <Article optionsArticle={options} />,
+    body: (optionsArticle) => <Article optionsArticle={optionsArticle} />,
   },
 
   {
     id: 3,
     code: "footer",
     title: "Fourth",
-    body: (options) => <Footer optionsFooter={options} />,
+    body: (optionsFooter) => <Footer optionsFooter={optionsFooter} />,
   },
   {
     id: 4,

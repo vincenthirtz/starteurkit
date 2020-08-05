@@ -7,15 +7,36 @@ import Contact from "./components/Contact";
 import Layout from "./components/Layout/Layout";
 import NotFoundPage from "./components/NotFoundPage";
 import { ThemeContext } from "./context";
+import ThemeDefault from "./components/themes/ThemeDefault";
 
 function Router() {
   const theme = useContext(ThemeContext);
   const routesDefault = {
-    "/": () => <Home />,
-    "/about": () => <About />,
-    "/features": () => <Features />,
-    "/contact": () => <Contact />,
-    "/404": () => <NotFoundPage />,
+    "/": () => (
+      <ThemeDefault>
+        <Home />
+      </ThemeDefault>
+    ),
+    "/about": () => (
+      <ThemeDefault>
+        <About />
+      </ThemeDefault>
+    ),
+    "/features": () => (
+      <ThemeDefault>
+        <Features />
+      </ThemeDefault>
+    ),
+    "/contact": () => (
+      <ThemeDefault>
+        <Contact />
+      </ThemeDefault>
+    ),
+    "/404": () => (
+      <ThemeDefault>
+        <NotFoundPage />
+      </ThemeDefault>
+    ),
     // '/products/:id': ({id}) => <ProductDetails id={id} />
   };
 

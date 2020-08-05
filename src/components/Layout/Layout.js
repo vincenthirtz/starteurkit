@@ -1,5 +1,4 @@
 import React, { useContext } from "react";
-import PropTypes from "prop-types";
 import ThemeDashBoard from "../themes/ThemeDashBoard";
 import ThemeOnePage from "../themes/ThemeOnePage";
 import ThemeModal from "../themes/ThemeModal";
@@ -16,11 +15,11 @@ const Layout = (props) => {
       case "default":
         return <ThemeDefault>{child}</ThemeDefault>;
       case "modal":
-        return <ThemeModal>{child}</ThemeModal>;
+        return <ThemeModal />;
       case "onepage":
-        return <ThemeOnePage>{child}</ThemeOnePage>;
+        return <ThemeOnePage />;
       case "dashboard":
-        return <ThemeDashBoard>{child}</ThemeDashBoard>;
+        return <ThemeDashBoard />;
       default:
         return null;
     }
@@ -30,7 +29,3 @@ const Layout = (props) => {
 };
 
 export default Layout;
-
-Layout.propTypes = {
-  children: PropTypes.element.isRequired,
-};

@@ -1,5 +1,4 @@
 import React, { useContext, useState } from "react";
-import { getWorkingPath } from "hookrouter";
 import Footer from "../Layout/Footer";
 import Contact from "../Contact";
 import About from "../About/About";
@@ -12,10 +11,9 @@ import OpenMenuHook from "../customHook";
 import OutsideAlerter from "../Layout/menuWrapper";
 import icon from "../icon";
 
-const ThemeOnePage = (child) => {
+const ThemeOnePage = () => {
   const color = useContext(ColorThemeContext);
   const [OpenMenu, setOpenMenu] = OpenMenuHook.useOpenMenu();
-  const { children } = child;
 
   const [showScroll, setShowScroll] = useState(false);
 
@@ -33,7 +31,7 @@ const ThemeOnePage = (child) => {
 
   window.addEventListener("scroll", checkScrollTop);
 
-  const Default = (
+  return (
     <>
       <OutsideAlerter>
         <button type="button" className={`burgerMenu ${OpenMenu ? "open" : ""}`} onClick={() => setOpenMenu(!OpenMenu)}>
@@ -72,10 +70,6 @@ const ThemeOnePage = (child) => {
       )}
     </>
   );
-
-  const render = getWorkingPath() === "/" ? Default : children;
-
-  return render;
 };
 
 export default ThemeOnePage;

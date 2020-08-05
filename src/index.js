@@ -132,9 +132,9 @@ const AppComponent = () => {
     <div className={color}>
       <ThemeContext.Provider value={theme}>
         <ColorThemeContext.Provider value={color}>
-          <Layout>
-            <Router />
-          </Layout>
+          <Router>
+            <Layout />
+          </Router>
         </ColorThemeContext.Provider>
       </ThemeContext.Provider>
     </div>

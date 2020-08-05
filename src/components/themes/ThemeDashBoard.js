@@ -4,7 +4,8 @@ import "./dashboard/Theme.css";
 import { structure } from "./dashboard/structure";
 import SubMenuOpen from "../subMenuCustom";
 
-const ThemeDashBoard = () => {
+const ThemeDashBoard = (child) => {
+  const { children } = child;
   const refButton = useRef();
   const Header = structure.find((dash) => dash.code === "header");
   const Footer = structure.find((dash) => dash.code === "footer");
@@ -12,6 +13,7 @@ const ThemeDashBoard = () => {
   const Nav = structure.find((dash) => dash.code === "nav");
   const optionsHeader = { align: "left", colorGeneral: "#ffffff", reference: refButton };
   const optionsNav = { align: "center", reference: refButton };
+  const optionsArticle = { children };
   const wrapOption = { align: "center" };
   const [openMenuGreen] = SubMenuOpen.useSubMenuOpen();
 
@@ -99,7 +101,7 @@ const ThemeDashBoard = () => {
           <nav reference={refButton} style={navWrapStyle} className={openMenuGreen ? `navMenu open` : `navMenu`}>
             {Nav.body(optionsNav)}
           </nav>
-          <article style={articleWrapStyle}>{Article.body()}</article>
+          <article style={articleWrapStyle}>{Article.body(optionsArticle)}</article>
         </div>
         <footer>{Footer.body()}</footer>
       </div>
