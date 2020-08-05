@@ -5,6 +5,9 @@ import About from "./components/About/About";
 import Features from "./components/Features";
 import Contact from "./components/Contact";
 import NotFoundPage from "./components/NotFoundPage";
+import HomeDash from "./components/themes/dashboard/pages/HomeDash";
+import ContactDash from "./components/themes/dashboard/pages/ContactDash";
+
 import { ThemeContext } from "./context";
 import ThemeDefault from "./components/themes/ThemeDefault";
 import ThemeDashBoard from "./components/themes/ThemeDashBoard";
@@ -53,8 +56,17 @@ function Router() {
     "/404": () => <NotFoundPage />,
   };
 
-  const routesDashBoard = {
-    "/": () => <ThemeDashBoard />,
+  const routesDashboard = {
+    "/": () => (
+      <ThemeDashBoard>
+        <HomeDash />
+      </ThemeDashBoard>
+    ),
+    "/contact": () => (
+      <ThemeDashBoard>
+        <ContactDash />
+      </ThemeDashBoard>
+    ),
     "/404": () => <NotFoundPage />,
   };
 
@@ -67,7 +79,7 @@ function Router() {
       case "onepage":
         return routesOnepage;
       case "dashboard":
-        return routesDashBoard;
+        return routesDashboard;
       default:
         return null;
     }
