@@ -4,10 +4,13 @@ import Home from "./components/Home";
 import About from "./components/About/About";
 import Features from "./components/Features";
 import Contact from "./components/Contact";
-import Layout from "./components/Layout/Layout";
 import NotFoundPage from "./components/NotFoundPage";
 import { ThemeContext } from "./context";
 import ThemeDefault from "./components/themes/ThemeDefault";
+import ThemeDashBoard from "./components/themes/ThemeDashBoard";
+import ThemeOnePage from "./components/themes/ThemeOnePage";
+import ThemeModal from "./components/themes/ThemeModal";
+import "./style/app.scss";
 
 function Router() {
   const theme = useContext(ThemeContext);
@@ -41,7 +44,17 @@ function Router() {
   };
 
   const routesOnepage = {
-    "/": () => <Layout />,
+    "/": () => <ThemeOnePage />,
+    "/404": () => <NotFoundPage />,
+  };
+
+  const routesModal = {
+    "/": () => <ThemeModal />,
+    "/404": () => <NotFoundPage />,
+  };
+
+  const routesDashBoard = {
+    "/": () => <ThemeDashBoard />,
     "/404": () => <NotFoundPage />,
   };
 
@@ -50,11 +63,11 @@ function Router() {
       case "default":
         return routesDefault;
       case "modal":
-        return routesOnepage;
+        return routesModal;
       case "onepage":
         return routesOnepage;
       case "dashboard":
-        return routesOnepage;
+        return routesDashBoard;
       default:
         return null;
     }

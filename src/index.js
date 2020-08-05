@@ -5,8 +5,6 @@ import { initReactI18next } from "react-i18next";
 import { ThemeContext } from "./context";
 import { ColorThemeContext } from "./ColorContext";
 import Router from "./router";
-import Layout from "./components/Layout/Layout";
-// import ModalHook from "./components/ModalHook";
 
 i18n.use(initReactI18next).init({
   resources: {
@@ -132,9 +130,7 @@ const AppComponent = () => {
     <div className={color}>
       <ThemeContext.Provider value={theme}>
         <ColorThemeContext.Provider value={color}>
-          <Router>
-            <Layout />
-          </Router>
+          <Router />
         </ColorThemeContext.Provider>
       </ThemeContext.Provider>
     </div>
