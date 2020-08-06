@@ -3,6 +3,7 @@ import Header from "./parts/Header";
 import Footer from "./parts/Footer";
 import Nav from "./parts/Nav";
 import Article from "./parts/Article";
+import CofeeCup from "../../../img/cofee.png";
 
 // eslint-disable-next-line import/prefer-default-export
 export const structure = [
@@ -14,7 +15,8 @@ export const structure = [
       <Header
         optionsHeader={optionsHeader}
         headerTitle="Titre point comme"
-        logo="https://img.aws.la-croix.com/2019/11/29/1201063416/17e-album-Renaud-sonne-comme-celui-sagesse_1_729_486.jpg"
+        logo={CofeeCup}
+        // "https://img.aws.la-croix.com/2019/11/29/1201063416/17e-album-Renaud-sonne-comme-celui-sagesse_1_729_486.jpg"
       />
     ),
   },

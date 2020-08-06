@@ -1,8 +1,11 @@
-import React, { useContext } from "react";
+import React from "react";
 
-const Footer = (props) => {
-  return <div>coucou footer</div>
+const Footer = () => {
+  return (
+    <div>
+      <p className="footerContent">footer/20</p>
+    </div>
+  );
 };
 
 export default Footer;
-

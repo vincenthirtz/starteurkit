@@ -9,7 +9,7 @@ const Nav = (props) => {
   const node = useRef();
 
   const menuInput = navStuff.map((n) => (
-    <a key={n.id} href={n.route} style={{ color: "white" }}>
+    <a className="menuItem" key={n.id} href={n.route} style={{ color: "white" }}>
       {n.name}
     </a>
   ));
