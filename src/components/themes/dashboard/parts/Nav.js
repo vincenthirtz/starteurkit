@@ -8,9 +8,7 @@ const Nav = (props) => {
   const [, setOpenMenuGreen] = SubMenuOpen.useSubMenuOpen();
   const node = useRef();
 
-  const menuInput = menu.map((
-    n, // eslint-disable-line
-  ) => (
+  /*eslint-disable-line*/ const menuInput = menu.map((n) => (
     <a className="menuItem" key={n.id} href={n.route} style={{ color: "white" }}>
       {n.name}
     </a>
