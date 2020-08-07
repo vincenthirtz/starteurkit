@@ -11,7 +11,7 @@ const Article = (props) => {
   return (
     <div
       // articleStuff={articleStuff}
-      style={{ height: "100%", overflow: "auto" }}
+      style={{ height: "100%", overflow: "auto", overflowX: "hidden" }}
     >
       {children}
     </div>

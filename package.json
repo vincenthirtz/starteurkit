@@ -31,6 +31,7 @@
   "dependencies": {
     "@formiz/core": "^1.0.0-rc.16",
     "@formiz/validations": "^1.0.0-rc.14",
+    "atoms": "^0.2.0",
     "components": "^0.1.0",
     "hookrouter": "^1.2.3",
     "i18next": "^19.6.3",
@@ -40,6 +41,7 @@
     "react-dom": "^16.13.1",
     "react-i18next": "^11.7.0",
     "react-lottie": "^1.2.3",
+    "recoil": "0.0.10",
     "router": "^1.3.5",
     "semantic-ui-react": "^1.1.1"
   },

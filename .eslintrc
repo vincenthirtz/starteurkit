@@ -28,6 +28,12 @@
                 "mjs": "never"
             }
         ],
+        //rule for recoil
+        // "react-hooks/exhaustive-deps": [
+        //     "warn", {
+        //       "additionalHooks": "useRecoilCallback"
+        //     }], 
+            
         "react/react-in-jsx-scope": "off",
         "react/jsx-uses-vars": [2],
         "camelcase": "off",
@@ -41,6 +47,7 @@
         "import/named": "off",
         "react/default-props-match-prop-types": "off",
         "react/no-array-index-key": "off",
+       
         "no-console": [
             "error",
             {

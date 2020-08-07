@@ -29,8 +29,7 @@ const ThemeDashBoard = (child) => {
   };
   const optionsArticle = {
     children,
-    // articleStuff: () => <div>{CofeeCup},  "gros texte pour tester des choses blablabla et bla"</div>,
-    articleStuff: [CofeeCup, "gros texte pour tester des choses blablabla et bla"],
+    // articleStuff: [CofeeCup, "gros texte pour tester des choses blablabla et bla"],
   };
   const wrapOption = { align: "center" };
   const [openMenuGreen] = SubMenuOpen.useSubMenuOpen();

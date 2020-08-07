@@ -1,6 +1,11 @@
 import React from "react";
+import { useRecoilState } from "recoil";
+import articleTitleState from "../../../atoms/ArticlesAtom";
+// import articleTitle from '../../../atoms/Atom';
 
 const HomeDash = () => {
+  const [articleTitle] = useRecoilState(articleTitleState);
+
   return (
     <>
       <div
@@ -37,11 +42,12 @@ const HomeDash = () => {
             justifySelf: "center",
           }}
         >
-          <div> suis decéption </div>
+          <h2> {articleTitle.titre} </h2>
+          <div>{articleTitle.content}</div>
+          <img src={articleTitle.contentImage} />
         </div>
       </div>
     </>
   );
 };
-
 export default HomeDash;

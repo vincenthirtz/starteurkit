@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { RecoilRoot } from "recoil";
 import ReactDOM from "react-dom";
 import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
@@ -127,13 +128,15 @@ const AppComponent = () => {
   const [color] = useState(`theme-${process.env.COLOR}`);
 
   return (
-    <div className={color}>
-      <ThemeContext.Provider value={theme}>
-        <ColorThemeContext.Provider value={color}>
-          <Router />
-        </ColorThemeContext.Provider>
-      </ThemeContext.Provider>
-    </div>
+    <RecoilRoot>
+      <div className={color}>
+        <ThemeContext.Provider value={theme}>
+          <ColorThemeContext.Provider value={color}>
+            <Router />
+          </ColorThemeContext.Provider>
+        </ThemeContext.Provider>
+      </div>
+    </RecoilRoot>
   );
 };
 
