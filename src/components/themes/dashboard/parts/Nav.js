@@ -3,17 +3,18 @@ import PropTypes from "prop-types";
 import SubMenuOpen from "../../../subMenuCustom";
 
 const Nav = (props) => {
-  const { navStuff, optionsNav } = props;
-  const { align, reference } = optionsNav;
+  const { optionsNav } = props;
+  const { align, reference, menu } = optionsNav;
   const [, setOpenMenuGreen] = SubMenuOpen.useSubMenuOpen();
   const node = useRef();
 
-  const menuInput = navStuff.map((n) => (
+  const menuInput = menu.map((
+    n, // eslint-disable-line
+  ) => (
     <a className="menuItem" key={n.id} href={n.route} style={{ color: "white" }}>
       {n.name}
     </a>
   ));
-  // const menu = menuInput.map((m) => <span key={m}>{m}</span>);
   let navPosition = {};
   let navClass = "";
 
@@ -73,11 +74,11 @@ const Nav = (props) => {
 export default Nav;
 
 Nav.propTypes = {
-  navStuff: PropTypes.arrayOf,
   optionsNav: PropTypes.shape({
     align: PropTypes.string,
     colorGeneral: PropTypes.string,
     reference: PropTypes.shape,
+    menu: PropTypes.shape({}),
   }),
 };
 

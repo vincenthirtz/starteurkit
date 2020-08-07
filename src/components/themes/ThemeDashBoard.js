@@ -3,6 +3,7 @@ import React, { useEffect, useRef } from "react";
 import "./dashboard/Theme.css";
 import { structure } from "./dashboard/structure";
 import SubMenuOpen from "../subMenuCustom";
+import CofeeCup from "../../img/cofee.png";
 
 const ThemeDashBoard = (child) => {
   const { children } = child;
@@ -11,9 +12,26 @@ const ThemeDashBoard = (child) => {
   const Footer = structure.find((dash) => dash.code === "footer");
   const Article = structure.find((dash) => dash.code === "article");
   const Nav = structure.find((dash) => dash.code === "nav");
-  const optionsHeader = { align: "left", colorGeneral: "#ffffff", reference: refButton };
-  const optionsNav = { align: "center", reference: refButton };
-  const optionsArticle = { children };
+  const optionsHeader = {
+    align: "left",
+    colorGeneral: "#ffffff",
+    reference: refButton,
+    imageHeader: CofeeCup,
+    headerTitle: "Titre point comme",
+  };
+  const optionsNav = {
+    align: "center",
+    reference: refButton,
+    menu: [
+      { id: 1, name: "Home", route: "/" },
+      { id: 2, name: "Contact", route: "/contact" },
+    ],
+  };
+  const optionsArticle = {
+    children,
+    // articleStuff: () => <div>{CofeeCup},  "gros texte pour tester des choses blablabla et bla"</div>,
+    articleStuff: [CofeeCup, "gros texte pour tester des choses blablabla et bla"],
+  };
   const wrapOption = { align: "center" };
   const [openMenuGreen] = SubMenuOpen.useSubMenuOpen();
 

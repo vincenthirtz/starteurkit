@@ -3,7 +3,6 @@ import Header from "./parts/Header";
 import Footer from "./parts/Footer";
 import Nav from "./parts/Nav";
 import Article from "./parts/Article";
-import CofeeCup from "../../../img/cofee.png";
 
 // eslint-disable-next-line import/prefer-default-export
 export const structure = [
@@ -11,28 +10,13 @@ export const structure = [
     id: 0,
     code: "header",
     title: "First",
-    body: (optionsHeader) => (
-      <Header
-        optionsHeader={optionsHeader}
-        headerTitle="Titre point comme"
-        logo={CofeeCup}
-        // "https://img.aws.la-croix.com/2019/11/29/1201063416/17e-album-Renaud-sonne-comme-celui-sagesse_1_729_486.jpg"
-      />
-    ),
+    body: (optionsHeader) => <Header optionsHeader={optionsHeader} />,
   },
   {
     id: 1,
     code: "nav",
     title: "Second",
-    body: (optionsNav) => (
-      <Nav
-        optionsNav={optionsNav}
-        navStuff={[
-          { id: 1, name: "Home", route: "/" },
-          { id: 2, name: "Contact", route: "/contact" },
-        ]}
-      />
-    ),
+    body: (optionsNav) => <Nav optionsNav={optionsNav} />,
   },
   {
     id: 2,
@@ -40,7 +24,6 @@ export const structure = [
     title: "Third",
     body: (optionsArticle) => <Article optionsArticle={optionsArticle} />,
   },
-
   {
     id: 3,
     code: "footer",
@@ -51,6 +34,6 @@ export const structure = [
     id: 4,
     code: "image-M",
     title: "Image",
-    body: <img src="./rono" />,
+    body: "prout",
   },
 ];

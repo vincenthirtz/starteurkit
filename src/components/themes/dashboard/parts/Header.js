@@ -3,8 +3,8 @@ import PropTypes from "prop-types";
 import SubMenuOpen from "../../../subMenuCustom";
 
 const Header = (props) => {
-  const { logo, optionsHeader, headerTitle } = props;
-  const { align, colorGeneral, reference } = optionsHeader;
+  const { logo, optionsHeader } = props;
+  const { align, colorGeneral, reference, imageHeader, headerTitle } = optionsHeader;
   const [openMenuGreen, setOpenMenuGreen] = SubMenuOpen.useSubMenuOpen();
 
   const testTurfu = () => {
@@ -56,7 +56,6 @@ const Header = (props) => {
       <div
         style={{
           color: colorGeneral,
-          // ? colorGeneral : "dark"
           display: "grid",
           gridTemplateColumns: "20vh auto 20vh",
           placeItems: "center",
@@ -66,7 +65,7 @@ const Header = (props) => {
           {headerTitle}
         </h1>
         <div className="logoContainer" style={pictureAlign}>
-          {logo && <img src={`${logo}`} />}
+          {logo && <img src={`${imageHeader}`} />}
         </div>
         <div className="burgerMenuDash" onClick={(e) => testTurfu(e)} ref={reference} style={{ gridRow: "1" }}>
           <div className="burger" />
@@ -87,6 +86,8 @@ Header.propTypes = {
     align: PropTypes.string,
     colorGeneral: PropTypes.string,
     reference: PropTypes.string,
+    imageHeader: PropTypes.symbol,
+    headerTitle: PropTypes.string,
   }),
 };
 
