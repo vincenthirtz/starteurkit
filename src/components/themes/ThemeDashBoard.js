@@ -48,7 +48,7 @@ const ThemeDashBoard = (child) => {
         navWrapStyle = {
           gridColumn: "1/ 4",
           gridRow: "1",
-          backgroundColor: "#00a0ec",
+          backgroundColor: "#0f1635",
         };
         articleWrapStyle = {
           gridColumn: " 1 /4",

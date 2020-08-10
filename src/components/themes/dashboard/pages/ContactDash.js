@@ -10,14 +10,20 @@ const ContactDash = () => {
   const usersStatus = [];
   for (let i = 0; i < arrayTransformer.length; i += 1) {
     usersStatus.push(
-      <div>
-        <h3>{arrayTransformer[i].prenom}</h3>
-        <h4>{arrayTransformer[i].nom}</h4>
-        <p>{arrayTransformer[i].contact}</p>
+      <div className="usersCards">
+        <div className="imageCard">
+          <img src={arrayTransformer[i].image} />
+        </div>
+        <ul>
+          <li className="cardFirstName">{arrayTransformer[i].prenom}</li>
+          <li className="cardName">{arrayTransformer[i].nom}</li>
+          <li className="cardMail">{arrayTransformer[i].contact}</li>
+        </ul>
       </div>,
     );
   }
-  return <>{usersStatus}</>;
+
+  return <div className="cardsWrap">{usersStatus}</div>;
 };
 
 export default ContactDash;
