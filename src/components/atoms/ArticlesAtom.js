@@ -5,8 +5,8 @@ import cofeeIcon from "../../img/cofee.png";
 const articleTitleState = atom({
   key: "articleContent",
   default: {
-    titre: "le café ça troue le cul",
-    content: "oui oui beaucoup",
+    titre: "Le café c'est bon !",
+    content: '" oui! " : someone in the morning ',
     contentImage: cofeeIcon,
   },
 });

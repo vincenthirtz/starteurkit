@@ -17,13 +17,12 @@ const HomeDash = () => {
           justifyContent: "center",
           width: "100%",
           height: "100%",
-          backgroundColor: "#ff9505",
+          backgroundColor: "#f5994a",
           color: "white",
         }}
       >
-        <h2>holala c'est le gros slogan</h2>
-        <div>ici logo</div>
-        <h4>petite phrase d'accroche</h4>
+        <h2 style={{ fontSize: "5rem" }}>Start[☕]rKit</h2>
+        <h4>glou glou le bon café </h4>
       </div>
 
       <div
@@ -42,8 +41,8 @@ const HomeDash = () => {
             justifySelf: "center",
           }}
         >
-          <h2> {articleTitle.titre} </h2>
-          <div>{articleTitle.content}</div>
+          <h2 style={{ color: "#b15c34" }}> {articleTitle.titre} </h2>
+          <div style={{ color: "white", fontWeight: "bolder" }}> {articleTitle.content}</div>
           <img src={articleTitle.contentImage} />
         </div>
       </div>

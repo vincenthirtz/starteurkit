@@ -61,7 +61,7 @@ const ThemeDashBoard = (child) => {
       navWrapStyle = {
         gridColumn: "1/2",
         gridRow: "1/span 3",
-        backgroundColor: "#00a0ec",
+        backgroundColor: "#0f1635",
       };
       articleWrapStyle = {
         gridColumn: " 2/4",
@@ -73,7 +73,7 @@ const ThemeDashBoard = (child) => {
       navWrapStyle = {
         gridColumn: " span 3",
         gridRow: "1/2",
-        backgroundColor: "#00a0ec",
+        backgroundColor: "#0f1635",
         display: "flex",
         justifyContent: "center",
       };
@@ -87,7 +87,7 @@ const ThemeDashBoard = (child) => {
       navWrapStyle = {
         gridColumn: " 3/4",
         gridRow: "1/2",
-        backgroundColor: "#00a0ec",
+        backgroundColor: "#0f1635",
       };
       articleWrapStyle = {
         gridColumn: " 1/3",
@@ -99,7 +99,7 @@ const ThemeDashBoard = (child) => {
       navWrapStyle = {
         gridColumn: "1/2",
         gridRow: "1/span 3",
-        backgroundColor: "#00a0ec",
+        backgroundColor: "#0f1635",
       };
       articleWrapStyle = {
         gridColumn: " 2/4",
