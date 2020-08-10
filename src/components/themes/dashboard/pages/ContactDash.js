@@ -3,27 +3,21 @@ import { useRecoilState } from "recoil";
 import contactContentState from "../../../atoms/ContactAtom";
 
 const ContactDash = () => {
-  const [contactContent, setContactContent] = useRecoilState(contactContentState);
-  const testSwitch = () => {
-    setContactContent({ nom: "patrick", prenom: "joko", contact: "NON" });
-  };
-  return (
-    <>
+  const [contactContent] = useRecoilState(contactContentState);
+
+  const arrayTransformer = Object.values(contactContent);
+
+  const usersStatus = [];
+  for (let i = 0; i < arrayTransformer.length; i += 1) {
+    usersStatus.push(
       <div>
-        <button type="button" onClick={() => testSwitch()}>
-          wesh
-        </button>
-        <h3>{contactContent.prenom}</h3>
-        <h4>{contactContent.nom}</h4>
-        <h4>Contact</h4>
-        <p>{contactContent.contact}</p>
-      </div>
-      <h3>{contactContent.prenom}</h3>
-      <h4>{contactContent.nom}</h4>
-      <h4>Contact</h4>
-      <p>{contactContent.contact}</p>
-    </>
-  );
+        <h3>{arrayTransformer[i].prenom}</h3>
+        <h4>{arrayTransformer[i].nom}</h4>
+        <p>{arrayTransformer[i].contact}</p>
+      </div>,
+    );
+  }
+  return <>{usersStatus}</>;
 };
 
 export default ContactDash;

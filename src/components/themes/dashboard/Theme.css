@@ -3,6 +3,7 @@
   grid-template-columns: 10em 1fr;
   grid-template-rows: auto 1fr auto;
   height: 100vh;
+  overflow: auto;
 }
 header {
   grid-column: 1 / span 2;
