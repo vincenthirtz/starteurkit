@@ -1,6 +1,5 @@
 import React from "react";
 import PropTypes from "prop-types";
-// import { getWorkingPath } from "hookrouter";
 
 const Article = (props) => {
   const {
@@ -11,7 +10,7 @@ const Article = (props) => {
   return (
     <div
       // articleStuff={articleStuff}
-      style={{ height: "100%", overflow: "auto", overflowX: "hidden" }}
+      style={{ height: "100%", overflow: "inherit", overflowX: "hidden" }}
     >
       {children}
     </div>

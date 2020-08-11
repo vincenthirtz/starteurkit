@@ -21,7 +21,7 @@ const HomeDash = () => {
           color: "white",
         }}
       >
-        <h2 style={{ fontSize: "5rem" }}>Start[☕]rKit</h2>
+        <h2 className="ArticleTitle">Start[☕]rKit</h2>
         <h4>glou glou le bon café </h4>
       </div>
 

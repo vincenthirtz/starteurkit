@@ -29,7 +29,6 @@ const ThemeDashBoard = (child) => {
   };
   const optionsArticle = {
     children,
-    // articleStuff: [CofeeCup, "gros texte pour tester des choses blablabla et bla"],
   };
   const wrapOption = { align: "center" };
   const [openMenuGreen] = SubMenuOpen.useSubMenuOpen();
@@ -38,7 +37,7 @@ const ThemeDashBoard = (child) => {
   let articleWrapStyle = {};
   const actualWidth = window.screen.availWidth;
 
-  if (actualWidth <= 400) {
+  if (actualWidth <= 420) {
     wrapOption.align = "mobile";
   }
 
@@ -71,15 +70,14 @@ const ThemeDashBoard = (child) => {
       break;
     case "center":
       navWrapStyle = {
-        gridColumn: " span 3",
-        gridRow: "1/2",
+        gridColumn: "1/4",
+        gridRow: "2/3",
         backgroundColor: "#0f1635",
         display: "flex",
         justifyContent: "center",
       };
       articleWrapStyle = {
-        gridColumn: " span 3",
-        gridRow: "2/3",
+        gridColumn: "1/4",
         height: "100%",
       };
       break;
@@ -119,20 +117,20 @@ const ThemeDashBoard = (child) => {
     <>
       <div id="main">
         <header reference={refButton}>{Header.body(optionsHeader)}</header>
+        <nav
+          reference={refButton}
+          style={navWrapStyle}
+          className={openMenuGreen ? `navMenu open` : `navMenu`}
+          isMobile={actualWidth}
+        >
+          {Nav.body(optionsNav)}
+        </nav>
         <div className="articleWrapper">
-          <nav
-            reference={refButton}
-            style={navWrapStyle}
-            className={openMenuGreen ? `navMenu open` : `navMenu`}
-            isMobile={actualWidth}
-          >
-            {Nav.body(optionsNav)}
-          </nav>
-          <article className="pef" style={articleWrapStyle}>
+          <article className="article" style={articleWrapStyle}>
             {Article.body(optionsArticle)}
           </article>
         </div>
-        <footer>{Footer.body()}</footer>
+        <footer className="base">{Footer.body()}</footer>
       </div>
     </>
   );

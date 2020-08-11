@@ -15,8 +15,8 @@ const ContactDash = () => {
           <img src={arrayTransformer[i].image} />
         </div>
         <ul>
-          <li className="cardFirstName">{arrayTransformer[i].prenom}</li>
-          <li className="cardName">{arrayTransformer[i].nom}</li>
+          <li className="cardFirstName">{arrayTransformer[i].firstname}</li>
+          <li className="cardName">{arrayTransformer[i].name}</li>
           <li className="cardMail">{arrayTransformer[i].contact}</li>
         </ul>
       </div>,
